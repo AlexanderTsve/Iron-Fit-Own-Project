@@ -1,0 +1,10 @@
+$color-primary: #012b82;
+$color-secondary: #ffffff;
+$light-grey: #f1f1f1;
+@font-face {
+  font-family: myFont;
+  src: url(../src/assets/fonts/Sportage-Demo/Sportage-DemoItalic.otf);
+}
+$fonts: myFont, Arial (sans-serif), Arial Black (sans-serif),
+  Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+  Impact (sans-serif), Gill Sans (sans-serif);
