@@ -3,6 +3,7 @@ import logo from "../../assets/images/logo.png";
 import styles from "./Header.module.scss";
 import { useState } from "react";
 import HeaderDropdown from "./HeaderDropdown";
+// import LoginModal from "../LoginModal/LoginModal";
 const Header = () => {
   const [showClubsDropdown, setShowClubsDropdown] = useState(false);
   const [showTimetablesDropdown, setShowTimetablesDropdown] = useState(false);
