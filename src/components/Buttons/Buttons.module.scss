@@ -1,0 +1,19 @@
+@import "../../custom.scss";
+.iron_fit_app_button {
+  font-family: $fonts;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  color: $color-secondary;
+  background-color: $light-green;
+  margin: 0.5rem;
+  &:hover {
+    color: $color-primary;
+    background-color: $color-secondary;
+  }
+  &:active {
+    background-color: $dark-violet;
+    color: $light-green;
+  }
+}
