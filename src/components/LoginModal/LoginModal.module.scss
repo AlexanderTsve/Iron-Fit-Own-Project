@@ -1,0 +1,51 @@
+@import "../../custom.scss";
+.login_modal {
+  padding-top: 0;
+  position: fixed;
+  z-index: 11;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: $dark-violet;
+  opacity: 0.95;
+  &_content {
+    background-color: $color-primary;
+    color: $violet;
+    height: 35rem;
+    width: 15vw;
+    margin: 5% auto 15% auto;
+    border: 3px solid $light-grey;
+    border-radius: 1rem;
+    &_form {
+      div {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        button {
+          max-height: 3rem;
+        }
+        label {
+          margin: 1rem;
+          color: $color-secondary;
+          font-family: $fonts;
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}
+.login__logo {
+  height: 6.6rem;
+}
+.close_btn {
+  display: flex;
+  justify-content: flex-end;
+}
+.link-to-sign-up {
+  cursor: pointer;
+  color: $light-grey;
+  text-decoration: underline;
+}
+.link-to-sign-up:hover {
+  color: $light-green;
+}
