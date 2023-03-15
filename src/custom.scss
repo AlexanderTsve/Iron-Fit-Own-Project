@@ -5,9 +5,10 @@ $dark-violet: #49323c;
 $light-green: #82b440;
 $violet: #69398b;
 $pink: #bc7f83;
+$red: #d91d0f;
 @font-face {
   font-family: myFont;
-  src: url(../src/assets/fonts/Sportage-Demo/Sportage-DemoItalic.otf);
+  src: url(../src/assets/fonts/Sportage-Demo/Sportage-Demo.otf);
 }
 $fonts: myFont, Arial (sans-serif), Arial Black (sans-serif),
   Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),

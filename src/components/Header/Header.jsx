@@ -4,7 +4,7 @@ import styles from "./Header.module.scss";
 import { useState } from "react";
 import HeaderDropdown from "./HeaderDropdown";
 // import LoginModal from "../LoginModal/LoginModal";
-const Header = () => {
+const Header = (props) => {
   const [showClubsDropdown, setShowClubsDropdown] = useState(false);
   const [showTimetablesDropdown, setShowTimetablesDropdown] = useState(false);
   const showClubsDropdownHandler = () => {
@@ -30,7 +30,9 @@ const Header = () => {
             onMouseLeave={hideClubsDropdownHandler}
           >
             Clubs
-            {showClubsDropdown && <HeaderDropdown />}
+            {showClubsDropdown && (
+              <HeaderDropdown dropdownList={props.dropdownList} />
+            )}
           </li>
           <li className={styles["nav__item"]}>Prices</li>
           <li className={styles["nav__item"]}>Equipment</li>
@@ -40,12 +42,21 @@ const Header = () => {
             onMouseLeave={hideTimetablesDropdownHandler}
           >
             Timetables
-            {showTimetablesDropdown && <HeaderDropdown />}
+            {showTimetablesDropdown && (
+              <HeaderDropdown dropdownList={props.dropdownList} />
+            )}
           </li>
           <li className={styles["nav__item"]}>Experts</li>
-          <li className={styles["nav__item"]}>Login</li>
+          <li className={styles["nav__item"]} onClick={props.showLoginModal}>
+            Login
+          </li>
           <li className={styles["nav__item"]}>Logout</li>
-          <li className={styles["nav__item"]}>Sign Up</li>
+          <li
+            className={styles["nav__item"]}
+            onClick={props.showRegistrationModal}
+          >
+            Sign Up
+          </li>
         </ul>
       </nav>
     </header>

@@ -1,5 +1,5 @@
 @import "../../custom.scss";
-.login_modal {
+.registration_modal {
   padding-top: 0;
   position: fixed;
   z-index: 11;
@@ -11,8 +11,8 @@
   &_content {
     background-color: $color-primary;
     color: $violet;
-    height: 35rem;
-    width: 15vw;
+    height: 50rem;
+    width: 18vw;
     margin: 5% auto 15% auto;
     border: 3px solid $light-grey;
     border-radius: 1rem;
@@ -25,10 +25,13 @@
           max-height: 3rem;
         }
         label {
+          width: 9.8rem;
           margin: 1rem;
           color: $color-secondary;
           font-family: $fonts;
           font-size: 1.25rem;
+          display: flex;
+          justify-content: space-between;
         }
         input {
           border-radius: 0.5rem;
@@ -40,23 +43,35 @@
     }
   }
 }
-.login__logo {
+.registration__logo {
   height: 6.6rem;
 }
 .close_btn {
   display: flex;
   justify-content: flex-end;
 }
-.link-to-sign-up {
+.link-to-login {
   cursor: pointer;
   color: $light-grey;
   text-decoration: underline;
   font-family: $fonts;
   font-size: 1.2rem;
 }
-.link-to-sign-up:hover {
+.link-to-login:hover {
   color: $light-green;
 }
-.link-to-sign-up:active {
+.link-to-login:active {
   color: $pink;
+}
+.msg {
+  &_err {
+    color: $red;
+  }
+  &_instructions {
+    background-color: $dark-violet;
+    color: $light-grey;
+  }
+}
+.offscreen {
+  display: none;
 }

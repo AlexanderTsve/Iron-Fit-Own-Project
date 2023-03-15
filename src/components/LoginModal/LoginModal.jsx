@@ -1,32 +1,30 @@
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import logo from "../../assets/images/logo.png";
-import { useState } from "react";
-import Button from "../Buttons/Buttons";
+import CustomButton from "../Buttons/Button";
 import styles from "./LoginModal.module.scss";
-const LoginModal = () => {
-  const [show, setShow] = useState(true);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+const LoginModal = (props) => {
   return (
     <Modal
       size="sm"
-      show={show}
-      onHide={handleClose}
+      show={props.showModal}
+      onHide={props.showModal}
       className={styles["login_modal"]}
     >
       <div className={styles["login_modal_content"]}>
         <div className={styles["close_btn"]}>
-          <Button type="button">x</Button>
+          <CustomButton type="button" onClick={props.hideModal}>
+            x
+          </CustomButton>
         </div>
         <Form className={styles["login_modal_content_form"]}>
           <Modal.Header>
             <img src={logo} alt="Logo" className={styles["login__logo"]} />
           </Modal.Header>
           <Modal.Body>
-            <Form.Group className="mb-3" controlId="formLoginUsername">
-              <Form.Label>Enter your username:</Form.Label>
-              <Form.Control required type="text" placeholder="Username..." />
+            <Form.Group className="mb-3" controlId="formLoginEmail">
+              <Form.Label>Enter your email:</Form.Label>
+              <Form.Control required type="text" placeholder="Email..." />
             </Form.Group>
             <br />
             <Form.Group className="mb-3" controlId="formLoginPassword">
@@ -47,8 +45,10 @@ const LoginModal = () => {
             </Form.Group>
           </Modal.Body>
           <Modal.Footer>
-            <Button type="button">Cancel</Button>
-            <Button type="submit">Log In</Button>
+            <CustomButton type="button" onClick={props.hideModal}>
+              Cancel
+            </CustomButton>
+            <CustomButton type="submit">Log In</CustomButton>
             <p className={styles["link-to-sign-up"]}>
               Do not have an account? Register &raquo;
             </p>
