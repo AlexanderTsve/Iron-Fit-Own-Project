@@ -16,4 +16,8 @@
     background-color: $dark-violet;
     color: $light-green;
   }
+  &:disabled {
+    color: $dark-violet;
+    background-color: $light-grey;
+  }
 }

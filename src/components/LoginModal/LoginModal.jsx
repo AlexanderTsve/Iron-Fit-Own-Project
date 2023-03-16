@@ -4,6 +4,10 @@ import logo from "../../assets/images/logo.png";
 import CustomButton from "../Buttons/Button";
 import styles from "./LoginModal.module.scss";
 const LoginModal = (props) => {
+  const goToRegistrationHandler = () => {
+    props.hideModal();
+    props.showRegistrationModal();
+  };
   return (
     <Modal
       size="sm"
@@ -49,7 +53,10 @@ const LoginModal = (props) => {
               Cancel
             </CustomButton>
             <CustomButton type="submit">Log In</CustomButton>
-            <p className={styles["link-to-sign-up"]}>
+            <p
+              className={styles["link-to-sign-up"]}
+              onClick={goToRegistrationHandler}
+            >
               Do not have an account? Register &raquo;
             </p>
             <br />

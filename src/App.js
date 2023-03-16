@@ -35,12 +35,14 @@ function App() {
         <LoginModal
           showModal={isLoginModalVisible}
           hideModal={hideLoginModalHandler}
+          showRegistrationModal={showRegistrationModalHandler}
         />
       )}
       {isRegistrationModalVisible && (
         <RegistrationModal
           showModal={isRegistrationModalVisible}
           hideModal={hideRegistrationModalHandler}
+          showLoginModal={showLoginModalHandler}
         />
       )}
       {/* <SendOriginalDataClubsComponent /> */}

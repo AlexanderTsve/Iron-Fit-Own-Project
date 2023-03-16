@@ -4,6 +4,8 @@ const CustomButton = (props) => {
     <button
       onClick={props.onClick}
       className={`${styles["iron_fit_app_button"]} ${props.className || ""}`}
+      type={props.type}
+      disabled={props.disabled}
     >
       {props.children}
     </button>

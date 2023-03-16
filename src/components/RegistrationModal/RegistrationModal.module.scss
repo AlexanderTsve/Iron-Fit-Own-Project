@@ -11,7 +11,7 @@
   &_content {
     background-color: $color-primary;
     color: $violet;
-    height: 50rem;
+    height: 52rem;
     width: 18vw;
     margin: 5% auto 15% auto;
     border: 3px solid $light-grey;
@@ -25,19 +25,24 @@
           max-height: 3rem;
         }
         label {
-          width: 9.8rem;
+          width: 14rem;
           margin: 1rem;
           color: $color-secondary;
           font-family: $fonts;
           font-size: 1.25rem;
           display: flex;
-          justify-content: space-between;
+          justify-content: space-evenly;
         }
         input {
           border-radius: 0.5rem;
           font-family: $fonts;
-          font-size: 1.25rem;
+          font-size: 1.1rem;
           padding: 0.5rem;
+        }
+        p {
+          color: $light-grey;
+          font-size: 0.75rem;
+          text-align: center;
         }
       }
     }
@@ -55,7 +60,7 @@
   color: $light-grey;
   text-decoration: underline;
   font-family: $fonts;
-  font-size: 1.2rem;
+  font-size: 1.2rem !important;
 }
 .link-to-login:hover {
   color: $light-green;
@@ -68,7 +73,6 @@
     color: $red;
   }
   &_instructions {
-    background-color: $dark-violet;
     color: $light-grey;
   }
 }

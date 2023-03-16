@@ -3,18 +3,17 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import logo from "../../assets/images/logo.png";
 import CustomButton from "../Buttons/Button";
+import InputIcon from "./InputIcon";
+import InputInstruction from "./InputInstruction";
 import { useState, useEffect, useRef } from "react";
-import {
-  faCheck,
-  faTimes,
-  faInfoCircle,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   REGEX_EMAIL,
   REGEX_PASSWORD,
   REGEX_PHONE,
   FILL_IN_VALID_EMAIL_MSG,
+  FILL_IN_VALID_PHONE_MSG,
+  FILL_IN_VALID_PASSWORD_MSG,
+  CONFIRM_VALID_PSW_MSG,
 } from "../../util/config";
 const RegistrationModal = (props) => {
   const userRef = useRef();
@@ -44,8 +43,10 @@ const RegistrationModal = (props) => {
   }, [userPhone]);
   useEffect(() => {
     setIsValidPassword(REGEX_PASSWORD.test(userPassword));
-    setIsValidConfirmedPsw(userPassword === userConfirmedPsw);
-  }, [userPassword, userConfirmedPsw]);
+    setIsValidConfirmedPsw(
+      userPassword === userConfirmedPsw && isValidPassword
+    );
+  }, [userPassword, userConfirmedPsw, isValidPassword]);
   useEffect(() => {
     setErrMessage("");
   }, [userEmail, userPhone, userPassword, userConfirmedPsw]);
@@ -57,6 +58,37 @@ const RegistrationModal = (props) => {
   };
   const blurEmailInputHandler = () => {
     setUserEmailFocus(false);
+  };
+  const changePhoneHandler = (e) => {
+    setUserPhone(e.target.value);
+  };
+  const focusPhoneInputHandler = () => {
+    setUserPhoneFocus(true);
+  };
+  const blurPhoneInputHandler = () => {
+    setUserPhoneFocus(false);
+  };
+  const changePasswordHandler = (e) => {
+    setUserPassword(e.target.value);
+  };
+  const focusPasswordHandler = () => {
+    setUserPasswordFocus(true);
+  };
+  const blurPasswordHandler = () => {
+    setUserPasswordFocus(false);
+  };
+  const changeConfirmedPsw = (e) => {
+    setUserConfirmedPsw(e.target.value);
+  };
+  const focusConfirmedPsw = () => {
+    setUserConfirmedPswFocus(true);
+  };
+  const blurConfirmedPsw = () => {
+    setUserConfirmedPswFocus(false);
+  };
+  const goToLoginHandler = () => {
+    props.hideModal();
+    props.showLoginModal();
   };
   return (
     <Modal
@@ -86,15 +118,7 @@ const RegistrationModal = (props) => {
             <Form.Group className="mb-3" controlId="formSignUpEmail">
               <Form.Label>
                 Enter your email:
-                <span className="input_icon">
-                  {!userEmail ? (
-                    ""
-                  ) : isValidEmail ? (
-                    <FontAwesomeIcon icon={faCheck} color="green" />
-                  ) : (
-                    <FontAwesomeIcon icon={faTimes} color="red" />
-                  )}
-                </span>
+                <InputIcon userInput={userEmail} isValidInput={isValidEmail} />
               </Form.Label>
               <Form.Control
                 required
@@ -107,47 +131,101 @@ const RegistrationModal = (props) => {
                 onBlur={blurEmailInputHandler}
               />
             </Form.Group>
-            <p
-              className={
-                userEmail && userEmailFocus && !isValidEmail
-                  ? "msg_instruction"
-                  : "offscreen"
-              }
-            >
-              <FontAwesomeIcon icon={faInfoCircle} />
-              {FILL_IN_VALID_EMAIL_MSG}
-            </p>
+            <InputInstruction
+              showInstruction={userEmailFocus && userEmail && !isValidEmail}
+              message={FILL_IN_VALID_EMAIL_MSG}
+            />
             <br />
             <Form.Group className="mb-3" controlId="formSignUpPhone">
-              <Form.Label>Enter your phone:</Form.Label>
-              <Form.Control required type="tel" placeholder="Phone..." />
+              <Form.Label>
+                Enter your phone:
+                <InputIcon userInput={userPhone} isValidInput={isValidPhone} />
+              </Form.Label>
+              <Form.Control
+                required
+                type="tel"
+                placeholder="Phone..."
+                autoComplete="off"
+                onChange={changePhoneHandler}
+                onFocus={focusPhoneInputHandler}
+                onBlur={blurPhoneInputHandler}
+              />
             </Form.Group>
+            <InputInstruction
+              showInstruction={userPhoneFocus && userPhone && !isValidPhone}
+              message={FILL_IN_VALID_PHONE_MSG}
+            />
             <br />
-            <Form.Group className="mb-3" controlId="formLoginPassword">
-              <Form.Label>Enter your password:</Form.Label>
+            <Form.Group className="mb-3" controlId="formSignUpPassword">
+              <Form.Label>
+                Enter your password:
+                <InputIcon
+                  userInput={userPassword}
+                  isValidInput={isValidPassword}
+                />
+              </Form.Label>
               <Form.Control
                 required
                 type="password"
                 placeholder="Password..."
+                onChange={changePasswordHandler}
+                onFocus={focusPasswordHandler}
+                onBlur={blurPasswordHandler}
               />
             </Form.Group>
+            <InputInstruction
+              showInstruction={
+                userPasswordFocus && userPassword && !isValidPassword
+              }
+              message={FILL_IN_VALID_PASSWORD_MSG}
+            />
             <br />
-            <Form.Group className="mb-3" controlId="formLoginPassword">
-              <Form.Label>Confirm your password:</Form.Label>
+            <Form.Group
+              className="mb-3"
+              controlId="formSignUpConfirmedPassword"
+            >
+              <Form.Label>
+                Confirm your password:
+                <InputIcon
+                  userInput={userConfirmedPsw}
+                  isValidInput={isValidConfirmedPsw || !userConfirmedPsw}
+                />
+              </Form.Label>
               <Form.Control
                 required
                 type="password"
                 placeholder="Password..."
+                onChange={changeConfirmedPsw}
+                onFocus={focusConfirmedPsw}
+                onBlur={blurConfirmedPsw}
               />
             </Form.Group>
+            <InputInstruction
+              showInstruction={
+                userConfirmedPsw &&
+                userConfirmedPswFocus &&
+                !isValidConfirmedPsw
+              }
+              message={CONFIRM_VALID_PSW_MSG}
+            />
             <br />
           </Modal.Body>
           <Modal.Footer>
             <CustomButton type="button" onClick={props.hideModal}>
               Cancel
             </CustomButton>
-            <CustomButton type="submit">Sign Up</CustomButton>
-            <p className={styles["link-to-login"]}>
+            <CustomButton
+              disabled={
+                !isValidEmail ||
+                !isValidPassword ||
+                !isValidPhone ||
+                !isValidConfirmedPsw
+              }
+              type="submit"
+            >
+              Sign Up
+            </CustomButton>
+            <p className={styles["link-to-login"]} onClick={goToLoginHandler}>
               Have an account already? Log in &raquo;
             </p>
             <br />
