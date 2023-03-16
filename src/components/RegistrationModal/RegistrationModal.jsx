@@ -5,6 +5,7 @@ import logo from "../../assets/images/logo.png";
 import CustomButton from "../Buttons/Button";
 import InputIcon from "./InputIcon";
 import InputInstruction from "./InputInstruction";
+import useRegistrationInput from "../../hooks/use-registration-input.js";
 import { useState, useEffect, useRef } from "react";
 import {
   REGEX_EMAIL,
@@ -17,30 +18,20 @@ import {
 } from "../../util/config";
 const RegistrationModal = (props) => {
   const userRef = useRef();
-  const errRef = useRef();
-  const [userEmail, setUserEmail] = useState("");
-  const [isValidEmail, setIsValidEmail] = useState(false);
-  const [userEmailFocus, setUserEmailFocus] = useState(false);
-  const [userPhone, setUserPhone] = useState("");
-  const [isValidPhone, setIsValidPhone] = useState(false);
-  const [userPhoneFocus, setUserPhoneFocus] = useState(false);
+  const userEmailInput = useRegistrationInput(REGEX_EMAIL);
+  const userPhoneInput = useRegistrationInput(REGEX_PHONE);
   const [userPassword, setUserPassword] = useState("");
   const [isValidPassword, setIsValidPassword] = useState(false);
   const [userPasswordFocus, setUserPasswordFocus] = useState(false);
   const [userConfirmedPsw, setUserConfirmedPsw] = useState("");
   const [isValidConfirmedPsw, setIsValidConfirmedPsw] = useState(false);
   const [userConfirmedPswFocus, setUserConfirmedPswFocus] = useState(false);
+  const [formIsValid, setFormIsValid] = useState(false);
   const [errMessage, setErrMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   useEffect(() => {
     userRef.current.focus();
   }, []);
-  useEffect(() => {
-    setIsValidEmail(REGEX_EMAIL.test(userEmail));
-  }, [userEmail]);
-  useEffect(() => {
-    setIsValidPhone(REGEX_PHONE.test(userPhone));
-  }, [userPhone]);
   useEffect(() => {
     setIsValidPassword(REGEX_PASSWORD.test(userPassword));
     setIsValidConfirmedPsw(
@@ -48,26 +39,18 @@ const RegistrationModal = (props) => {
     );
   }, [userPassword, userConfirmedPsw, isValidPassword]);
   useEffect(() => {
-    setErrMessage("");
-  }, [userEmail, userPhone, userPassword, userConfirmedPsw]);
-  const changeEmailHandler = (e) => {
-    setUserEmail(e.target.value);
-  };
-  const focusEmailInputHandler = () => {
-    setUserEmailFocus(true);
-  };
-  const blurEmailInputHandler = () => {
-    setUserEmailFocus(false);
-  };
-  const changePhoneHandler = (e) => {
-    setUserPhone(e.target.value);
-  };
-  const focusPhoneInputHandler = () => {
-    setUserPhoneFocus(true);
-  };
-  const blurPhoneInputHandler = () => {
-    setUserPhoneFocus(false);
-  };
+    userEmailInput.isValidInput &&
+    isValidPassword &&
+    userPhoneInput.isValidInput &&
+    isValidConfirmedPsw
+      ? setFormIsValid(true)
+      : setFormIsValid(false);
+  }, [
+    isValidConfirmedPsw,
+    userEmailInput.isValidInput,
+    isValidPassword,
+    userPhoneInput.isValidInput,
+  ]);
   const changePasswordHandler = (e) => {
     setUserPassword(e.target.value);
   };
@@ -90,6 +73,9 @@ const RegistrationModal = (props) => {
     props.hideModal();
     props.showLoginModal();
   };
+  const submitRegistrationHandler = (e) => {
+    e.preventDefault();
+  };
   return (
     <Modal
       size="sm"
@@ -98,15 +84,15 @@ const RegistrationModal = (props) => {
       className={styles["registration_modal"]}
     >
       <div className={styles["registration_modal_content"]}>
-        <p ref={errRef} className={errMessage ? "msg_err" : "offscreen"}>
-          {errMessage}
-        </p>
         <div className={styles["close_btn"]}>
           <CustomButton type="button" onClick={props.hideModal}>
             x
           </CustomButton>
         </div>
-        <Form className={styles["registration_modal_content_form"]}>
+        <Form
+          className={styles["registration_modal_content_form"]}
+          onSubmit={submitRegistrationHandler}
+        >
           <Modal.Header>
             <img
               src={logo}
@@ -118,7 +104,10 @@ const RegistrationModal = (props) => {
             <Form.Group className="mb-3" controlId="formSignUpEmail">
               <Form.Label>
                 Enter your email:
-                <InputIcon userInput={userEmail} isValidInput={isValidEmail} />
+                <InputIcon
+                  userInput={userEmailInput.userInput}
+                  isValidInput={userEmailInput.isValidInput}
+                />
               </Form.Label>
               <Form.Control
                 required
@@ -126,33 +115,44 @@ const RegistrationModal = (props) => {
                 placeholder="Email..."
                 ref={userRef}
                 autoComplete="off"
-                onChange={changeEmailHandler}
-                onFocus={focusEmailInputHandler}
-                onBlur={blurEmailInputHandler}
+                onChange={userEmailInput.changeInputHandler}
+                onFocus={userEmailInput.focusInputHandler}
+                onBlur={userEmailInput.blurInputHandler}
               />
             </Form.Group>
             <InputInstruction
-              showInstruction={userEmailFocus && userEmail && !isValidEmail}
+              showInstruction={
+                userEmailInput.userInputFocus &&
+                userEmailInput.userInput &&
+                !userEmailInput.isValidInput
+              }
               message={FILL_IN_VALID_EMAIL_MSG}
             />
             <br />
             <Form.Group className="mb-3" controlId="formSignUpPhone">
               <Form.Label>
                 Enter your phone:
-                <InputIcon userInput={userPhone} isValidInput={isValidPhone} />
+                <InputIcon
+                  userInput={userPhoneInput.userInput}
+                  isValidInput={userPhoneInput.isValidInput}
+                />
               </Form.Label>
               <Form.Control
                 required
                 type="tel"
                 placeholder="Phone..."
                 autoComplete="off"
-                onChange={changePhoneHandler}
-                onFocus={focusPhoneInputHandler}
-                onBlur={blurPhoneInputHandler}
+                onChange={userPhoneInput.changeInputHandler}
+                onFocus={userPhoneInput.focusInputHandler}
+                onBlur={userPhoneInput.blurInputHandler}
               />
             </Form.Group>
             <InputInstruction
-              showInstruction={userPhoneFocus && userPhone && !isValidPhone}
+              showInstruction={
+                userPhoneInput.userInputFocus &&
+                userPhoneInput.userInput &&
+                !userPhoneInput.isValidInput
+              }
               message={FILL_IN_VALID_PHONE_MSG}
             />
             <br />
@@ -214,15 +214,7 @@ const RegistrationModal = (props) => {
             <CustomButton type="button" onClick={props.hideModal}>
               Cancel
             </CustomButton>
-            <CustomButton
-              disabled={
-                !isValidEmail ||
-                !isValidPassword ||
-                !isValidPhone ||
-                !isValidConfirmedPsw
-              }
-              type="submit"
-            >
+            <CustomButton disabled={!formIsValid} type="submit">
               Sign Up
             </CustomButton>
             <p className={styles["link-to-login"]} onClick={goToLoginHandler}>

@@ -3,11 +3,16 @@ import Modal from "react-bootstrap/Modal";
 import logo from "../../assets/images/logo.png";
 import CustomButton from "../Buttons/Button";
 import styles from "./LoginModal.module.scss";
+import { useEffect, useRef } from "react";
 const LoginModal = (props) => {
   const goToRegistrationHandler = () => {
     props.hideModal();
     props.showRegistrationModal();
   };
+  const userRef = useRef();
+  useEffect(() => {
+    userRef.current.focus();
+  }, []);
   return (
     <Modal
       size="sm"
@@ -28,7 +33,12 @@ const LoginModal = (props) => {
           <Modal.Body>
             <Form.Group className="mb-3" controlId="formLoginEmail">
               <Form.Label>Enter your email:</Form.Label>
-              <Form.Control required type="text" placeholder="Email..." />
+              <Form.Control
+                required
+                type="text"
+                placeholder="Email..."
+                ref={userRef}
+              />
             </Form.Group>
             <br />
             <Form.Group className="mb-3" controlId="formLoginPassword">

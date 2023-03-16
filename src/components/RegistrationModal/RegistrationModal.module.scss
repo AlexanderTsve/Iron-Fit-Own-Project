@@ -11,7 +11,7 @@
   &_content {
     background-color: $color-primary;
     color: $violet;
-    height: 52rem;
+    height: 51rem;
     width: 18vw;
     margin: 5% auto 15% auto;
     border: 3px solid $light-grey;
@@ -41,8 +41,10 @@
         }
         p {
           color: $light-grey;
-          font-size: 0.75rem;
+          font-size: 0.85rem;
           text-align: center;
+          font-family: $secondary-fonts;
+          font-style: italic;
         }
       }
     }
@@ -59,7 +61,7 @@
   cursor: pointer;
   color: $light-grey;
   text-decoration: underline;
-  font-family: $fonts;
+  font-family: $fonts !important;
   font-size: 1.2rem !important;
 }
 .link-to-login:hover {
