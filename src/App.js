@@ -24,6 +24,28 @@ function App() {
   const hideRegistrationModalHandler = () => {
     setIsRegistrationModalVisible(false);
   };
+  const submitRegistrationFormHandler = async (url, data, error) => {
+    try {
+      const initObj = {
+        method: "POST",
+        body: JSON.stringify({
+          email: data.userEmailInput,
+          password: data.userPasswordInput,
+          returnSecureToken: true,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      const response = await fetch(url, initObj);
+      if (!response.ok) {
+        throw new Error(error);
+      }
+    } catch (err) {
+      throw err;
+    }
+  };
+
   return (
     <div className="App">
       <Header
@@ -43,6 +65,7 @@ function App() {
           showModal={isRegistrationModalVisible}
           hideModal={hideRegistrationModalHandler}
           showLoginModal={showLoginModalHandler}
+          signUpUser={submitRegistrationFormHandler}
         />
       )}
       {/* <SendOriginalDataClubsComponent /> */}

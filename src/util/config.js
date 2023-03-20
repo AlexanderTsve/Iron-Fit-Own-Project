@@ -19,3 +19,5 @@ export const FILL_IN_VALID_PHONE_MSG =
 export const FILL_IN_VALID_PASSWORD_MSG =
   "Password must be 6 to 20 characters long and contain 1 capital letter, 1 lowercase letter and 1 number!";
 export const CONFIRM_VALID_PSW_MSG = "Confirm your password!";
+export const POST_REGISTRATION_AUTH_URL =
+  "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyD6KelOIQO1vqaFenmxrzOrsKoNgeThnXs";

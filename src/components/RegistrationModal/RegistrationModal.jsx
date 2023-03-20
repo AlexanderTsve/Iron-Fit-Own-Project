@@ -3,7 +3,6 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import logo from "../../assets/images/logo.png";
 import CustomButton from "../Buttons/Button";
-import InputInstruction from "./InputInstruction";
 import InputField from "./InputField";
 import useRegistrationRegInput from "../../hooks/use-registration_reg-input.js";
 import useRegistrationPasswordInput from "../../hooks/use-registration-password-input";
@@ -15,8 +14,14 @@ import {
   FILL_IN_VALID_PHONE_MSG,
   FILL_IN_VALID_PASSWORD_MSG,
   CONFIRM_VALID_PSW_MSG,
+  POST_REGISTRATION_AUTH_URL,
 } from "../../util/config";
-const RegistrationModal = ({ hideModal, showModal, showLoginModal }) => {
+const RegistrationModal = ({
+  hideModal,
+  showModal,
+  showLoginModal,
+  signUpUser,
+}) => {
   const userRef = useRef();
   const userEmailInput = useRegistrationRegInput(REGEX_EMAIL);
   const userPhoneInput = useRegistrationRegInput(REGEX_PHONE);
@@ -46,6 +51,19 @@ const RegistrationModal = ({ hideModal, showModal, showLoginModal }) => {
   };
   const submitRegistrationHandler = (e) => {
     e.preventDefault();
+    if (
+      !userEmailInput.isValidInput ||
+      !userPhoneInput.isValidInput ||
+      !passwordInputs.userPasswordState.isValidPassword ||
+      !passwordInputs.userPasswordState.isValidConfirmedPsw
+    ) {
+      return;
+    }
+    signUpUser(POST_REGISTRATION_AUTH_URL, {
+      userEmailInput: userEmailInput.userInput,
+      userPhoneInput: userPhoneInput.userInput,
+      userPasswordInput: passwordInputs.userPasswordState.passwordValue,
+    });
   };
   return (
     <Modal
@@ -83,17 +101,15 @@ const RegistrationModal = ({ hideModal, showModal, showLoginModal }) => {
               onChange={userEmailInput.changeInputHandler}
               onFocus={userEmailInput.focusInputHandler}
               onBlur={userEmailInput.blurInputHandler}
-            >
-              Enter your email:
-            </InputField>
-            <InputInstruction
               showInstruction={
                 userEmailInput.userInputFocus &&
                 userEmailInput.userInput &&
                 !userEmailInput.isValidInput
               }
               message={FILL_IN_VALID_EMAIL_MSG}
-            />
+            >
+              Enter your email:
+            </InputField>
             <br />
             <InputField
               required={true}
@@ -105,17 +121,15 @@ const RegistrationModal = ({ hideModal, showModal, showLoginModal }) => {
               onChange={userPhoneInput.changeInputHandler}
               onFocus={userPhoneInput.focusInputHandler}
               onBlur={userPhoneInput.blurInputHandler}
-            >
-              Enter your phone:
-            </InputField>
-            <InputInstruction
               showInstruction={
                 userPhoneInput.userInputFocus &&
                 userPhoneInput.userInput &&
                 !userPhoneInput.isValidInput
               }
               message={FILL_IN_VALID_PHONE_MSG}
-            />
+            >
+              Enter your phone:
+            </InputField>
             <br />
             <InputField
               controlId="password_input"
@@ -127,17 +141,15 @@ const RegistrationModal = ({ hideModal, showModal, showLoginModal }) => {
               onChange={passwordInputs.changePasswordHandler}
               onFocus={passwordInputs.focusPasswordInputHandler}
               onBlur={passwordInputs.blurPasswordInputHandler}
-            >
-              Enter your password:
-            </InputField>
-            <InputInstruction
               showInstruction={
                 passwordInputs.userPasswordInputFocus &&
                 passwordInputs.userPasswordState.passwordValue &&
                 !passwordInputs.userPasswordState.isValidPassword
               }
               message={FILL_IN_VALID_PASSWORD_MSG}
-            />
+            >
+              Enter your password:
+            </InputField>
             <br />
             <InputField
               controlId="confirmed_psw_input"
@@ -152,17 +164,15 @@ const RegistrationModal = ({ hideModal, showModal, showLoginModal }) => {
               onChange={passwordInputs.changePasswordHandler}
               onFocus={passwordInputs.focusConfirmedPsdInputHandler}
               onBlur={passwordInputs.blurConfirmedPsdInputHandler}
-            >
-              Confirm your password:
-            </InputField>
-            <InputInstruction
               showInstruction={
                 passwordInputs.userPasswordState.confirmedPswValue &&
                 passwordInputs.userConfirmedPswFocus &&
                 !passwordInputs.userPasswordState.isValidConfirmedPsw
               }
               message={CONFIRM_VALID_PSW_MSG}
-            />
+            >
+              Confirm your password:
+            </InputField>
             <br />
           </Modal.Body>
           <Modal.Footer>
