@@ -1,11 +1,11 @@
 import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const InputIcon = (props) => {
+const InputIcon = ({ userInput, isValidInput }) => {
   return (
     <span>
-      {!props.userInput ? (
+      {!userInput ? (
         ""
-      ) : props.isValidInput ? (
+      ) : isValidInput ? (
         <FontAwesomeIcon icon={faCheck} color="green" />
       ) : (
         <FontAwesomeIcon icon={faTimes} color="red" />

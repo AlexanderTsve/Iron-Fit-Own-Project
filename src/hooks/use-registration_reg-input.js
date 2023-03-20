@@ -1,27 +1,22 @@
 import { useState, useEffect } from "react";
-const useRegistrationInput = (regex) => {
+import useToggleFocus from "./use-toggle-focus.js";
+const useRegistrationRegInput = (regex) => {
   const [userInput, setUserInput] = useState("");
   const [isValidInput, setIsValidInput] = useState(false);
-  const [userInputFocus, setUserInputFocus] = useState(false);
+  const userInputToggleFocus = useToggleFocus();
   useEffect(() => {
     setIsValidInput(regex.test(userInput));
   }, [userInput, regex]);
   const changeInputHandler = (e) => {
     setUserInput(e.target.value);
   };
-  const focusInputHandler = () => {
-    setUserInputFocus(true);
-  };
-  const blurInputHandler = () => {
-    setUserInputFocus(false);
-  };
   return {
     userInput,
     isValidInput,
-    userInputFocus,
+    userInputFocus: userInputToggleFocus.userInputFocus,
     changeInputHandler,
-    focusInputHandler,
-    blurInputHandler,
+    focusInputHandler: userInputToggleFocus.focusInputHandler,
+    blurInputHandler: userInputToggleFocus.blurInputHandler,
   };
 };
-export default useRegistrationInput;
+export default useRegistrationRegInput;

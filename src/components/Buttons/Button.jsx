@@ -1,13 +1,13 @@
 import styles from "./Buttons.module.scss";
-const CustomButton = (props) => {
+const CustomButton = ({ onClick, className, type, disabled, children }) => {
   return (
     <button
-      onClick={props.onClick}
-      className={`${styles["iron_fit_app_button"]} ${props.className || ""}`}
-      type={props.type}
-      disabled={props.disabled}
+      onClick={onClick}
+      className={`${styles["iron_fit_app_button"]} ${className || ""}`}
+      type={type}
+      disabled={disabled}
     >
-      {props.children}
+      {children}
     </button>
   );
 };

@@ -4,10 +4,10 @@ import logo from "../../assets/images/logo.png";
 import CustomButton from "../Buttons/Button";
 import styles from "./LoginModal.module.scss";
 import { useEffect, useRef } from "react";
-const LoginModal = (props) => {
+const LoginModal = ({ showModal, hideModal, showRegistrationModal }) => {
   const goToRegistrationHandler = () => {
-    props.hideModal();
-    props.showRegistrationModal();
+    hideModal();
+    showRegistrationModal();
   };
   const userRef = useRef();
   useEffect(() => {
@@ -16,13 +16,13 @@ const LoginModal = (props) => {
   return (
     <Modal
       size="sm"
-      show={props.showModal}
-      onHide={props.showModal}
+      show={showModal}
+      onHide={showModal}
       className={styles["login_modal"]}
     >
       <div className={styles["login_modal_content"]}>
         <div className={styles["close_btn"]}>
-          <CustomButton type="button" onClick={props.hideModal}>
+          <CustomButton type="button" onClick={hideModal}>
             x
           </CustomButton>
         </div>
@@ -59,7 +59,7 @@ const LoginModal = (props) => {
             </Form.Group>
           </Modal.Body>
           <Modal.Footer>
-            <CustomButton type="button" onClick={props.hideModal}>
+            <CustomButton type="button" onClick={hideModal}>
               Cancel
             </CustomButton>
             <CustomButton type="submit">Log In</CustomButton>

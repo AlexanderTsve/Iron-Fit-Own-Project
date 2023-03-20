@@ -3,8 +3,7 @@ import logo from "../../assets/images/logo.png";
 import styles from "./Header.module.scss";
 import { useState } from "react";
 import HeaderDropdown from "./HeaderDropdown";
-// import LoginModal from "../LoginModal/LoginModal";
-const Header = (props) => {
+const Header = ({ dropdownList, showLoginModal, showRegistrationModal }) => {
   const [showClubsDropdown, setShowClubsDropdown] = useState(false);
   const [showTimetablesDropdown, setShowTimetablesDropdown] = useState(false);
   const showClubsDropdownHandler = () => {
@@ -31,7 +30,7 @@ const Header = (props) => {
           >
             Clubs
             {showClubsDropdown && (
-              <HeaderDropdown dropdownList={props.dropdownList} />
+              <HeaderDropdown dropdownList={dropdownList} />
             )}
           </li>
           <li className={styles["nav__item"]}>Prices</li>
@@ -43,18 +42,15 @@ const Header = (props) => {
           >
             Timetables
             {showTimetablesDropdown && (
-              <HeaderDropdown dropdownList={props.dropdownList} />
+              <HeaderDropdown dropdownList={dropdownList} />
             )}
           </li>
           <li className={styles["nav__item"]}>Experts</li>
-          <li className={styles["nav__item"]} onClick={props.showLoginModal}>
+          <li className={styles["nav__item"]} onClick={showLoginModal}>
             Login
           </li>
           <li className={styles["nav__item"]}>Logout</li>
-          <li
-            className={styles["nav__item"]}
-            onClick={props.showRegistrationModal}
-          >
+          <li className={styles["nav__item"]} onClick={showRegistrationModal}>
             Sign Up
           </li>
         </ul>
