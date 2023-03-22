@@ -11,8 +11,8 @@ const makePostApiCall = async (url, obj, error) => {
     if (!response.ok) {
       throw new Error(error);
     }
-  } catch (err) {
-    throw err;
+  } catch (error) {
+    throw error;
   }
 };
 export const submitAuthenticationRegFormHandler = async (url, data, error) => {
@@ -40,6 +40,37 @@ export const submitRegistrationFormDataHandler = async (url, data, error) => {
       },
       error
     );
+  } catch (error) {
+    throw error;
+  }
+};
+export const submitAuthenticationLoginFormHandler = async (
+  url,
+  data,
+  error
+) => {
+  try {
+    await makePostApiCall(
+      url,
+      {
+        email: data.userEmailInput,
+        password: data.userPasswordInput,
+        returnSecureToken: true,
+      },
+      error
+    );
+  } catch (error) {
+    throw error;
+  }
+};
+export const submitLoginFormDataHandler = async (url, error) => {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(error);
+    }
+    const data = await response.json();
+    return data;
   } catch (error) {
     throw error;
   }

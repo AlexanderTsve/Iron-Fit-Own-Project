@@ -20,6 +20,7 @@ import {
   USERS_URL,
   REGISTRATION_SUCCESS,
   REGISTRATION_URL_ERROR,
+  REGISTRATION_LOADING,
 } from "../../util/config";
 const RegistrationModal = ({
   hideModal,
@@ -66,6 +67,7 @@ const RegistrationModal = ({
       return;
     }
     try {
+      setMessage(REGISTRATION_LOADING);
       await authenticateSignUpUser(
         POST_REGISTRATION_AUTH_URL,
         {

@@ -7,6 +7,8 @@ import { useState } from "react";
 import {
   submitAuthenticationRegFormHandler,
   submitRegistrationFormDataHandler,
+  submitAuthenticationLoginFormHandler,
+  submitLoginFormDataHandler,
 } from "./util/helpers.js";
 // import SendOriginalDataClubsComponent from "./assets/originalData/ordiginalData";
 function App() {
@@ -28,49 +30,6 @@ function App() {
   const hideRegistrationModalHandler = () => {
     setIsRegistrationModalVisible(false);
   };
-  // const submitAuthenticationRegFormHandler = async (url, data, error) => {
-  //   try {
-  //     const initObj = {
-  //       method: "POST",
-  //       body: JSON.stringify({
-  //         email: data.userEmailInput,
-  //         password: data.userPasswordInput,
-  //         returnSecureToken: true,
-  //       }),
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     };
-  //     const response = await fetch(url, initObj);
-  //     if (!response.ok) {
-  //       throw new Error(error);
-  //     }
-  //   } catch (err) {
-  //     throw err;
-  //   }
-  // };
-  // const submitRegistrationFormDataHandler = async (url, data) => {
-  //   try {
-  //     const initObj = {
-  //       method: "POST",
-  //       body: JSON.stringify({
-  //         email: data.userEmailInput,
-  //         phone: data.userPhoneInput,
-  //       }),
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     };
-  //     const response = await fetch(url, initObj);
-  //     if (!response.ok) {
-  //       throw new Error(
-  //         "Something went wrong with the request! No data has been sent! Please, try again later!"
-  //       );
-  //     }
-  //   } catch (err) {
-  //     throw err;
-  //   }
-  // };
   return (
     <div className="App">
       <Header
@@ -83,6 +42,8 @@ function App() {
           showModal={isLoginModalVisible}
           hideModal={hideLoginModalHandler}
           showRegistrationModal={showRegistrationModalHandler}
+          authenticateSignInUser={submitAuthenticationLoginFormHandler}
+          submitLoginForm={submitLoginFormDataHandler}
         />
       )}
       {isRegistrationModalVisible && (

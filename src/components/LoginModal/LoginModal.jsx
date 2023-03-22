@@ -3,8 +3,10 @@ import Modal from "react-bootstrap/Modal";
 import logo from "../../assets/images/logo.png";
 import CustomButton from "../Buttons/Button";
 import styles from "./LoginModal.module.scss";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 const LoginModal = ({ showModal, hideModal, showRegistrationModal }) => {
+  const [emailInput, setEmailInput] = useState("");
+  const [passwordInput, setPasswordInput] = useState("");
   const goToRegistrationHandler = () => {
     hideModal();
     showRegistrationModal();
@@ -13,6 +15,39 @@ const LoginModal = ({ showModal, hideModal, showRegistrationModal }) => {
   useEffect(() => {
     userRef.current.focus();
   }, []);
+  const changeEmailInputHandler = (e) => {
+    setEmailInput(e.target.value);
+  };
+  const changePasswordInputHandler = (e) => {
+    setPasswordInput(e.target.value);
+  };
+  const submitLoginHandler = async (e) => {
+    e.preventDefault();
+    if (!emailInput || !passwordInput) {
+    }
+    // try {
+    //   setMessage(REGISTRATION_LOADING);
+    //   await authenticateSignUpUser(
+    //     POST_REGISTRATION_AUTH_URL,
+    //     {
+    //       userEmailInput: userEmailInput.userInput,
+    //       userPasswordInput: passwordInputs.userPasswordState.passwordValue,
+    //     },
+    //     REGISTRATION_AUTH_ERROR
+    //   );
+    //   await submitRegistrationForm(
+    //     USERS_URL,
+    //     {
+    //       userEmailInput: userEmailInput.userInput,
+    //       userPhoneInput: userPhoneInput.userInput,
+    //     },
+    //     REGISTRATION_URL_ERROR
+    //   );
+    //   setMessage(REGISTRATION_SUCCESS);
+    // } catch (err) {
+    //   setMessage(err.message);
+    // }
+  };
   return (
     <Modal
       size="sm"
@@ -26,7 +61,10 @@ const LoginModal = ({ showModal, hideModal, showRegistrationModal }) => {
             x
           </CustomButton>
         </div>
-        <Form className={styles["login_modal_content_form"]}>
+        <Form
+          className={styles["login_modal_content_form"]}
+          onSubmit={submitLoginHandler}
+        >
           <Modal.Header>
             <img src={logo} alt="Logo" className={styles["login__logo"]} />
           </Modal.Header>
@@ -38,6 +76,7 @@ const LoginModal = ({ showModal, hideModal, showRegistrationModal }) => {
                 type="text"
                 placeholder="Email..."
                 ref={userRef}
+                onChange={changeEmailInputHandler}
               />
             </Form.Group>
             <br />
@@ -47,6 +86,7 @@ const LoginModal = ({ showModal, hideModal, showRegistrationModal }) => {
                 required
                 type="password"
                 placeholder="Password..."
+                onChange={changePasswordInputHandler}
               />
             </Form.Group>
             <br />
