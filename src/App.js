@@ -24,7 +24,7 @@ function App() {
   const hideRegistrationModalHandler = () => {
     setIsRegistrationModalVisible(false);
   };
-  const submitRegistrationFormHandler = async (url, data, error) => {
+  const submitAuthenticationRegFormHandler = async (url, data, error) => {
     try {
       const initObj = {
         method: "POST",
@@ -45,7 +45,28 @@ function App() {
       throw err;
     }
   };
-
+  const submitRegistrationFormDataHandler = async (url, data) => {
+    try {
+      const initObj = {
+        method: "POST",
+        body: JSON.stringify({
+          email: data.userEmailInput,
+          phone: data.userPhoneInput,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      const response = await fetch(url, initObj);
+      if (!response.ok) {
+        throw new Error(
+          "Something went wrong with the request! No data has been sent! Please, try again later!"
+        );
+      }
+    } catch (err) {
+      throw err;
+    }
+  };
   return (
     <div className="App">
       <Header
@@ -65,7 +86,8 @@ function App() {
           showModal={isRegistrationModalVisible}
           hideModal={hideRegistrationModalHandler}
           showLoginModal={showLoginModalHandler}
-          signUpUser={submitRegistrationFormHandler}
+          authenticateSignUpUser={submitAuthenticationRegFormHandler}
+          submitRegistrationForm={submitRegistrationFormDataHandler}
         />
       )}
       {/* <SendOriginalDataClubsComponent /> */}

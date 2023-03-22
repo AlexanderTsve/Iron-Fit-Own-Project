@@ -21,3 +21,9 @@ export const FILL_IN_VALID_PASSWORD_MSG =
 export const CONFIRM_VALID_PSW_MSG = "Confirm your password!";
 export const POST_REGISTRATION_AUTH_URL =
   "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyD6KelOIQO1vqaFenmxrzOrsKoNgeThnXs";
+export const REGISTRATION_AUTH_ERROR =
+  "Please, check if the email has been used already for registration in the site or try again later!";
+export const USERS_URL =
+  "https://react-http-requests-81638-default-rtdb.europe-west1.firebasedatabase.app/iron_fit-users.json";
+export const REGISTRATION_SUCCESS =
+  "Your registration has been successful! Thank you!";

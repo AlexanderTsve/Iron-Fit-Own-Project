@@ -1,0 +1,44 @@
+@import "../../custom.scss";
+.modal_message {
+  display: block;
+  position: fixed;
+  z-index: 11;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $light-grey;
+  opacity: 0.95;
+  padding-top: 10rem;
+  &-header {
+    background-color: $color-primary;
+    margin: 0 auto 0 auto;
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    button {
+      width: 2rem;
+      height: 2rem;
+      margin: 1rem 1rem 0 0;
+    }
+  }
+  &-content {
+    background-color: $color-primary;
+    margin: 0 auto 0 auto;
+    border-radius: 2%;
+    width: 30%;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+  }
+  &-footer {
+    background-color: $color-primary;
+    margin: 0 auto 0 auto;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    button {
+      margin-bottom: 1rem;
+    }
+  }
+}
