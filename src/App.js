@@ -4,6 +4,10 @@ import LoginModal from "./components/LoginModal/LoginModal";
 import RegistrationModal from "./components/RegistrationModal/RegistrationModal";
 import { clubNames } from "./util/config.js";
 import { useState } from "react";
+import {
+  submitAuthenticationRegFormHandler,
+  submitRegistrationFormDataHandler,
+} from "./util/helpers.js";
 // import SendOriginalDataClubsComponent from "./assets/originalData/ordiginalData";
 function App() {
   const [isLoginModalVisible, setIsLoginModalVisible] = useState(false);
@@ -24,49 +28,49 @@ function App() {
   const hideRegistrationModalHandler = () => {
     setIsRegistrationModalVisible(false);
   };
-  const submitAuthenticationRegFormHandler = async (url, data, error) => {
-    try {
-      const initObj = {
-        method: "POST",
-        body: JSON.stringify({
-          email: data.userEmailInput,
-          password: data.userPasswordInput,
-          returnSecureToken: true,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
-      const response = await fetch(url, initObj);
-      if (!response.ok) {
-        throw new Error(error);
-      }
-    } catch (err) {
-      throw err;
-    }
-  };
-  const submitRegistrationFormDataHandler = async (url, data) => {
-    try {
-      const initObj = {
-        method: "POST",
-        body: JSON.stringify({
-          email: data.userEmailInput,
-          phone: data.userPhoneInput,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
-      const response = await fetch(url, initObj);
-      if (!response.ok) {
-        throw new Error(
-          "Something went wrong with the request! No data has been sent! Please, try again later!"
-        );
-      }
-    } catch (err) {
-      throw err;
-    }
-  };
+  // const submitAuthenticationRegFormHandler = async (url, data, error) => {
+  //   try {
+  //     const initObj = {
+  //       method: "POST",
+  //       body: JSON.stringify({
+  //         email: data.userEmailInput,
+  //         password: data.userPasswordInput,
+  //         returnSecureToken: true,
+  //       }),
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     };
+  //     const response = await fetch(url, initObj);
+  //     if (!response.ok) {
+  //       throw new Error(error);
+  //     }
+  //   } catch (err) {
+  //     throw err;
+  //   }
+  // };
+  // const submitRegistrationFormDataHandler = async (url, data) => {
+  //   try {
+  //     const initObj = {
+  //       method: "POST",
+  //       body: JSON.stringify({
+  //         email: data.userEmailInput,
+  //         phone: data.userPhoneInput,
+  //       }),
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     };
+  //     const response = await fetch(url, initObj);
+  //     if (!response.ok) {
+  //       throw new Error(
+  //         "Something went wrong with the request! No data has been sent! Please, try again later!"
+  //       );
+  //     }
+  //   } catch (err) {
+  //     throw err;
+  //   }
+  // };
   return (
     <div className="App">
       <Header

@@ -19,6 +19,7 @@ import {
   REGISTRATION_AUTH_ERROR,
   USERS_URL,
   REGISTRATION_SUCCESS,
+  REGISTRATION_URL_ERROR,
 } from "../../util/config";
 const RegistrationModal = ({
   hideModal,
@@ -73,10 +74,14 @@ const RegistrationModal = ({
         },
         REGISTRATION_AUTH_ERROR
       );
-      await submitRegistrationForm(USERS_URL, {
-        userEmailInput: userEmailInput.userInput,
-        userPhoneInput: userPhoneInput.userInput,
-      });
+      await submitRegistrationForm(
+        USERS_URL,
+        {
+          userEmailInput: userEmailInput.userInput,
+          userPhoneInput: userPhoneInput.userInput,
+        },
+        REGISTRATION_URL_ERROR
+      );
       setMessage(REGISTRATION_SUCCESS);
     } catch (err) {
       setMessage(err.message);
