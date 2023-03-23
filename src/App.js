@@ -3,7 +3,7 @@ import Header from "./components/Header/Header";
 import LoginModal from "./components/LoginModal/LoginModal";
 import RegistrationModal from "./components/RegistrationModal/RegistrationModal";
 import { clubNames } from "./util/config.js";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   submitAuthenticationRegFormHandler,
   submitRegistrationFormDataHandler,
@@ -15,6 +15,8 @@ function App() {
   const [isLoginModalVisible, setIsLoginModalVisible] = useState(false);
   const [isRegistrationModalVisible, setIsRegistrationModalVisible] =
     useState(false);
+  const [isLogged, setIsLogged] = useState(false);
+  useEffect(() => {}, []);
   const clubsDropdownList = clubNames.map((name, index) => (
     <p key={index + 1}>{name}</p>
   ));
@@ -36,6 +38,7 @@ function App() {
         dropdownList={clubsDropdownList}
         showLoginModal={showLoginModalHandler}
         showRegistrationModal={showRegistrationModalHandler}
+        isLogged={isLogged}
       />
       {isLoginModalVisible && (
         <LoginModal
