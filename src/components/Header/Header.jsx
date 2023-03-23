@@ -45,7 +45,6 @@ const Header = ({ dropdownList, showLoginModal, showRegistrationModal }) => {
               <HeaderDropdown dropdownList={dropdownList} />
             )}
           </li>
-          <li className={styles["nav__item"]}>Experts</li>
           <li className={styles["nav__item"]} onClick={showLoginModal}>
             Login
           </li>
