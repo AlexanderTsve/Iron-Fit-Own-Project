@@ -5,29 +5,21 @@ import CustomButton from "../Buttons/Button";
 import MessageModal from "../MessageModal/MessageModal";
 import styles from "./LoginModal.module.scss";
 import { useEffect, useRef, useState, Fragment } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { loginUser, actions } from "../../store/active-user-slice";
 import {
   INVALID_LOGIN_INPUTS,
   LOADING_MSG,
-  POST_LOGIN_AUTH_URL,
-  LOGIN_AUTH_ERROR,
-  USERS_URL,
-  LOGIN_URL_ERROR,
   LOGIN_SUCCESS,
 } from "../../util/config";
-const LoginModal = ({
-  showModal,
-  hideModal,
-  showRegistrationModal,
-  authenticateSignInUser,
-  submitLoginForm,
-}) => {
+const LoginModal = ({ showModal, hideModal, showRegistrationModal }) => {
+  const user = useSelector((state) => state.activeUser);
+  const dispatch = useDispatch();
   const [emailInput, setEmailInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
   const [checked, setChecked] = useState(false);
   const [message, setMessage] = useState("");
   const [hideMessageModal, setHideMessageModal] = useState(false);
-  const [isLogged, setIsLogged] = useState(false);
-  const [loggedUser, setLoggedUser] = useState(null);
   const goToRegistrationHandler = () => {
     hideModal();
     showRegistrationModal();
@@ -36,13 +28,6 @@ const LoginModal = ({
   useEffect(() => {
     userRef.current.focus();
   }, []);
-  useEffect(() => {
-    if (isLogged && checked) {
-      localStorage.setItem("rememberedIronFitUser", JSON.stringify(loggedUser));
-    } else {
-      localStorage.removeItem("rememberedIronFitUser");
-    }
-  }, [checked, loggedUser, isLogged]);
   const changeEmailInputHandler = (e) => {
     setEmailInput(e.target.value);
   };
@@ -58,23 +43,7 @@ const LoginModal = ({
       if (!emailInput || !passwordInput) {
         throw new Error(INVALID_LOGIN_INPUTS);
       }
-      setMessage(LOADING_MSG);
-      await authenticateSignInUser(
-        POST_LOGIN_AUTH_URL,
-        {
-          userEmailInput: emailInput,
-          userPasswordInput: passwordInput,
-        },
-        LOGIN_AUTH_ERROR
-      );
-      const response = await submitLoginForm(USERS_URL, LOGIN_URL_ERROR);
-      setMessage(LOGIN_SUCCESS);
-      setIsLogged(true);
-      const currentUser = Object.values(response).find(
-        (user) => user.email === emailInput
-      );
-      console.log(currentUser);
-      setLoggedUser(currentUser);
+      dispatch(loginUser({ emailInput, passwordInput }));
     } catch (err) {
       setMessage(err.message);
     }
@@ -83,7 +52,40 @@ const LoginModal = ({
     setMessage("");
     setHideMessageModal(true);
     hideModal();
+    if (user.isRejected) {
+      dispatch(actions.reset());
+    }
   };
+  useEffect(() => {
+    if (user.isLoading) {
+      setMessage(LOADING_MSG);
+    }
+    if (user.isLogged) {
+      setMessage(LOGIN_SUCCESS);
+    }
+    if (user.isRejected) {
+      setMessage(user.errorLogin);
+    }
+  }, [user.errorLogin, user.isLoading, user.isLogged, user.isRejected]);
+  useEffect(() => {
+    if (user.isLogged && checked) {
+      localStorage.setItem(
+        "rememberedIronFitUser",
+        JSON.stringify({
+          loggedUserEmail: user.loggedUserEmail,
+          loggedUserPhone: user.loggedUserPhone,
+        })
+      );
+    } else {
+      localStorage.removeItem("rememberedIronFitUser");
+    }
+  }, [
+    checked,
+    user.loggedUser,
+    user.isLogged,
+    user.loggedUserEmail,
+    user.loggedUserPhone,
+  ]);
   return (
     <Fragment>
       {message ? (

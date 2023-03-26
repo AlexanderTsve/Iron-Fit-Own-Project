@@ -7,8 +7,8 @@ import { useState, useEffect } from "react";
 import {
   submitAuthenticationRegFormHandler,
   submitRegistrationFormDataHandler,
-  submitAuthenticationLoginFormHandler,
-  submitLoginFormDataHandler,
+  // submitAuthenticationLoginFormHandler,
+  // submitLoginFormDataHandler,
 } from "./util/helpers.js";
 // import SendOriginalDataClubsComponent from "./assets/originalData/ordiginalData";
 function App() {
@@ -45,8 +45,8 @@ function App() {
           showModal={isLoginModalVisible}
           hideModal={hideLoginModalHandler}
           showRegistrationModal={showRegistrationModalHandler}
-          authenticateSignInUser={submitAuthenticationLoginFormHandler}
-          submitLoginForm={submitLoginFormDataHandler}
+          // authenticateSignInUser={submitAuthenticationLoginFormHandler}
+          // submitLoginForm={submitLoginFormDataHandler}
         />
       )}
       {isRegistrationModalVisible && (

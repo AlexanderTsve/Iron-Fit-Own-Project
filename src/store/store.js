@@ -1,3 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-const store = configureStore({});
+import activeUserReducer from "./active-user-slice.js";
+const store = configureStore({
+  reducer: {
+    activeUser: activeUserReducer,
+  },
+});
 export default store;
