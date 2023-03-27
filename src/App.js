@@ -7,6 +7,8 @@ import EquipmentPage from "./pages/EquipmentPage/EquipmentPage";
 import PricesPage from "./pages//PricesPage/PricesPage";
 import TimetablesPage from "./pages/TimetablesPage/TimetablesPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
+import ClubDetailsPage from "./pages/ClubDetailsPage/ClubDetailsPage";
+import ClubTimetablePage from "./pages/ClubTimetablePage/ClubTimetablePage";
 import { useSelector } from "react-redux";
 // import SendOriginalDataClubsComponent from "./assets/originalData/ordiginalData";
 const loggedUserRouter = createBrowserRouter([
@@ -20,6 +22,8 @@ const loggedUserRouter = createBrowserRouter([
       { path: "/equipment", element: <EquipmentPage /> },
       { path: "/prices", element: <PricesPage /> },
       { path: "/timetables", element: <TimetablesPage /> },
+      { path: "/clubs/:nameId", element: <ClubDetailsPage /> },
+      { path: "/timetables/:nameId", element: <ClubTimetablePage /> },
     ],
   },
 ]);
@@ -33,6 +37,8 @@ const guestRouter = createBrowserRouter([
       { path: "/equipment", element: <EquipmentPage /> },
       { path: "/prices", element: <PricesPage /> },
       { path: "/timetables", element: <TimetablesPage /> },
+      { path: "/clubs/:nameId", element: <ClubDetailsPage /> },
+      { path: "/timetables/:nameId", element: <ClubTimetablePage /> },
     ],
   },
 ]);

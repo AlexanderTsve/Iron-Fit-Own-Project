@@ -5,6 +5,8 @@ import LoginModal from "../../components/LoginModal/LoginModal";
 import RegistrationModal from "../../components/RegistrationModal/RegistrationModal";
 import { clubNames } from "../../util/config.js";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router";
 import {
   submitAuthenticationRegFormHandler,
   submitRegistrationFormDataHandler,
@@ -13,9 +15,8 @@ const RootLayout = () => {
   const [isLoginModalVisible, setIsLoginModalVisible] = useState(false);
   const [isRegistrationModalVisible, setIsRegistrationModalVisible] =
     useState(false);
-  const clubsDropdownList = clubNames.map((name, index) => (
-    <p key={index + 1}>{name}</p>
-  ));
+  const subDirectory = useSelector((state) => state.activeDropdown);
+  const navigate = useNavigate();
   const showLoginModalHandler = () => {
     setIsLoginModalVisible(true);
   };
@@ -28,6 +29,14 @@ const RootLayout = () => {
   const hideRegistrationModalHandler = () => {
     setIsRegistrationModalVisible(false);
   };
+  const navigateToClubHandler = (name) => {
+    navigate(`${subDirectory.activeDropdown}/${name}`);
+  };
+  const clubsDropdownList = clubNames.map((name, index) => (
+    <p key={index + 1} onClick={() => navigateToClubHandler(name)}>
+      {name}
+    </p>
+  ));
   return (
     <Fragment>
       <Navigation

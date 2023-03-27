@@ -4,6 +4,7 @@ import styles from "./Navigation.module.scss";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../store/active-user-slice";
+import { changeDropdownAction } from "../../store/active-dropdown-slice.js";
 import HeaderDropdown from "./HeaderDropdown";
 import NavigationLink from "./NavigationLink";
 const Navigation = ({
@@ -17,15 +18,19 @@ const Navigation = ({
   const dispatch = useDispatch();
   const showClubsDropdownHandler = () => {
     setShowClubsDropdown(!showClubsDropdown);
+    dispatch(changeDropdownAction.activateClubsDropdown());
   };
   const hideClubsDropdownHandler = () => {
     setShowClubsDropdown(false);
+    dispatch(changeDropdownAction.reset());
   };
   const showTimetablesDropdownHandler = () => {
     setShowTimetablesDropdown(!showTimetablesDropdown);
+    dispatch(changeDropdownAction.activateTimetablesDropdown());
   };
   const hideTimetablesDropdownHandler = () => {
     setShowTimetablesDropdown(false);
+    dispatch(changeDropdownAction.reset());
   };
   const logoutHandler = () => {
     dispatch(actions.reset());
