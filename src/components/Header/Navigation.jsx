@@ -1,11 +1,16 @@
 import React from "react";
 import logo from "../../assets/images/logo.png";
-import styles from "./Header.module.scss";
+import styles from "./Navigation.module.scss";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../store/active-user-slice";
 import HeaderDropdown from "./HeaderDropdown";
-const Header = ({ dropdownList, showLoginModal, showRegistrationModal }) => {
+import NavigationLink from "./NavigationLink";
+const Navigation = ({
+  dropdownList,
+  showLoginModal,
+  showRegistrationModal,
+}) => {
   const [showClubsDropdown, setShowClubsDropdown] = useState(false);
   const [showTimetablesDropdown, setShowTimetablesDropdown] = useState(false);
   const user = useSelector((state) => state.activeUser);
@@ -40,19 +45,23 @@ const Header = ({ dropdownList, showLoginModal, showRegistrationModal }) => {
             onMouseEnter={showClubsDropdownHandler}
             onMouseLeave={hideClubsDropdownHandler}
           >
-            Clubs
+            <NavigationLink to="/">Clubs</NavigationLink>
             {showClubsDropdown && (
               <HeaderDropdown dropdownList={dropdownList} />
             )}
           </li>
-          <li className={styles["nav__item"]}>Prices</li>
-          <li className={styles["nav__item"]}>Equipment</li>
+          <li className={styles["nav__item"]}>
+            <NavigationLink to="/prices">Prices</NavigationLink>
+          </li>
+          <li className={styles["nav__item"]}>
+            <NavigationLink to="/equipment">Equipment</NavigationLink>
+          </li>
           <li
             className={styles["nav__item"]}
             onMouseEnter={showTimetablesDropdownHandler}
             onMouseLeave={hideTimetablesDropdownHandler}
           >
-            Timetables
+            <NavigationLink to="/timetables">Timetables</NavigationLink>
             {showTimetablesDropdown && (
               <HeaderDropdown dropdownList={dropdownList} />
             )}
@@ -67,7 +76,11 @@ const Header = ({ dropdownList, showLoginModal, showRegistrationModal }) => {
               Logout
             </li>
           )}
-          {user.isLogged && <li className={styles["nav__item"]}>My Profile</li>}
+          {user.isLogged && (
+            <li className={styles["nav__item"]}>
+              <NavigationLink to="/profile">My Profile</NavigationLink>
+            </li>
+          )}
           {!user.isLogged && (
             <li className={styles["nav__item"]} onClick={showRegistrationModal}>
               Sign Up
@@ -78,4 +91,4 @@ const Header = ({ dropdownList, showLoginModal, showRegistrationModal }) => {
     </header>
   );
 };
-export default Header;
+export default Navigation;
