@@ -26,7 +26,9 @@ const ClubsMap = () => {
     }
   }, []);
   useEffect(() => {
-    sendClubsRequest();
+    if (geoLocations.length === 0) {
+      sendClubsRequest();
+    }
     if (geoLocations.length > 0 && !map) {
       const { lat, lon } = geoLocations[5];
       const centeredLocation = fromLonLat([lon, lat]);
