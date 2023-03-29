@@ -10,42 +10,35 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import ClubDetailsPage from "./pages/ClubDetailsPage/ClubDetailsPage";
 import ClubTimetablePage from "./pages/ClubTimetablePage/ClubTimetablePage";
 import { useSelector } from "react-redux";
-// import SendOriginalDataClubsComponent from "./assets/originalData/ordiginalData";
-const loggedUserRouter = createBrowserRouter([
-  {
-    path: "/",
-    element: <RootLayout />,
-    errorElement: <ErrorPage />,
-    children: [
-      { path: "/", element: <ClubsPage /> },
-      { path: "/profile", element: <ClientProfilePage /> },
-      { path: "/equipment", element: <EquipmentPage /> },
-      { path: "/prices", element: <PricesPage /> },
-      { path: "/timetables", element: <TimetablesPage /> },
-      { path: "/clubs/:nameId", element: <ClubDetailsPage /> },
-      { path: "/timetables/:nameId", element: <ClubTimetablePage /> },
-    ],
-  },
-]);
-const guestRouter = createBrowserRouter([
-  {
-    path: "/",
-    element: <RootLayout />,
-    errorElement: <ErrorPage />,
-    children: [
-      { path: "/", element: <ClubsPage /> },
-      { path: "/equipment", element: <EquipmentPage /> },
-      { path: "/prices", element: <PricesPage /> },
-      { path: "/timetables", element: <TimetablesPage /> },
-      { path: "/clubs/:nameId", element: <ClubDetailsPage /> },
-      { path: "/timetables/:nameId", element: <ClubTimetablePage /> },
-    ],
-  },
-]);
 function App() {
   const user = useSelector((state) => state.activeUser);
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <RootLayout />,
+      errorElement: <ErrorPage />,
+      children: user.isLogged
+        ? [
+            { index: true, element: <ClubsPage /> },
+            { path: "/profile", element: <ClientProfilePage /> },
+            { path: "/equipment", element: <EquipmentPage /> },
+            { path: "/prices", element: <PricesPage /> },
+            { path: "/timetables", element: <TimetablesPage /> },
+            { path: "/clubs/:nameId", element: <ClubDetailsPage /> },
+            { path: "/timetables/:nameId", element: <ClubTimetablePage /> },
+          ]
+        : [
+            { index: true, element: <ClubsPage /> },
+            { path: "/equipment", element: <EquipmentPage /> },
+            { path: "/prices", element: <PricesPage /> },
+            { path: "/timetables", element: <TimetablesPage /> },
+            { path: "/clubs/:nameId", element: <ClubDetailsPage /> },
+            { path: "/timetables/:nameId", element: <ClubTimetablePage /> },
+          ],
+    },
+  ]);
   return (
-    <RouterProvider router={user.isLogged ? loggedUserRouter : guestRouter}>
+    <RouterProvider router={router}>
       <div className="App">{/* <SendOriginalDataClubsComponent /> */}</div>
     </RouterProvider>
   );
