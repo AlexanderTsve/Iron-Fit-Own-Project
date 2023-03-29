@@ -25,6 +25,8 @@ export const POST_LOGIN_AUTH_URL =
   "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyD6KelOIQO1vqaFenmxrzOrsKoNgeThnXs";
 export const USERS_URL =
   "https://react-http-requests-81638-default-rtdb.europe-west1.firebasedatabase.app/iron_fit-users.json";
+export const CLUBS_URL =
+  "https://react-http-requests-81638-default-rtdb.europe-west1.firebasedatabase.app/iron-fit-clubs.json";
 export const REGISTRATION_AUTH_ERROR =
   "Unsuccessful registration! Please, check if the email has been used for registration already or try again later!";
 export const REGISTRATION_URL_ERROR =
@@ -39,3 +41,5 @@ export const LOGIN_AUTH_ERROR =
 export const LOGIN_URL_ERROR =
   "Unsuccessful login! Something went wrong with the request! Please, try again later!";
 export const LOGIN_SUCCESS = "You have been logged in successfully! Welcome!";
+export const UNSUCCESSFUL_REQUEST =
+  "The request has not been successful! Please, try again later!";

@@ -1,0 +1,11 @@
+@import "../../custom.scss";
+.map-element {
+  display: flex;
+  justify-content: center;
+}
+.map-container {
+  width: 30vw;
+  height: 25rem;
+  margin-bottom: 5rem;
+  border-radius: 1rem;
+}

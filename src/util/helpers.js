@@ -15,6 +15,18 @@ const makePostApiCall = async (url, obj, error) => {
     throw error;
   }
 };
+const makeGetApiCall = async (url, error) => {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(error);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
 export const submitAuthenticationRegFormHandler = async (url, data, error) => {
   try {
     await makePostApiCall(
@@ -65,11 +77,15 @@ export const submitAuthenticationLoginFormHandler = async (
 };
 export const submitLoginFormDataHandler = async (url, error) => {
   try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(error);
-    }
-    const data = await response.json();
+    const data = await makeGetApiCall(url, error);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+export const getClubs = async (url, error) => {
+  try {
+    const data = await makeGetApiCall(url, error);
     return data;
   } catch (error) {
     throw error;
