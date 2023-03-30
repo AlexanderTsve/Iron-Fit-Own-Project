@@ -1,9 +1,10 @@
 import ClubsMap from "./ClubsMap";
+import ClubsHeader from "./ClubsHeader";
 import { Fragment } from "react";
 const ClubsPage = () => {
   return (
     <Fragment>
-      <h1>My Clubs</h1>
+      <ClubsHeader />
       <ClubsMap />
     </Fragment>
   );

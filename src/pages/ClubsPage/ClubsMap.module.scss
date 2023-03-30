@@ -2,10 +2,45 @@
 .map-element {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto;
 }
 .map-container {
-  width: 30vw;
+  width: 50vw;
   height: 25rem;
   margin-bottom: 5rem;
+  border: 2px $violet solid;
   border-radius: 1rem;
+  overflow: hidden;
+}
+.spinner {
+  margin: 5rem auto;
+  text-align: center;
+  border: 16px solid $light-grey;
+  border-radius: 50%;
+  border-top: 16px solid $color-primary;
+  width: 6rem;
+  height: 6rem;
+  animation: rotate 2s infinite linear;
+}
+.rejected {
+  font-family: $fonts;
+  color: $red;
+  font-style: italic;
+}
+.error {
+  display: flex;
+  justify-content: center;
+  svg {
+    align-self: center;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
