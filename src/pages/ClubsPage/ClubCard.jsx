@@ -1,6 +1,7 @@
 import styles from "./ClubCard.module.scss";
 import { faDoorClosed, faDoorOpen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Button from "../../components/Buttons/Button";
 const ClubCard = ({ info }) => {
   const workDays = info.workDays;
   const startWorkingHour = Number(info.workingHours.split(".")[0]);
@@ -34,18 +35,24 @@ const ClubCard = ({ info }) => {
     calcIsDelayMinutes;
   return (
     <div className={styles.card}>
-      <h3>{info.name.toUpperCase()}</h3>
-      <p>{info.address}</p>
-      <p>{info.phone}</p>
-      <p>Mon-Sat, {info.workingHours}</p>
-      <p>
-        <FontAwesomeIcon
-          icon={clubStatus ? faDoorOpen : faDoorClosed}
-          color={clubStatus ? "green" : "red"}
-        />
-      </p>
-      <button>Timetables</button>
-      <button>Details</button>
+      <div className={styles["card-header"]}>
+        <h3>{info.name.toUpperCase()}</h3>
+        <p>
+          <FontAwesomeIcon
+            icon={clubStatus ? faDoorOpen : faDoorClosed}
+            color={clubStatus ? "green" : "red"}
+          />
+        </p>
+        <span>Mon-Sat, {info.workingHours}</span>
+      </div>
+      <div className={styles["card-info"]}>
+        <span>Address: {info.address}</span>
+        <span>Tel.: {info.phone}</span>
+      </div>
+      <div className={styles["card-btns"]}>
+        <Button>Timetables</Button>
+        <Button>Details</Button>
+      </div>
     </div>
   );
 };

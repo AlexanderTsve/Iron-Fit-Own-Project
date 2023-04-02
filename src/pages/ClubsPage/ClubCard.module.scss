@@ -1,7 +1,40 @@
 @import "../../custom.scss";
 .card {
-  display: flex;
-  justify-content: space-around;
   width: 50vw;
   margin-bottom: 2rem;
+  border: 0.3rem $dark-violet solid;
+  border-radius: 1rem;
+  background-color: $pink;
+  &-header {
+    text-align: center;
+    font-family: $fonts;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: $color-primary;
+    text-decoration: underline;
+    span {
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+  }
+  &-info {
+    font-family: $fonts;
+    color: $color-primary;
+    font-style: italic;
+    font-size: 1.3rem;
+    margin: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    span {
+      margin-bottom: 1rem;
+    }
+  }
+  &-btns {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    button {
+      margin: 0.5rem;
+    }
+  }
 }
