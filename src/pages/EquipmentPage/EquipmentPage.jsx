@@ -1,4 +1,5 @@
+import EquipmentFitness from "./EquipmentFitness";
 const EquipmentPage = () => {
-  return <h1>Equipment</h1>;
+  return <EquipmentFitness />;
 };
 export default EquipmentPage;

@@ -1,7 +1,5 @@
-import { useEffect, useState, useRef, useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState, useRef } from "react";
 import styles from "./ClubsMap.module.scss";
-import { sendClubsRequest } from "../../store/clubs-slice";
 import { Feature, Map, View } from "ol/index.js";
 import { OSM, Vector as VectorSource } from "ol/source.js";
 import { Point } from "ol/geom.js";
@@ -10,28 +8,26 @@ import { Vector as VectorLayer } from "ol/layer.js";
 import { fromLonLat, toLonLat } from "ol/proj.js";
 import { Icon, Style } from "ol/style.js";
 import { defaults as defaultControls } from "ol/control.js";
-import { CLUBS_URL, UNSUCCESSFUL_REQUEST } from "../../util/config.js";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useGetClubsRequest from "../../hooks/use-get-clubs-request";
 const ClubsMap = () => {
   const [map, setMap] = useState();
   const mapElement = useRef();
   const mapRef = useRef();
   mapRef.current = map;
-  const clubs = useSelector((state) => state.clubsList);
-  const dispatch = useDispatch();
-  const getClubs = useCallback(() => {
-    dispatch(sendClubsRequest(CLUBS_URL, UNSUCCESSFUL_REQUEST));
-  }, [dispatch]);
+  const clubsObj = useGetClubsRequest();
   useEffect(() => {
-    if (clubs.isRejected) {
+    if (clubsObj.clubs.isRejected) {
       return;
     }
-    if (clubs.list.length === 0) {
-      getClubs();
+    if (clubsObj.clubs.list.length === 0) {
+      clubsObj.getClubs();
     }
-    if (clubs.list.length > 0 && !map) {
-      const listOfLocations = clubs.list.map((club) => club.geoLocation);
+    if (clubsObj.clubs.list.length > 0 && !map) {
+      const listOfLocations = clubsObj.clubs.list.map(
+        (club) => club.geoLocation
+      );
       const { lat, lon } = listOfLocations[5];
       const centeredLocation = fromLonLat([lon, lat]);
       const features = listOfLocations.map((location) => {
@@ -77,7 +73,7 @@ const ClubsMap = () => {
       });
       setMap(initialMap);
     }
-  }, [map, clubs.list, getClubs, clubs.isRejected]);
+  }, [clubsObj, map]);
   const pointerMoveHandler = () => {
     let centeredLocation;
     if (mapRef.current) {
@@ -102,14 +98,14 @@ const ClubsMap = () => {
   };
   return (
     <div className={styles["map-element"]}>
-      {clubs.isLoading && <div className={styles.spinner}></div>}
-      {clubs.isRejected && (
+      {clubsObj.clubs.isLoading && <div className={styles.spinner} />}
+      {clubsObj.clubs.isRejected && (
         <div className={styles.error}>
           <FontAwesomeIcon icon={faExclamationTriangle} color="red" />
-          <h1 className={styles.rejected}>{clubs.errorMsg}</h1>
+          <h1 className={styles.rejected}>{clubsObj.clubs.errorMsg}</h1>
         </div>
       )}
-      {!clubs.isRejected && (
+      {!clubsObj.clubs.isRejected && (
         <div
           ref={mapElement}
           className={styles["map-container"]}
