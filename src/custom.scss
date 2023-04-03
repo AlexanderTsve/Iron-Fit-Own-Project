@@ -16,3 +16,11 @@ $fonts: myFont, Arial (sans-serif), Arial Black (sans-serif),
 $secondary-fonts: Arial (sans-serif), Arial Black (sans-serif),
   Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
   Impact (sans-serif), Gill Sans (sans-serif);
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

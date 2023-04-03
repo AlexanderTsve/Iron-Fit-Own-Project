@@ -1,4 +1,4 @@
-import EquipmentFitness from "./EquipmentFitness";
+import EquipmentFitness from "./EquipmentFitnessTable/EquipmentFitness";
 const EquipmentPage = () => {
   return <EquipmentFitness />;
 };
