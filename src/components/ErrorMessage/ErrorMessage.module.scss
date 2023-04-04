@@ -1,0 +1,13 @@
+@import "../../custom.scss";
+.error {
+  display: flex;
+  justify-content: center;
+  svg {
+    align-self: center;
+  }
+}
+.rejected {
+  font-family: $fonts;
+  font-style: italic;
+  color: $red;
+}

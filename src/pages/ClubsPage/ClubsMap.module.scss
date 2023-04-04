@@ -23,15 +23,3 @@
   height: 6rem;
   animation: rotate 2s infinite linear;
 }
-.rejected {
-  font-family: $fonts;
-  color: $red;
-  font-style: italic;
-}
-.error {
-  display: flex;
-  justify-content: center;
-  svg {
-    align-self: center;
-  }
-}

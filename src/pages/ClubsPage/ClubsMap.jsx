@@ -8,8 +8,7 @@ import { Vector as VectorLayer } from "ol/layer.js";
 import { fromLonLat, toLonLat } from "ol/proj.js";
 import { Icon, Style } from "ol/style.js";
 import { defaults as defaultControls } from "ol/control.js";
-import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import useGetClubsRequest from "../../hooks/use-get-clubs-request";
 const ClubsMap = () => {
   const [map, setMap] = useState();
@@ -100,10 +99,7 @@ const ClubsMap = () => {
     <div className={styles["map-element"]}>
       {clubsObj.clubs.isLoading && <div className={styles.spinner} />}
       {clubsObj.clubs.isRejected && (
-        <div className={styles.error}>
-          <FontAwesomeIcon icon={faExclamationTriangle} color="red" />
-          <h1 className={styles.rejected}>{clubsObj.clubs.errorMsg}</h1>
-        </div>
+        <ErrorMessage errorMsg={clubsObj.clubs.errorMsg} />
       )}
       {!clubsObj.clubs.isRejected && (
         <div

@@ -1,0 +1,13 @@
+@import "../../custom.scss";
+.table {
+  &-type,
+  &-item {
+    text-align: center;
+  }
+  &-type {
+    font-size: 1.4rem;
+    font-family: $fonts;
+    color: $color-primary;
+    text-decoration: underline;
+  }
+}
