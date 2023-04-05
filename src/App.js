@@ -40,7 +40,11 @@ function App() {
   ]);
   return (
     <RouterProvider router={router}>
-      <div className="App">{/* {<SendOriginalDataClubsComponent />} */}</div>
+      <div className="App">
+        {
+          // <SendOriginalDataClubsComponent />
+        }
+      </div>
     </RouterProvider>
   );
 }

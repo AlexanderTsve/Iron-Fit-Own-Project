@@ -8,6 +8,7 @@
 //       geoLocation: { lat: 42.69729077097609, lon: 23.317056955920172 },
 //       workingHours: "7.00 - 21.30",
 //       workDays: [1, 2, 3, 4, 5, 6],
+//       workDaysStr: "Mon-Sat",
 //       phone: "0888 88 88 88",
 //       id: uuidv4(),
 //       equipment: {
@@ -26,6 +27,20 @@
 //         sauna: true,
 //         steamBath: true,
 //       },
+//       info: {
+//         area: "1231sqm",
+//         parking: "free for 2 hours, paid 2.00 BGN per hour",
+//         lockers: "own padlock or buy from the reception - 5.00 BGN",
+//         towel: "own/rent",
+//         wifi: true,
+//         water: {
+//           halfl: 1.3,
+//           l: 1.8,
+//         },
+//         proteinDrink: "3.00 BGN/0.5l",
+//         wheelchairAccess: true,
+//         bodyAnalysis: "2.00 BGN",
+//       },
 //     },
 //     {
 //       name: "Sofia Lyulin",
@@ -33,6 +48,7 @@
 //       geoLocation: { lat: 42.713264924349055, lon: 23.24888154242746 },
 //       workingHours: "7.00 - 21.30",
 //       workDays: [1, 2, 3, 4, 5, 6],
+//       workDaysStr: "Mon-Sat",
 //       phone: "0887 88 88 88",
 //       id: uuidv4(),
 //       equipment: {
@@ -51,6 +67,20 @@
 //         sauna: true,
 //         steamBath: true,
 //       },
+//       info: {
+//         area: "1341sqm",
+//         parking: "free for 2 hours, paid 2.00 BGN per hour",
+//         lockers: "own padlock or buy from the reception - 5.00 BGN",
+//         towel: "own/rent",
+//         wifi: true,
+//         water: {
+//           halfl: 1.3,
+//           l: 1.8,
+//         },
+//         proteinDrink: "3.00 BGN/0.5l",
+//         wheelchairAccess: true,
+//         bodyAnalysis: "2.00 BGN",
+//       },
 //     },
 //     {
 //       name: "Sofia Mladost",
@@ -58,6 +88,7 @@
 //       geoLocation: { lat: 42.63632565792078, lon: 23.36977386941168 },
 //       workingHours: "7.00 - 21.30",
 //       workDays: [1, 2, 3, 4, 5, 6],
+//       workDaysStr: "Mon-Sat",
 //       phone: "0887 86 86 86",
 //       id: uuidv4(),
 //       equipment: {
@@ -76,6 +107,20 @@
 //         sauna: true,
 //         steamBath: false,
 //       },
+//       info: {
+//         area: "1161sqm",
+//         parking: "free for 2 hours, paid 2.00 BGN per hour",
+//         lockers: "own padlock or buy from the reception - 5.00 BGN",
+//         towel: "own/rent",
+//         wifi: true,
+//         water: {
+//           halfl: 1.3,
+//           l: 1.8,
+//         },
+//         proteinDrink: "3.00 BGN/0.5l",
+//         wheelchairAccess: true,
+//         bodyAnalysis: "2.00 BGN",
+//       },
 //     },
 //     {
 //       name: "Sofia Pavlovo",
@@ -83,6 +128,7 @@
 //       geoLocation: { lat: 42.66163252401128, lon: 23.264926969504085 },
 //       workingHours: "7.00 - 21.30",
 //       workDays: [1, 2, 3, 4, 5, 6],
+//       workDaysStr: "Mon-Sat",
 //       phone: "0887 83 83 83",
 //       id: uuidv4(),
 //       equipment: {
@@ -101,6 +147,20 @@
 //         sauna: false,
 //         steamBath: false,
 //       },
+//       info: {
+//         area: "1300sqm",
+//         parking: "free for 2 hours, paid 2.00 BGN per hour",
+//         lockers: "own padlock or buy from the reception - 5.00 BGN",
+//         towel: "own/rent",
+//         wifi: true,
+//         water: {
+//           halfl: 1.3,
+//           l: 1.8,
+//         },
+//         proteinDrink: "3.00 BGN/0.5l",
+//         wheelchairAccess: true,
+//         bodyAnalysis: "2.00 BGN",
+//       },
 //     },
 //     {
 //       name: "Plovdiv Trakia",
@@ -108,6 +168,7 @@
 //       geoLocation: { lat: 42.13878058136747, lon: 24.787433525222482 },
 //       workingHours: "7.00 - 21.30",
 //       workDays: [1, 2, 3, 4, 5, 6],
+//       workDaysStr: "Mon-Sat",
 //       phone: "0887 84 84 84",
 //       id: uuidv4(),
 //       equipment: {
@@ -126,6 +187,20 @@
 //         sauna: true,
 //         steamBath: true,
 //       },
+//       info: {
+//         area: "1510sqm",
+//         parking: "free for 2 hours, paid 2.00 BGN per hour",
+//         lockers: "own padlock or buy from the reception - 5.00 BGN",
+//         towel: "own/rent",
+//         wifi: true,
+//         water: {
+//           halfl: 1.2,
+//           l: 1.6,
+//         },
+//         proteinDrink: "3.00 BGN/0.5l",
+//         wheelchairAccess: true,
+//         bodyAnalysis: "2.00 BGN",
+//       },
 //     },
 //     {
 //       name: "Plovdiv Center",
@@ -133,6 +208,7 @@
 //       geoLocation: { lat: 42.141660340827904, lon: 24.739933484743627 },
 //       workingHours: "7.00 - 21.30",
 //       workDays: [1, 2, 3, 4, 5, 6],
+//       workDaysStr: "Mon-Sat",
 //       phone: "0887 85 85 85",
 //       id: uuidv4(),
 //       equipment: {
@@ -151,6 +227,20 @@
 //         sauna: true,
 //         steamBath: true,
 //       },
+//       info: {
+//         area: "1115sqm",
+//         parking: "free for 2 hours, paid 2.00 BGN per hour",
+//         lockers: "own padlock or buy from the reception - 5.00 BGN",
+//         towel: "own/rent",
+//         wifi: true,
+//         water: {
+//           halfl: 1.2,
+//           l: 1.6,
+//         },
+//         proteinDrink: "3.00 BGN/0.5l",
+//         wheelchairAccess: true,
+//         bodyAnalysis: "2.00 BGN",
+//       },
 //     },
 //     {
 //       name: "Burgas Central Park",
@@ -158,6 +248,7 @@
 //       geoLocation: { lat: 42.51408531283424, lon: 27.4501782559161 },
 //       workingHours: "7.00 - 21.30",
 //       workDays: [1, 2, 3, 4, 5, 6],
+//       workDaysStr: "Mon-Sat",
 //       phone: "0887 82 82 82",
 //       id: uuidv4(),
 //       equipment: {
@@ -176,6 +267,20 @@
 //         sauna: true,
 //         steamBath: true,
 //       },
+//       info: {
+//         area: "1325sqm",
+//         parking: "free for 2 hours, paid 2.00 BGN per hour",
+//         lockers: "own padlock or buy from the reception - 5.00 BGN",
+//         towel: "own/rent",
+//         wifi: true,
+//         water: {
+//           halfl: 1.1,
+//           l: 1.5,
+//         },
+//         proteinDrink: "3.00 BGN/0.5l",
+//         wheelchairAccess: true,
+//         bodyAnalysis: "2.00 BGN",
+//       },
 //     },
 //     {
 //       name: "Varna Center",
@@ -183,6 +288,7 @@
 //       geoLocation: { lat: 43.20793873871141, lon: 27.910629969424402 },
 //       workingHours: "7.00 - 21.30",
 //       workDays: [1, 2, 3, 4, 5, 6],
+//       workDaysStr: "Mon-Sat",
 //       phone: "0887 81 81 81",
 //       id: uuidv4(),
 //       equipment: {
@@ -201,6 +307,20 @@
 //         sauna: true,
 //         steamBath: true,
 //       },
+//       info: {
+//         area: "1525sqm",
+//         parking: "free for 2 hours, paid 2.00 BGN per hour",
+//         lockers: "own padlock or buy from the reception - 5.00 BGN",
+//         towel: "own/rent",
+//         wifi: true,
+//         water: {
+//           halfl: 1.1,
+//           l: 1.5,
+//         },
+//         proteinDrink: "3.00 BGN/0.5l",
+//         wheelchairAccess: true,
+//         bodyAnalysis: "2.00 BGN",
+//       },
 //     },
 //     {
 //       name: "Varna Planet Mall",
@@ -208,6 +328,7 @@
 //       geoLocation: { lat: 43.22703005778861, lon: 27.875800015313523 },
 //       workingHours: "7.00 - 21.30",
 //       workDays: [1, 2, 3, 4, 5, 6],
+//       workDaysStr: "Mon-Sat",
 //       phone: "0887 81 81 81",
 //       id: uuidv4(),
 //       equipment: {
@@ -226,6 +347,20 @@
 //         sauna: false,
 //         steamBath: false,
 //       },
+//       info: {
+//         area: "1125sqm",
+//         parking: "free for 2 hours, paid 2.00 BGN per hour",
+//         lockers: "own padlock or buy from the reception - 5.00 BGN",
+//         towel: "own/rent",
+//         wifi: true,
+//         water: {
+//           halfl: 1.1,
+//           l: 1.5,
+//         },
+//         proteinDrink: "3.00 BGN/0.5l",
+//         wheelchairAccess: true,
+//         bodyAnalysis: "2.00 BGN",
+//       },
 //     },
 //     {
 //       name: "Varna Levski",
@@ -233,6 +368,7 @@
 //       geoLocation: { lat: 43.22060153604811, lon: 27.936078298260362 },
 //       workingHours: "7.00 - 21.30",
 //       workDays: [1, 2, 3, 4, 5, 6],
+//       workDaysStr: "Mon-Sat",
 //       phone: "0887 80 80 80",
 //       id: uuidv4(),
 //       equipment: {
@@ -250,6 +386,20 @@
 //       wellness: {
 //         sauna: true,
 //         steamBath: true,
+//       },
+//       info: {
+//         area: "1223sqm",
+//         parking: "free for 2 hours, paid 2.00 BGN per hour",
+//         lockers: "own padlock or buy from the reception - 5.00 BGN",
+//         towel: "own/rent",
+//         wifi: true,
+//         water: {
+//           halfl: 1.1,
+//           l: 1.5,
+//         },
+//         proteinDrink: "3.00 BGN/0.5l",
+//         wheelchairAccess: true,
+//         bodyAnalysis: "2.00 BGN",
 //       },
 //     },
 //   ];

@@ -1,6 +1,6 @@
-import ClubsMap from "./ClubsMap";
-import ClubsHeader from "./ClubsHeader";
-import ClubsList from "./ClubsList";
+import ClubsMap from "./ClubsMap/ClubsMap";
+import ClubsHeader from "./ClubsHeader/ClubsHeader";
+import ClubsList from "./ClubsList/ClubsList";
 import { Fragment } from "react";
 const ClubsPage = () => {
   return (

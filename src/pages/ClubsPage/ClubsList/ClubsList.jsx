@@ -1,5 +1,5 @@
 import styles from "./ClubsList.module.scss";
-import ClubCard from "./ClubCard";
+import ClubCard from "../ClubCard/ClubCard";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 const ClubsList = () => {

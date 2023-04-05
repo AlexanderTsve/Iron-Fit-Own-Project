@@ -8,8 +8,8 @@ import { Vector as VectorLayer } from "ol/layer.js";
 import { fromLonLat, toLonLat } from "ol/proj.js";
 import { Icon, Style } from "ol/style.js";
 import { defaults as defaultControls } from "ol/control.js";
-import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
-import useGetClubsRequest from "../../hooks/use-get-clubs-request";
+import ErrorMessage from "../../../components/ErrorMessage/ErrorMessage";
+import useGetClubsRequest from "../../../hooks/use-get-clubs-request";
 const ClubsMap = () => {
   const [map, setMap] = useState();
   const mapElement = useRef();
@@ -39,7 +39,7 @@ const ClubsMap = () => {
             anchor: [0.5, 46],
             anchorXUnits: "fraction",
             anchorYUnits: "pixels",
-            src: `${require("../../assets/icons/gym.png")}`,
+            src: `${require("../../../assets/icons/gym.png")}`,
           }),
         });
         const iconFeature = new Feature({

@@ -1,7 +1,7 @@
 import styles from "./ClubCard.module.scss";
 import { faDoorClosed, faDoorOpen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Button from "../../components/Buttons/Button";
+import Button from "../../../components/Buttons/Button";
 const ClubCard = ({ info }) => {
   const workDays = info.workDays;
   const startWorkingHour = Number(info.workingHours.split(".")[0]);

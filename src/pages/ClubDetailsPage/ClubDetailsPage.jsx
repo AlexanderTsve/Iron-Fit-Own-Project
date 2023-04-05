@@ -1,11 +1,9 @@
-import { useParams } from "react-router-dom";
 import { Fragment } from "react";
+import ClubDetails from "./ClubDetails/ClubDetails";
 const ClubDetailsPage = () => {
-  const params = useParams();
   return (
     <Fragment>
-      <h1>Club Details</h1>
-      <p>{params.nameId}</p>
+      <ClubDetails />
     </Fragment>
   );
 };

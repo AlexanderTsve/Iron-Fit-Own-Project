@@ -1,0 +1,11 @@
+@import "../../../../custom.scss";
+.info-para {
+  margin-top: 2.5rem;
+  span {
+    font-family: $fonts;
+    text-decoration: underline;
+    font-size: 1.5rem;
+    color: $dark-violet;
+    font-style: italic;
+  }
+}
