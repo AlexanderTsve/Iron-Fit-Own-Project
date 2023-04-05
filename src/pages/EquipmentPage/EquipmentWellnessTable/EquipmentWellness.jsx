@@ -3,7 +3,6 @@ import useGetClubsRequest from "../../../hooks/use-get-clubs-request";
 import { useEffect } from "react";
 import { Fragment } from "react";
 import TableTitle from "../../../components/TableTitle/TableTitle";
-import Table from "react-bootstrap/Table";
 import TableHeader from "../../../components/TableHeader/TableHeader";
 import TableRow from "../../../components/TableRow/TableRow";
 const EquipmentWellness = () => {
@@ -19,7 +18,7 @@ const EquipmentWellness = () => {
         <Fragment>
           <TableTitle>Wellness</TableTitle>
           {clubsObj.clubs.list.length > 0 && (
-            <Table bordered hover className="w-75">
+            <table className={styles["wellness-table"]}>
               <TableHeader list={clubsObj.clubs.list} />
               <tbody>
                 <TableRow
@@ -28,7 +27,7 @@ const EquipmentWellness = () => {
                   isEquipmentTable={false}
                 />
               </tbody>
-            </Table>
+            </table>
           )}
         </Fragment>
       )}

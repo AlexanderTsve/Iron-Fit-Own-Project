@@ -1,12 +1,22 @@
 @import "../../custom.scss";
 header {
-  max-width: 100vw;
+  width: 100vw;
   background-color: $color-primary;
+  opacity: 0.9;
   font-family: $fonts;
   font-size: 1.5rem;
+  position: fixed;
+  top: 0;
+  z-index: 100;
   nav {
     display: flex;
     justify-content: space-between;
+    .welcome-para {
+      color: $light-grey;
+      margin-top: 2rem;
+      font-style: italic;
+      font-size: 2rem;
+    }
     .header__logo {
       height: 6.6rem;
       margin: 0.5rem;
@@ -18,7 +28,7 @@ header {
         align-items: center;
       }
       &__item {
-        margin: 0 1rem 1.5rem 1rem;
+        margin: 0 1.5rem 1.5rem 1rem;
         cursor: pointer;
         text-decoration: underline;
         color: $color-secondary;

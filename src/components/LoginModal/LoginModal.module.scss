@@ -5,7 +5,8 @@
   z-index: 11;
   left: 0;
   top: 0;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: $dark-violet;
   opacity: 0.95;
   &_content {
@@ -13,7 +14,7 @@
     color: $violet;
     height: 35rem;
     width: 15vw;
-    margin: 5% auto 15% auto;
+    margin: 12rem auto;
     border: 3px solid $light-grey;
     border-radius: 1rem;
     &_form {

@@ -1,8 +1,13 @@
 @import "../../custom.scss";
 .table-header {
-  font-size: 1.4rem;
-  font-family: $fonts;
-  color: $color-primary;
-  text-decoration: underline;
-  text-align: center;
+  &-content {
+    font-size: 1.4rem;
+    font-family: $fonts;
+    color: $color-primary;
+    text-decoration: underline;
+    text-align: center;
+    th {
+      border-bottom: solid 0.2rem $light-grey;
+    }
+  }
 }

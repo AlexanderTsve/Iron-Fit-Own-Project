@@ -2,7 +2,6 @@ import styles from "./EquipmentFitness.module.scss";
 import { useEffect } from "react";
 import { Fragment } from "react";
 import useGetClubsRequest from "../../../hooks/use-get-clubs-request";
-import Table from "react-bootstrap/Table";
 import ErrorMessage from "../../../components/ErrorMessage/ErrorMessage";
 import TableTitle from "../../../components/TableTitle/TableTitle";
 import TableHeader from "../../../components/TableHeader/TableHeader";
@@ -27,7 +26,7 @@ const EquipmentFitness = () => {
         <Fragment>
           <TableTitle>Fitness</TableTitle>
           {clubsObj.clubs.list.length > 0 && (
-            <Table bordered hover className="w-75">
+            <table className={styles["fitness-table"]}>
               <TableHeader list={clubsObj.clubs.list} />
               <tbody>
                 <TableRow
@@ -36,7 +35,7 @@ const EquipmentFitness = () => {
                   isEquipmentTable={true}
                 />
               </tbody>
-            </Table>
+            </table>
           )}
         </Fragment>
       )}

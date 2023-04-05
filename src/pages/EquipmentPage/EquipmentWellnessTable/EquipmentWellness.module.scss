@@ -1,6 +1,19 @@
 @import "../../../custom.scss";
+.wellness-table {
+  width: 85vw;
+  border-collapse: collapse;
+  tr:nth-child(even) {
+    background-color: $light-grey;
+  }
+  tr:hover {
+    background-color: $yellow;
+  }
+}
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  h1 {
+    margin-top: 4rem;
+  }
 }

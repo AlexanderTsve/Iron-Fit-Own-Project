@@ -44,6 +44,9 @@ const Navigation = ({
     <header>
       <nav>
         <img src={logo} alt="Logo" className={styles["header__logo"]} />
+        <p className={styles["welcome-para"]}>
+          Welcome, {user.isLogged ? user.loggedUserEmail : "Guest"}!
+        </p>
         <ul className={styles["nav__list"]}>
           <li
             className={styles["nav__item"]}

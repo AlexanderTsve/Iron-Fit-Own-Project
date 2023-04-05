@@ -1,6 +1,6 @@
 @import "../../../custom.scss";
 .spinner {
-  margin: 5rem auto;
+  margin: 12rem auto;
   text-align: center;
   border: 16px solid $light-grey;
   border-radius: 50%;
@@ -13,4 +13,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.fitness-table {
+  width: 85vw;
+  border-collapse: collapse;
+  tr:nth-child(even) {
+    background-color: $light-grey;
+  }
+  tr:hover {
+    background-color: $yellow;
+  }
 }

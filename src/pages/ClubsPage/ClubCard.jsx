@@ -50,8 +50,8 @@ const ClubCard = ({ info }) => {
         <span>Tel.: {info.phone}</span>
       </div>
       <div className={styles["card-btns"]}>
-        <Button>Timetables</Button>
-        <Button>Details</Button>
+        <Button>Timetable</Button>
+        <Button>More Info</Button>
       </div>
     </div>
   );
