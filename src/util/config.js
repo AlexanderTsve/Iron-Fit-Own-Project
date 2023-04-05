@@ -1,4 +1,4 @@
-export const clubNames = [
+export const CLUB_NAMES = [
   "Sofia Center",
   "Sofia Lyulin",
   "Sofia Mladost",

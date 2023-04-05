@@ -11,3 +11,10 @@
     }
   }
 }
+.club-name {
+  cursor: pointer;
+}
+.club-name:hover {
+  background-color: $dark-violet;
+  color: $light-grey;
+}

@@ -3,7 +3,7 @@ import { Fragment } from "react";
 import Navigation from "../../components/Header/Navigation";
 import LoginModal from "../../components/LoginModal/LoginModal";
 import RegistrationModal from "../../components/RegistrationModal/RegistrationModal";
-import { clubNames } from "../../util/config.js";
+import { CLUB_NAMES } from "../../util/config.js";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
@@ -32,7 +32,7 @@ const RootLayout = () => {
   const navigateToClubHandler = (name) => {
     navigate(`${subDirectory.activeDropdown}/${name}`);
   };
-  const clubsDropdownList = clubNames.map((name, index) => (
+  const clubsDropdownList = CLUB_NAMES.map((name, index) => (
     <p key={index + 1} onClick={() => navigateToClubHandler(name)}>
       {name}
     </p>

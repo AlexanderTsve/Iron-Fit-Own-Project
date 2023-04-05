@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../store/active-user-slice";
 import { changeDropdownAction } from "../../store/active-dropdown-slice.js";
-import HeaderDropdown from "./HeaderDropdown";
+import ClubsDropdown from "./ClubsDropdown";
 import NavigationLink from "./NavigationLink";
 const Navigation = ({
   dropdownList,
@@ -54,9 +54,7 @@ const Navigation = ({
             onMouseLeave={hideClubsDropdownHandler}
           >
             <NavigationLink to="/">Clubs</NavigationLink>
-            {showClubsDropdown && (
-              <HeaderDropdown dropdownList={dropdownList} />
-            )}
+            {showClubsDropdown && <ClubsDropdown dropdownList={dropdownList} />}
           </li>
           <li className={styles["nav__item"]}>
             <NavigationLink to="/prices">Prices</NavigationLink>
@@ -71,7 +69,7 @@ const Navigation = ({
           >
             <NavigationLink to="/timetables">Timetables</NavigationLink>
             {showTimetablesDropdown && (
-              <HeaderDropdown dropdownList={dropdownList} />
+              <ClubsDropdown dropdownList={dropdownList} />
             )}
           </li>
           {!user.isLogged && (
