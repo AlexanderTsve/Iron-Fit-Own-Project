@@ -9,10 +9,22 @@ import TimetablesPage from "./pages/TimetablesPage/TimetablesPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import ClubDetailsPage from "./pages/ClubDetailsPage/ClubDetailsPage";
 import ClubTimetablePage from "./pages/ClubTimetablePage/ClubTimetablePage";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { actions } from "./store/active-user-slice";
 // import SendOriginalDataClubsComponent from "./util/ordiginalData";
 function App() {
   const user = useSelector((state) => state.activeUser);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (localStorage.getItem("rememberedIronFitUser")) {
+      dispatch(
+        actions.activateRememberedUser(
+          JSON.parse(localStorage.getItem("rememberedIronFitUser"))
+        )
+      );
+    }
+  }, [dispatch]);
   const router = createBrowserRouter([
     {
       path: "/",

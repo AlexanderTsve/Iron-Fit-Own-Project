@@ -69,15 +69,7 @@ const LoginModal = ({ showModal, hideModal, showRegistrationModal }) => {
   }, [user.errorLogin, user.isLoading, user.isLogged, user.isRejected]);
   useEffect(() => {
     if (user.isLogged && checked) {
-      localStorage.setItem(
-        "rememberedIronFitUser",
-        JSON.stringify({
-          loggedUserEmail: user.loggedUserEmail,
-          loggedUserPhone: user.loggedUserPhone,
-        })
-      );
-    } else {
-      localStorage.removeItem("rememberedIronFitUser");
+      dispatch(actions.rememberUser());
     }
   }, [
     checked,
@@ -85,6 +77,7 @@ const LoginModal = ({ showModal, hideModal, showRegistrationModal }) => {
     user.isLogged,
     user.loggedUserEmail,
     user.loggedUserPhone,
+    dispatch,
   ]);
   return (
     <Fragment>

@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../assets/images/logo.png";
 import styles from "./Navigation.module.scss";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../store/active-user-slice";
 import { changeDropdownAction } from "../../store/active-dropdown-slice.js";
@@ -35,11 +35,6 @@ const Navigation = ({
   const logoutHandler = () => {
     dispatch(actions.reset());
   };
-  useEffect(() => {
-    if (!user.isLogged && localStorage.getItem("rememberedIronFitUser")) {
-      localStorage.removeItem("rememberedIronFitUser");
-    }
-  }, [user.isLogged]);
   return (
     <header>
       <nav>

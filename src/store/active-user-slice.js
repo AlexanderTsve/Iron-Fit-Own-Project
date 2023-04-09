@@ -15,6 +15,7 @@ const initialState = {
   isLoading: false,
   isLogged: false,
   isRejected: false,
+  isChecked: false,
   errorLogin: "",
 };
 export const loginUser = createAsyncThunk(
@@ -45,6 +46,20 @@ export const activeUserSlice = createSlice({
   reducers: {
     reset: () => {
       return initialState;
+    },
+    rememberUser: (state) => {
+      return {
+        ...state,
+        isChecked: true,
+      };
+    },
+    activateRememberedUser: (state, { payload }) => {
+      return {
+        ...state,
+        isLogged: true,
+        loggedUserEmail: payload.loggedUserEmail,
+        loggedUserPhone: payload.loggedUserPhone,
+      };
     },
   },
   extraReducers: (builder) => {
