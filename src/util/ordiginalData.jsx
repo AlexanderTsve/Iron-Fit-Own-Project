@@ -136,7 +136,7 @@
 //       },
 //       wellness: {
 //         sauna: false,
-//         steamBath: false,
+//         steamBath: true,
 //       },
 //       info: {
 //         area: "1300 m²",
@@ -320,7 +320,7 @@
 //         workoutConstruction: true,
 //       },
 //       wellness: {
-//         sauna: false,
+//         sauna: true,
 //         steamBath: false,
 //       },
 //       info: {
