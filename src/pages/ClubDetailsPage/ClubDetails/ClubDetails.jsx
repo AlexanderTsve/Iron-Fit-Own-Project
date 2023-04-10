@@ -4,6 +4,15 @@ import { useEffect } from "react";
 import ErrorMessage from "../../../components/ErrorMessage/ErrorMessage";
 import { useParams } from "react-router-dom";
 import ClubDetailsInfoParagraph from "./ClubDetailsInfoParagraph/ClubDetailsInfoParagraph";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSquareParking,
+  faLock,
+  faWheelchair,
+  faWifi,
+  faBottleWater,
+} from "@fortawesome/free-solid-svg-icons";
+import ClubUsefulInfoItem from "./ClubUsefulInfoItem/ClubUsefulInfoItem";
 const ClubDetails = () => {
   const clubsObj = useGetClubsRequest();
   const params = useParams();
@@ -36,25 +45,21 @@ const ClubDetails = () => {
                 <ClubDetailsInfoParagraph
                   type="Address"
                   list={clubsObj.clubs.list}
-                  nameId={params.nameId}
                   property="address"
                 />
                 <ClubDetailsInfoParagraph
                   type="Tel"
                   list={clubsObj.clubs.list}
-                  nameId={params.nameId}
                   property="phone"
                 />
                 <ClubDetailsInfoParagraph
                   type="Work days"
                   list={clubsObj.clubs.list}
-                  nameId={params.nameId}
                   property="workDaysStr"
                 />
                 <ClubDetailsInfoParagraph
                   type="Opening hours"
                   list={clubsObj.clubs.list}
-                  nameId={params.nameId}
                   property="workingHours"
                 />
               </div>
@@ -64,15 +69,67 @@ const ClubDetails = () => {
                 Useful Information
               </p>
               <div className={styles["details-useful-info"]}>
-                <p className={styles["details-useful-info-size"]}>
-                  <span>Size: </span>
-                  <span>
-                    {clubsObj.clubs.list
-                      .find((club) => club.name === params.nameId)
-                      .info.area.replace(/\D/g, "")}
-                    m<sup>2</sup>
-                  </span>
-                </p>
+                <ul>
+                  <ClubUsefulInfoItem
+                    type="Size"
+                    list={clubsObj.clubs.list}
+                    property="area"
+                    dataType="string"
+                  />
+                  <ClubUsefulInfoItem
+                    icon={<FontAwesomeIcon icon={faSquareParking} />}
+                    dataType="string"
+                    list={clubsObj.clubs.list}
+                    property="parking"
+                  />
+                  <ClubUsefulInfoItem
+                    type="Body analysis"
+                    dataType="string"
+                    list={clubsObj.clubs.list}
+                    property="bodyAnalysis"
+                  />
+
+                  <ClubUsefulInfoItem
+                    icon={<FontAwesomeIcon icon={faLock} />}
+                    type="Lockers"
+                    dataType="string"
+                    list={clubsObj.clubs.list}
+                    property="lockers"
+                  />
+                  <ClubUsefulInfoItem
+                    icon={<FontAwesomeIcon icon={faWheelchair} />}
+                    type="Wheelchair Access"
+                    dataType="boolean"
+                    list={clubsObj.clubs.list}
+                    property="wheelchairAccess"
+                  />
+                  <ClubUsefulInfoItem
+                    type="Protein Drink"
+                    dataType="string"
+                    list={clubsObj.clubs.list}
+                    property="proteinDrink"
+                  />
+                  <ClubUsefulInfoItem
+                    type="Towel"
+                    dataType="string"
+                    list={clubsObj.clubs.list}
+                    property="towel"
+                  />
+                  <ClubUsefulInfoItem
+                    icon={<FontAwesomeIcon icon={faWifi} />}
+                    type="Wifi"
+                    dataType="boolean"
+                    list={clubsObj.clubs.list}
+                    property="wifi"
+                  />
+                  <ClubUsefulInfoItem
+                    icon={<FontAwesomeIcon icon={faBottleWater} />}
+                    type="Water"
+                    dataType="string"
+                    list={clubsObj.clubs.list}
+                    property="water"
+                  />
+                </ul>
               </div>
             </div>
           </div>

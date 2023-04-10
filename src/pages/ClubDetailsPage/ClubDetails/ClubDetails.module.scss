@@ -39,11 +39,15 @@
     text-align: center;
     width: 45vw;
     &-info {
-      display: flex;
-      &-size {
-        font-family: $fonts;
-        font-size: 1.4rem;
-        color: $dark-violet;
+      font-family: $fonts;
+      font-size: 1.4rem;
+      color: $dark-violet;
+      ul {
+        padding: 0;
+        li {
+          list-style: none;
+          margin: 1rem;
+        }
       }
     }
   }
