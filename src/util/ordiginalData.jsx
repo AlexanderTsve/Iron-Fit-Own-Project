@@ -1205,6 +1205,56 @@
 //       ],
 //     },
 //   ];
+//   const prices = [
+//     { name: "Single entry", price: "25.00 BGN" },
+//     {
+//       name: "Pro",
+//       term: "12 months fixed-term membership",
+//       price: "79.00 BGN monthly",
+//       characteristics: [
+//         "Unlimited access to all IF clubs",
+//         "One group activity per day",
+//         "Fitness areas with high-quality equipment",
+//         "Different training areas",
+//         "Sauna/steambath (depending on the club)",
+//         "Changing rooms, Showers, Wifi",
+//         "Safes for valuables and personal belongings",
+//       ],
+//       bonuses: [
+//         "3 entries for a friend every month",
+//         "2 freezes for 1 month each",
+//       ],
+//     },
+//     {
+//       name: "Easy",
+//       term: "Membership for an indefinite period",
+//       price: "99.00 BGN monthly",
+//       characteristics: [
+//         "Unlimited access to all IF clubs",
+//         "One group activity per day",
+//         "Fitness areas with high-quality equipment",
+//         "Different training areas",
+//         "Sauna/steambath (depending on the club)",
+//         "Changing rooms, Showers, Wifi",
+//         "Safes for valuables and personal belongings",
+//       ],
+//       bonuses: ["1 entry for a friend every month", "1 freeze for 1 month"],
+//     },
+//     {
+//       name: "Basic",
+//       term: "1 month",
+//       price: "139.00 BGN monthly",
+//       characteristics: [
+//         "Unlimited access to all IF clubs",
+//         "One group activity per day",
+//         "Fitness areas with high-quality equipment",
+//         "Different training areas",
+//         "Sauna/steambath (depending on the club)",
+//         "Changing rooms, Showers, Wifi",
+//         "Safes for valuables and personal belongings",
+//       ],
+//     },
+//   ];
 //   const sendClubs = async () => {
 //     const sendData = await fetch(
 //       "https://react-http-requests-81638-default-rtdb.europe-west1.firebasedatabase.app/iron-fit-clubs.json",
@@ -1231,10 +1281,24 @@
 //     );
 //     await sendData();
 //   };
+//   const sendPrices = async () => {
+//     const sendData = await fetch(
+//       "https://react-http-requests-81638-default-rtdb.europe-west1.firebasedatabase.app/iron-fit-prices.json",
+//       {
+//         method: "POST",
+//         body: JSON.stringify(prices),
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//       }
+//     );
+//     await sendData();
+//   };
 //   return (
 //     <Fragment>
 //       <button onClick={sendClubs}>Click Me for Clubs!</button>
 //       <button onClick={sendTimetables}>Click Me for Timetables!</button>
+//       <button onClick={sendPrices}>Click Me for Prices!</button>
 //     </Fragment>
 //   );
 // };
