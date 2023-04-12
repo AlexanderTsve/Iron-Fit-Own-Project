@@ -1,0 +1,58 @@
+@import "../../../custom.scss";
+.order_modal {
+  display: flex;
+  justify-content: center;
+  padding-top: 0;
+  text-align: center;
+  position: fixed;
+  z-index: 11;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $dark-violet;
+  opacity: 0.95;
+  &_content {
+    height: 30rem;
+    margin-top: 12rem;
+    background-color: $color-primary;
+    color: $violet;
+    width: 18vw;
+    border: 3px solid $light-grey;
+    border-radius: 1rem;
+  }
+  &_component {
+    display: flex;
+    flex-direction: column;
+    height: 5rem;
+    align-items: center;
+    &_label {
+      margin-top: 1rem;
+      color: $color-secondary;
+      font-family: $fonts;
+      font-size: 1.25rem;
+    }
+    &_input {
+      border-radius: 0.5rem;
+      font-family: $fonts;
+      font-size: 1.1rem;
+      padding: 0.5rem;
+    }
+    &_list {
+      padding: 0.5rem;
+      font-family: $fonts;
+      font-size: 1.1rem;
+      border-radius: 0.3rem;
+    }
+  }
+}
+.datePicker {
+  border-radius: 0.3rem;
+  div {
+    input {
+      padding: 0.5rem;
+      font-family: $fonts;
+      font-size: 1.1rem;
+    }
+  }
+}

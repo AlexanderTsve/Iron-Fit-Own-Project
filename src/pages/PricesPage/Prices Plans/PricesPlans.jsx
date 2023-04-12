@@ -12,13 +12,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faPlus } from "@fortawesome/free-solid-svg-icons";
 import CustomButton from "../../../components/Buttons/Button";
 import MessageModal from "../../../components/MessageModal/MessageModal";
+import OrderForm from "../OrderForm/OrderForm";
 const PricesPlans = () => {
   const [prices, setPrices] = useState([]);
   const [isRejected, setIsRejected] = useState(false);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [buttonIsPressed, setButtonIsPressed] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  const [showMessageModal, setShowMessageModal] = useState(false);
+  const [showOrderModal, setShowOrderModal] = useState(false);
   const user = useSelector((state) => state.activeUser);
   const getPricesHandler = async () => {
     try {
@@ -39,14 +41,17 @@ const PricesPlans = () => {
   }, [prices.length]);
   useEffect(() => {
     if (buttonIsPressed && !user.isLogged) {
-      setShowModal(true);
+      setShowMessageModal(true);
+    }
+    if (buttonIsPressed && user.isLogged) {
+      setShowOrderModal(true);
     }
   }, [buttonIsPressed, user.isLogged]);
   const orderOnlineHandler = () => {
     setButtonIsPressed(true);
   };
   const hideMessageModalHandler = () => {
-    setShowModal(false);
+    setShowMessageModal(false);
     setButtonIsPressed(false);
   };
   return (
@@ -54,9 +59,12 @@ const PricesPlans = () => {
       {buttonIsPressed && !user.isLogged && (
         <MessageModal
           message={GUEST_TRY_ORDER_PLAN_MSG}
-          showMessageModal={showModal}
+          showMessageModal={showMessageModal}
           hideMessageModal={hideMessageModalHandler}
         />
+      )}
+      {buttonIsPressed && user.isLogged && (
+        <OrderForm showOrderModal={showOrderModal} />
       )}
       {isLoading && <div className={styles.spinner} />}
       {isRejected && <ErrorMessage errorMsg={error} />}
