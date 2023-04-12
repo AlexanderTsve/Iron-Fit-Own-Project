@@ -47,3 +47,5 @@ export const LOGIN_URL_ERROR =
 export const LOGIN_SUCCESS = "You have been logged in successfully! Welcome!";
 export const UNSUCCESSFUL_REQUEST =
   "The request has not been successful! Please, try again later!";
+export const GUEST_TRY_ORDER_PLAN_MSG =
+  "Please, log in and then order a plan online! Thank you!";

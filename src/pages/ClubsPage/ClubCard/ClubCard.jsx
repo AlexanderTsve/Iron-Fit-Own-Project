@@ -2,7 +2,9 @@ import styles from "./ClubCard.module.scss";
 import { faDoorClosed, faDoorOpen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "../../../components/Buttons/Button";
+import { useNavigate } from "react-router-dom";
 const ClubCard = ({ info }) => {
+  const navigate = useNavigate();
   const workDays = info.workDays;
   const startWorkingHour = Number(info.workingHours.split(".")[0]);
   const startWorkingMinutes = Number(
@@ -33,6 +35,9 @@ const ClubCard = ({ info }) => {
     currentHour <= endWorkingHour &&
     calcIsEarlyMinutes &&
     calcIsDelayMinutes;
+  const navigateToClubDetailsPageHandler = () => {
+    navigate(`/clubs/${info.name}`);
+  };
   return (
     <div className={styles.card}>
       <div className={styles["card-header"]}>
@@ -51,7 +56,7 @@ const ClubCard = ({ info }) => {
       </div>
       <div className={styles["card-btns"]}>
         <Button>Timetable</Button>
-        <Button>More Info</Button>
+        <Button onClick={navigateToClubDetailsPageHandler}>More Info</Button>
       </div>
     </div>
   );

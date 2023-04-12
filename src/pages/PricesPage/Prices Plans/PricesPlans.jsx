@@ -1,16 +1,25 @@
 import styles from "./PricesPlans.module.scss";
 import { getPrices } from "../../../util/helpers.js";
-import { PRICES_URL, UNSUCCESSFUL_REQUEST } from "../../../util/config";
+import {
+  PRICES_URL,
+  UNSUCCESSFUL_REQUEST,
+  GUEST_TRY_ORDER_PLAN_MSG,
+} from "../../../util/config";
 import { useEffect, useState, Fragment } from "react";
+import { useSelector } from "react-redux";
 import ErrorMessage from "../../../components/ErrorMessage/ErrorMessage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faPlus } from "@fortawesome/free-solid-svg-icons";
 import CustomButton from "../../../components/Buttons/Button";
+import MessageModal from "../../../components/MessageModal/MessageModal";
 const PricesPlans = () => {
   const [prices, setPrices] = useState([]);
   const [isRejected, setIsRejected] = useState(false);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [buttonIsPressed, setButtonIsPressed] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const user = useSelector((state) => state.activeUser);
   const getPricesHandler = async () => {
     try {
       setIsLoading(true);
@@ -28,8 +37,27 @@ const PricesPlans = () => {
       getPricesHandler();
     }
   }, [prices.length]);
+  useEffect(() => {
+    if (buttonIsPressed && !user.isLogged) {
+      setShowModal(true);
+    }
+  }, [buttonIsPressed, user.isLogged]);
+  const orderOnlineHandler = () => {
+    setButtonIsPressed(true);
+  };
+  const hideMessageModalHandler = () => {
+    setShowModal(false);
+    setButtonIsPressed(false);
+  };
   return (
     <div className={styles.container}>
+      {buttonIsPressed && !user.isLogged && (
+        <MessageModal
+          message={GUEST_TRY_ORDER_PLAN_MSG}
+          showMessageModal={showModal}
+          hideMessageModal={hideMessageModalHandler}
+        />
+      )}
       {isLoading && <div className={styles.spinner} />}
       {isRejected && <ErrorMessage errorMsg={error} />}
       {!isLoading && !isRejected && prices.length > 0 && (
@@ -68,16 +96,15 @@ const PricesPlans = () => {
                             className={styles["price-list-item-bonus"]}
                             key={index}
                           >
-                            <FontAwesomeIcon
-                              icon={faPlusCircle}
-                              color="#012b82"
-                            />
+                            <FontAwesomeIcon icon={faPlus} color="#82b440" />
                             {bonus}
                           </li>
                         ))}
                       </ul>
                     )}
-                    <CustomButton>Order Online</CustomButton>
+                    <CustomButton onClick={orderOnlineHandler}>
+                      Order Online
+                    </CustomButton>
                   </Fragment>
                 )}
               </div>
