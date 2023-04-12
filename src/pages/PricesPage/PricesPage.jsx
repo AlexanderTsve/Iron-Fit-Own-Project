@@ -1,4 +1,5 @@
+import PricesPlans from "./Prices Plans/PricesPlans";
 const PricesPage = () => {
-  return <h1>Prices</h1>;
+  return <PricesPlans />;
 };
 export default PricesPage;

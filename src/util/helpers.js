@@ -91,3 +91,11 @@ export const getClubs = async (url, error) => {
     throw error;
   }
 };
+export const getPrices = async (url, error) => {
+  try {
+    const data = await makeGetApiCall(url, error);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};

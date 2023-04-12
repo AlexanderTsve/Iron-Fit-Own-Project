@@ -1,0 +1,71 @@
+@import "../../../custom.scss";
+.header-container {
+  text-align: center;
+  font-family: $fonts;
+  color: $dark-violet;
+  &-title {
+    font-style: italic;
+    text-decoration: underline;
+  }
+}
+.spinner {
+  margin: 12rem auto;
+  text-align: center;
+  border: 16px solid $light-grey;
+  border-radius: 50%;
+  border-top: 16px solid $color-primary;
+  width: 6rem;
+  height: 6rem;
+  animation: rotate 2s infinite linear;
+}
+.container {
+  margin-top: 11rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.price-list {
+  &-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    height: 69.5vh;
+    background-color: $light-grey;
+  }
+  &-item {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 15vw;
+    height: 30rem;
+    border: solid $dark-violet 0.25rem;
+    border-radius: 0.5rem;
+    background-color: $pink;
+    font-family: $fonts;
+    color: $color-primary;
+    &-characteristics,
+    &-bonuses {
+      padding: 0;
+    }
+    &-term {
+      font-size: 1.2rem;
+    }
+    &-name {
+      text-decoration: underline;
+    }
+    &-price {
+      font-size: 1.5rem;
+      font-style: italic;
+    }
+    &-characteristic,
+    &-bonus {
+      font-size: 1rem;
+      font-style: italic;
+      list-style: none;
+      padding: 0;
+    }
+  }
+}

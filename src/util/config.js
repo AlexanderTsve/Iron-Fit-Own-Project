@@ -29,6 +29,8 @@ export const USERS_URL =
   "https://react-http-requests-81638-default-rtdb.europe-west1.firebasedatabase.app/iron_fit-users.json";
 export const CLUBS_URL =
   "https://react-http-requests-81638-default-rtdb.europe-west1.firebasedatabase.app/iron-fit-clubs.json";
+export const PRICES_URL =
+  "https://react-http-requests-81638-default-rtdb.europe-west1.firebasedatabase.app/iron-fit-prices.json";
 export const REGISTRATION_AUTH_ERROR =
   "Unsuccessful registration! Please, check if the email has been used for registration already or try again later!";
 export const REGISTRATION_URL_ERROR =
