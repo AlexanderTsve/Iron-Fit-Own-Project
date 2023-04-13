@@ -99,3 +99,25 @@ export const getPrices = async (url, error) => {
     throw error;
   }
 };
+export const getUsers = async (url, error) => {
+  try {
+    const data = await makeGetApiCall(url, error);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+export const updateUserOrderData = async (url, data, error) => {
+  try {
+    await makePostApiCall(
+      url,
+      {
+        email: data.userEmailInput,
+        phone: data.userPhoneInput,
+      },
+      error
+    );
+  } catch (error) {
+    throw error;
+  }
+};

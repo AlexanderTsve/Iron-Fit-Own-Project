@@ -21,6 +21,7 @@ const PricesPlans = () => {
   const [buttonIsPressed, setButtonIsPressed] = useState(false);
   const [showMessageModal, setShowMessageModal] = useState(false);
   const [showOrderModal, setShowOrderModal] = useState(false);
+  const [plan, setPlan] = useState("");
   const user = useSelector((state) => state.activeUser);
   const getPricesHandler = async () => {
     try {
@@ -47,16 +48,24 @@ const PricesPlans = () => {
       setShowOrderModal(true);
     }
   }, [buttonIsPressed, user.isLogged]);
-  const orderOnlineHandler = () => {
+  const orderOnlineHandler = (e) => {
     setButtonIsPressed(true);
+    if (user.isLogged) {
+      setPlan(e.target.parentElement.firstChild.textContent);
+    }
   };
   const hideMessageModalHandler = () => {
     setShowMessageModal(false);
     setButtonIsPressed(false);
   };
+  const hideOrderFormHandler = () => {
+    setShowOrderModal(false);
+    setButtonIsPressed(false);
+    setPlan("");
+  };
   return (
     <div className={styles.container}>
-      {buttonIsPressed && !user.isLogged && (
+      {showMessageModal && !user.isLogged && (
         <MessageModal
           message={GUEST_TRY_ORDER_PLAN_MSG}
           showMessageModal={showMessageModal}
@@ -64,7 +73,11 @@ const PricesPlans = () => {
         />
       )}
       {buttonIsPressed && user.isLogged && (
-        <OrderForm showOrderModal={showOrderModal} />
+        <OrderForm
+          plan={plan}
+          showOrderModal={showOrderModal}
+          hideOrderForm={hideOrderFormHandler}
+        />
       )}
       {isLoading && <div className={styles.spinner} />}
       {isRejected && <ErrorMessage errorMsg={error} />}
