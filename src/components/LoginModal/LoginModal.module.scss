@@ -12,9 +12,9 @@
   &_content {
     background-color: $color-primary;
     color: $violet;
-    height: 35rem;
+    height: 32rem;
     width: 15vw;
-    margin: 12rem auto;
+    margin: 10rem auto;
     border: 3px solid $light-grey;
     border-radius: 1rem;
     &_form {
@@ -53,7 +53,7 @@
   color: $light-grey;
   text-decoration: underline;
   font-family: $fonts;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   font-style: italic;
 }
 .link-to-sign-up:hover {

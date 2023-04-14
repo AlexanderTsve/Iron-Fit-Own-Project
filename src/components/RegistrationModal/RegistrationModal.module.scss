@@ -5,15 +5,15 @@
   z-index: 11;
   left: 0;
   top: 0;
-  width: 100%;
+  width: 100vw;
   background-color: $dark-violet;
   opacity: 0.95;
   &_content {
     background-color: $color-primary;
     color: $violet;
-    height: 48rem;
+    height: 36.5rem;
     width: 18vw;
-    margin: 12rem auto;
+    margin: 10rem auto;
     border: 3px solid $light-grey;
     border-radius: 1rem;
     &_form {
@@ -26,10 +26,10 @@
         }
         label {
           width: 14rem;
-          margin: 1rem;
+          margin: 0.3rem;
           color: $color-secondary;
           font-family: $fonts;
-          font-size: 1.25rem;
+          font-size: 1.15rem;
           display: flex;
           justify-content: space-evenly;
         }
@@ -37,7 +37,7 @@
           border-radius: 0.5rem;
           font-family: $fonts;
           font-size: 1.1rem;
-          padding: 0.5rem;
+          padding: 0.3rem;
         }
         p {
           color: $light-grey;
