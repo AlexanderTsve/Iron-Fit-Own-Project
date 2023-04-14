@@ -107,14 +107,17 @@ export const getUsers = async (url, error) => {
     throw error;
   }
 };
-export const updateUserOrderData = async (url, data, error) => {
+export const updateUserOrderData = async (
+  url,
+  userId,
+  dataPlan,
+  dataUser,
+  error
+) => {
   try {
     await makePostApiCall(
-      url,
-      {
-        email: data.userEmailInput,
-        phone: data.userPhoneInput,
-      },
+      url.replace(".json", `/${userId}/orderData.json`),
+      { dataPlan, dataUser },
       error
     );
   } catch (error) {

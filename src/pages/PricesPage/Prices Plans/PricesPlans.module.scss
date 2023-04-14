@@ -30,7 +30,6 @@
     display: flex;
     justify-content: space-around;
     width: 100vw;
-    height: 69.5vh;
     background-color: $light-grey;
   }
   &-item {
@@ -40,7 +39,6 @@
     justify-content: space-around;
     align-items: center;
     width: 15vw;
-    height: 30rem;
     border: solid $dark-violet 0.25rem;
     border-radius: 0.5rem;
     background-color: $pink;
