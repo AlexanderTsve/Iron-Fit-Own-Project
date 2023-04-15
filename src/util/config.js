@@ -14,7 +14,7 @@ export const REGEX_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export const REGEX_PASSWORD = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
 export const REGEX_PHONE = /(\+)?(359|0)8[789]\d{1}(|-| )\d{3}(|-| )\d{3}/;
 export const REGEX_UPPERCASE = /[A-Z]/;
-export const REGEX_NAME = "/^[A-Za-z][A-Za-z'-]+([ A-Za-z][A-Za-z'-]+)*/";
+export const REGEX_NAME = /^[A-Z][A-Za-z'-]+([ A-Z][A-Za-z'-]+)*/;
 export const SPLIT_REGEX_UPPERCASE = /(?=[A-Z])/;
 export const FILL_IN_VALID_EMAIL_MSG = "Fill in a valid email address!";
 export const FILL_IN_VALID_PHONE_MSG =
@@ -52,3 +52,7 @@ export const GUEST_TRY_ORDER_PLAN_MSG =
   "Please, log in and then order a plan online! Thank you!";
 export const UNSUCCESSFUL_REQUEST_ORDER_PLAN =
   "Something went wrong with the request and the order has not been sent! Please, try again later.";
+export const INVALID_INPUT_DATA_ORDER_PLAN =
+  "Please, fill in the form with valid data!";
+export const INVALID_CLUB_DATA_ORDER_PLAN =
+  "Please, choose a valid club from the list!";
