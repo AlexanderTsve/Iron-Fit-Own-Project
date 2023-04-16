@@ -56,3 +56,5 @@ export const INVALID_INPUT_DATA_ORDER_PLAN =
   "Please, fill in the form with valid data!";
 export const INVALID_CLUB_DATA_ORDER_PLAN =
   "Please, choose a valid club from the list!";
+export const SUCCESSFUL_ORDER_MSG =
+  "The data has been sent successfully! Please, visit the chosen club in order to receive your card! Thank you!";

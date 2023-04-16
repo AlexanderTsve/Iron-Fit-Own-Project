@@ -2,12 +2,14 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import {
   submitAuthenticationLoginFormHandler,
   submitLoginFormDataHandler,
+  updateLoggedUser,
 } from "../util/helpers";
 import {
   POST_LOGIN_AUTH_URL,
   LOGIN_AUTH_ERROR,
   USERS_URL,
   LOGIN_URL_ERROR,
+  UNSUCCESSFUL_REQUEST_ORDER_PLAN,
 } from "../util/config";
 const initialState = {
   loggedUserEmail: "",
@@ -17,6 +19,7 @@ const initialState = {
   isRejected: false,
   isChecked: false,
   errorLogin: "",
+  orderData: {},
 };
 export const loginUser = createAsyncThunk(
   "activeUser/login",
@@ -33,6 +36,20 @@ export const loginUser = createAsyncThunk(
       const response = await submitLoginFormDataHandler(
         USERS_URL,
         LOGIN_URL_ERROR
+      );
+      return Object.values(response).find((user) => user.email === emailInput);
+    } catch (err) {
+      return rejectWithValue(err.message);
+    }
+  }
+);
+export const updateLoggedInUser = createAsyncThunk(
+  "activeUser/update",
+  async ({ emailInput, passwordInput }, { rejectWithValue }) => {
+    try {
+      const response = await updateLoggedUser(
+        USERS_URL,
+        UNSUCCESSFUL_REQUEST_ORDER_PLAN
       );
       return Object.values(response).find((user) => user.email === emailInput);
     } catch (err) {
@@ -59,6 +76,7 @@ export const activeUserSlice = createSlice({
         isLogged: true,
         loggedUserEmail: payload.loggedUserEmail,
         loggedUserPhone: payload.loggedUserPhone,
+        orderData: payload.orderData || {},
       };
     },
   },
@@ -70,6 +88,7 @@ export const activeUserSlice = createSlice({
       state.isLoading = false;
       state.loggedUserEmail = payload.email;
       state.loggedUserPhone = payload.phone;
+      state.orderData = payload.orderData || {};
       state.isLogged = true;
     });
     builder.addCase(loginUser.rejected, (state, { payload }) => {
@@ -77,6 +96,22 @@ export const activeUserSlice = createSlice({
       state.errorLogin = payload;
       state.loggedUserEmail = "";
       state.loggedUserPhone = "";
+      state.orderData = {};
+      state.isLogged = false;
+      state.isLoading = false;
+    });
+    builder.addCase(updateLoggedInUser.fulfilled, (state, { payload }) => {
+      state.loggedUserEmail = payload.email;
+      state.loggedUserPhone = payload.phone;
+      state.orderData = payload.orderData;
+      state.isLogged = true;
+    });
+    builder.addCase(updateLoggedInUser.rejected, (state, { payload }) => {
+      state.isRejected = true;
+      state.errorLogin = payload;
+      state.loggedUserEmail = "";
+      state.loggedUserPhone = "";
+      state.orderData = {};
       state.isLogged = false;
       state.isLoading = false;
     });

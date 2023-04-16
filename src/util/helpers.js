@@ -83,6 +83,14 @@ export const submitLoginFormDataHandler = async (url, error) => {
     throw error;
   }
 };
+export const updateLoggedUser = async (url, error) => {
+  try {
+    const data = await makeGetApiCall(url, error);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
 export const getClubs = async (url, error) => {
   try {
     const data = await makeGetApiCall(url, error);
@@ -112,12 +120,13 @@ export const updateUserOrderData = async (
   userId,
   dataPlan,
   dataUser,
+  dataClub,
   error
 ) => {
   try {
     await makePostApiCall(
       url.replace(".json", `/${userId}/orderData.json`),
-      { dataPlan, dataUser },
+      { dataPlan, dataUser, dataClub },
       error
     );
   } catch (error) {
