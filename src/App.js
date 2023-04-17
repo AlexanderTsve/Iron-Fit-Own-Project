@@ -2,7 +2,7 @@ import "./App.css";
 import RootLayout from "./pages/RootLayout/RootLayout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ClubsPage from "./pages/ClubsPage/ClubsPage";
-import ClientProfilePage from "./pages/ClientProfilePage/ClientProfilePage";
+import ProfilePage from "./pages/ClientProfilePage/ProfilePage";
 import EquipmentPage from "./pages/EquipmentPage/EquipmentPage";
 import PricesPage from "./pages//PricesPage/PricesPage";
 import TimetablesPage from "./pages/TimetablesPage/TimetablesPage";
@@ -33,7 +33,7 @@ function App() {
       children: user.isLogged
         ? [
             { index: true, element: <ClubsPage /> },
-            { path: "/profile", element: <ClientProfilePage /> },
+            { path: "/profile", element: <ProfilePage /> },
             { path: "/equipment", element: <EquipmentPage /> },
             { path: "/prices", element: <PricesPage /> },
             { path: "/timetables", element: <TimetablesPage /> },
@@ -42,6 +42,7 @@ function App() {
           ]
         : [
             { index: true, element: <ClubsPage /> },
+            { path: "/profile", element: <ClubsPage /> },
             { path: "/equipment", element: <EquipmentPage /> },
             { path: "/prices", element: <PricesPage /> },
             { path: "/timetables", element: <TimetablesPage /> },

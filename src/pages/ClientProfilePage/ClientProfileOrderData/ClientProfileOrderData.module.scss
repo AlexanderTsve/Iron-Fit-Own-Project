@@ -1,0 +1,14 @@
+@import "../../../custom.scss";
+.order-data{
+    &-container{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-family: $fonts;
+    }
+    &-title{
+        text-decoration: underline;
+        font-style: italic;
+        color: $dark-violet;
+    }
+}
