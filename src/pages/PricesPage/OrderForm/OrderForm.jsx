@@ -13,7 +13,7 @@ import {
 } from "../../../util/config";
 import CustomButton from "../../../components/Buttons/Button";
 import { useState, useRef, useEffect, Fragment, useCallback } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import {
   getPrices,
   getUsers,
@@ -22,6 +22,7 @@ import {
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import MessageModal from "../../../components/MessageModal/MessageModal";
+import { updateLoggedInUser } from "../../../store/active-user-slice";
 const OrderForm = ({ plan, hideOrderForm }) => {
   const [startDate, setStartDate] = useState(new Date());
   const [showMessageModal, setShowMessageModal] = useState(false);
@@ -33,6 +34,7 @@ const OrderForm = ({ plan, hideOrderForm }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formIsValid, setFormIsValid] = useState(false);
   const user = useSelector((state) => state.activeUser);
+  const dispatch = useDispatch();
   const firstNameRef = useRef();
   const lastNameRef = useRef();
   const clubsRef = useRef();
@@ -46,7 +48,7 @@ const OrderForm = ({ plan, hideOrderForm }) => {
     hideOrderForm();
   };
   const hideMessageModalHandler = () => {
-    if (isSuccess) {
+    if (isSuccess || Object.keys(user.orderData).length > 0) {
       hideModalHandler();
     }
     if (!isSuccess) {
@@ -110,12 +112,14 @@ const OrderForm = ({ plan, hideOrderForm }) => {
       setIsLoading(false);
       setIsSuccess(true);
       setSuccessMessage(SUCCESSFUL_ORDER_MSG);
+      const email = user.loggedUserEmail;
+      dispatch(updateLoggedInUser({ email }));
     } catch (err) {
       setIsLoading(false);
       setIsRejected(true);
       setError(err.message);
     }
-  }, [plan, user.loggedUserEmail, startDate]);
+  }, [plan, user.loggedUserEmail, startDate, dispatch]);
   useEffect(() => {
     if (isLoading) {
       sendOrderDataHandler();
@@ -128,9 +132,20 @@ const OrderForm = ({ plan, hideOrderForm }) => {
   }, [formIsValid]);
   useEffect(() => {
     if (isSubmitted) {
-      validateForm();
+      if (Object.keys(user.orderData).length === 0) {
+        validateForm();
+      }
+      if (Object.keys(user.orderData).length > 0) {
+        setIsRejected(true);
+        setError(
+          `You have ordered a plan already. In order to change your current plan you should visit club
+            ${Object.values(user.orderData)[0].dataClub}!
+          `
+        );
+        setShowMessageModal(true);
+      }
     }
-  }, [isSubmitted]);
+  }, [isSubmitted, user.orderData]);
   const submitOrderFormHandler = async (e) => {
     e.preventDefault();
     setIsSubmitted(true);

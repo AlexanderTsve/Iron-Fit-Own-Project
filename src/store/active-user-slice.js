@@ -45,13 +45,13 @@ export const loginUser = createAsyncThunk(
 );
 export const updateLoggedInUser = createAsyncThunk(
   "activeUser/update",
-  async ({ emailInput, passwordInput }, { rejectWithValue }) => {
+  async ({ email }, { rejectWithValue }) => {
     try {
       const response = await updateLoggedUser(
         USERS_URL,
         UNSUCCESSFUL_REQUEST_ORDER_PLAN
       );
-      return Object.values(response).find((user) => user.email === emailInput);
+      return Object.values(response).find((user) => user.email === email);
     } catch (err) {
       return rejectWithValue(err.message);
     }
