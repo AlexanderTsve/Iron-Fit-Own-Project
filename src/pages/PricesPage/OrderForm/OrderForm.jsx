@@ -12,7 +12,7 @@ import {
   SUCCESSFUL_ORDER_MSG,
 } from "../../../util/config";
 import CustomButton from "../../../components/Buttons/Button";
-import { useState, useRef, useEffect, Fragment, useCallback } from "react";
+import { useReducer, useRef, useEffect, Fragment, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getPrices,
@@ -23,16 +23,75 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import MessageModal from "../../../components/MessageModal/MessageModal";
 import { updateLoggedInUser } from "../../../store/active-user-slice";
+const initFormState = {
+  startDate: new Date(),
+  showMessageModal: false,
+  isRejected: false,
+  error: "",
+  isLoading: false,
+  isSuccess: false,
+  successMessage: "",
+  isSubmitted: false,
+  formIsValid: false,
+  hasActivePlan: false,
+};
+const formReducer = (state, action) => {
+  if (action.type === "SET_DATE") {
+    return { ...state, startDate: action.date };
+  }
+  if (action.type === "RESET_FORM") {
+    return initFormState;
+  }
+  if (action.type === "FORM_IS_VALID") {
+    return { ...state, showMessageModal: true, formIsValid: true };
+  }
+  if (action.type === "FORM_IS_INVALID") {
+    return {
+      ...state,
+      showMessageModal: true,
+      isRejected: true,
+      error: action.error,
+    };
+  }
+  if (action.type === "SEND_ORDER_FORM") {
+    return {
+      ...state,
+      isLoading: false,
+      isSuccess: true,
+      successMessage: action.successMessage,
+    };
+  }
+  if (action.type === "UNSUCCESSFUL_REQUEST") {
+    return {
+      ...state,
+      isLoading: false,
+      isRejected: true,
+      error: action.error,
+    };
+  }
+  if (action.type === "LOADING_REQUEST") {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }
+  if (action.type === "USER_HAS_ACTIVE_PLAN") {
+    return {
+      ...state,
+      hasActivePlan: true,
+      showMessageModal: true,
+    };
+  }
+  if (action.type === "SUBMIT_FORM") {
+    return { ...state, isSubmitted: true };
+  }
+  return initFormState;
+};
 const OrderForm = ({ plan, hideOrderForm }) => {
-  const [startDate, setStartDate] = useState(new Date());
-  const [showMessageModal, setShowMessageModal] = useState(false);
-  const [isRejected, setIsRejected] = useState(false);
-  const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formIsValid, setFormIsValid] = useState(false);
+  const [formState, dispatchFormAction] = useReducer(
+    formReducer,
+    initFormState
+  );
   const user = useSelector((state) => state.activeUser);
   const dispatch = useDispatch();
   const firstNameRef = useRef();
@@ -42,23 +101,17 @@ const OrderForm = ({ plan, hideOrderForm }) => {
     firstNameRef.current.focus();
   }, []);
   const changeDateHandler = (date) => {
-    setStartDate(date);
+    dispatchFormAction({ type: "SET_DATE", date });
   };
   const hideModalHandler = () => {
     hideOrderForm();
   };
   const hideMessageModalHandler = () => {
-    if (isSuccess || Object.keys(user.orderData).length > 0) {
+    if (formState.isSuccess || formState.hasActivePlan) {
       hideModalHandler();
     }
-    if (!isSuccess) {
-      setShowMessageModal(false);
-      setIsLoading(false);
-      setIsRejected(false);
-      setError("");
-      setIsSubmitted(false);
-      setFormIsValid(false);
-      setSuccessMessage("");
+    if (!formState.isSuccess) {
+      dispatchFormAction({ type: "RESET_FORM" });
     }
   };
   const validateForm = () => {
@@ -78,13 +131,10 @@ const OrderForm = ({ plan, hideOrderForm }) => {
         }
       }
       if (formIsValid) {
-        setFormIsValid(true);
+        dispatchFormAction({ type: "FORM_IS_VALID" });
       }
     } catch (err) {
-      setError(err.message);
-      setIsRejected(true);
-    } finally {
-      setShowMessageModal(true);
+      dispatchFormAction({ type: "FORM_IS_INVALID", error: err.message });
     }
   };
   const sendOrderDataHandler = useCallback(async () => {
@@ -97,6 +147,7 @@ const OrderForm = ({ plan, hideOrderForm }) => {
       const currentUser = Object.entries(users).find(
         (array) => array[1].email === user.loggedUserEmail
       );
+      const date = formState.startDate;
       await updateUserOrderData(
         USERS_URL,
         currentUser[0],
@@ -104,77 +155,79 @@ const OrderForm = ({ plan, hideOrderForm }) => {
         {
           firstName: firstNameRef.current.value,
           lastName: lastNameRef.current.value,
-          startDate,
+          date,
         },
         clubsRef.current.value,
         UNSUCCESSFUL_REQUEST_ORDER_PLAN
       );
-      setIsLoading(false);
-      setIsSuccess(true);
-      setSuccessMessage(SUCCESSFUL_ORDER_MSG);
+      dispatchFormAction({
+        type: "SEND_ORDER_FORM",
+        successMessage: SUCCESSFUL_ORDER_MSG,
+      });
       const email = user.loggedUserEmail;
       dispatch(updateLoggedInUser({ email }));
     } catch (err) {
-      setIsLoading(false);
-      setIsRejected(true);
-      setError(err.message);
+      dispatchFormAction({ type: "UNSUCCESSFUL_REQUEST", error: err.message });
     }
-  }, [plan, user.loggedUserEmail, startDate, dispatch]);
+  }, [dispatch, formState.startDate, plan, user.loggedUserEmail]);
   useEffect(() => {
-    if (isLoading) {
+    if (formState.isLoading) {
       sendOrderDataHandler();
     }
-  }, [isLoading, sendOrderDataHandler]);
+  }, [formState.isLoading, sendOrderDataHandler]);
   useEffect(() => {
-    if (formIsValid) {
-      setIsLoading(true);
+    if (formState.formIsValid) {
+      dispatchFormAction({ type: "LOADING_REQUEST" });
     }
-  }, [formIsValid]);
+  }, [formState.formIsValid]);
   useEffect(() => {
-    if (isSubmitted) {
-      if (Object.keys(user.orderData).length === 0) {
-        validateForm();
-      }
-      if (Object.keys(user.orderData).length > 0) {
-        setIsRejected(true);
-        setError(
-          `You have ordered a plan already. In order to change your current plan you should visit club
-            ${Object.values(user.orderData)[0].dataClub}!
-          `
-        );
-        setShowMessageModal(true);
-      }
+    if (formState.isSubmitted) {
+      validateForm();
     }
-  }, [isSubmitted, user.orderData]);
+  }, [formState.isSubmitted]);
   const submitOrderFormHandler = async (e) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    if (Object.keys(user.orderData).length > 0) {
+      dispatchFormAction({ type: "USER_HAS_ACTIVE_PLAN" });
+    }
+    if (Object.keys(user.orderData).length === 0) {
+      dispatchFormAction({ type: "SUBMIT_FORM" });
+    }
   };
   return (
     <Fragment>
-      {showMessageModal && isLoading && (
+      {formState.showMessageModal && formState.isLoading && (
         <MessageModal
           message={LOADING_MSG}
-          showMessageModal={showMessageModal}
+          showMessageModal={formState.showMessageModal}
           hideMessageModal={hideMessageModalHandler}
         />
       )}
-      {showMessageModal && isRejected && (
+      {formState.showMessageModal && formState.isRejected && (
         <MessageModal
-          message={error}
-          showMessageModal={showMessageModal}
+          message={formState.error}
+          showMessageModal={formState.showMessageModal}
           hideMessageModal={hideMessageModalHandler}
         />
       )}
-      {showMessageModal && isSuccess && (
+      {formState.showMessageModal && formState.isSuccess && (
         <MessageModal
-          message={successMessage}
-          showMessageModal={showMessageModal}
+          message={formState.successMessage}
+          showMessageModal={formState.showMessageModal}
+          hideMessageModal={hideMessageModalHandler}
+        />
+      )}
+      {formState.showMessageModal && formState.hasActivePlan && (
+        <MessageModal
+          message={`You have ordered a plan already. In order to change your current plan you should visit club
+         ${Object.values(user.orderData)[0].dataClub}!
+       `}
+          showMessageModal={formState.showMessageModal}
           hideMessageModal={hideMessageModalHandler}
         />
       )}
       (
-      {!isSuccess && (
+      {!formState.isSuccess && !formState.hasActivePlan && (
         <form
           onSubmit={submitOrderFormHandler}
           className={styles["order_modal"]}
@@ -226,7 +279,7 @@ const OrderForm = ({ plan, hideOrderForm }) => {
               </label>
               <DatePicker
                 wrapperClassName={styles.datePicker}
-                selected={startDate}
+                selected={formState.startDate}
                 onChange={changeDateHandler}
                 minDate={new Date()}
               />
