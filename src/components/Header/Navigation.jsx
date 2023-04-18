@@ -7,6 +7,7 @@ import { actions } from "../../store/active-user-slice";
 import { changeDropdownAction } from "../../store/active-dropdown-slice.js";
 import ClubsDropdown from "./ClubsDropdown";
 import NavigationLink from "./NavigationLink";
+import { useLocation, useNavigate } from "react-router-dom";
 const Navigation = ({
   dropdownList,
   showLoginModal,
@@ -14,6 +15,8 @@ const Navigation = ({
 }) => {
   const [showClubsDropdown, setShowClubsDropdown] = useState(false);
   const [showTimetablesDropdown, setShowTimetablesDropdown] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
   const user = useSelector((state) => state.activeUser);
   const dispatch = useDispatch();
   const showClubsDropdownHandler = () => {
@@ -34,6 +37,9 @@ const Navigation = ({
   };
   const logoutHandler = () => {
     dispatch(actions.reset());
+    if (location.pathname === "/profile") {
+      navigate("/");
+    }
   };
   return (
     <header>

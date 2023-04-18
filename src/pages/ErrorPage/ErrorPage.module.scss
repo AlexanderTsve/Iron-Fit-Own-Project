@@ -1,0 +1,18 @@
+@import "../../custom.scss";
+.container {
+  overflow: hidden;
+  background-color: $red;
+  height: 100vh;
+  text-align: center;
+  color: $dark-violet;
+}
+.title {
+  padding-top: 12rem;
+  margin: 0;
+}
+.image {
+  border-radius: 1rem;
+}
+.button-container {
+  margin-top: 1rem;
+}

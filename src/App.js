@@ -42,7 +42,6 @@ function App() {
           ]
         : [
             { index: true, element: <ClubsPage /> },
-            { path: "/profile", element: <ClubsPage /> },
             { path: "/equipment", element: <EquipmentPage /> },
             { path: "/prices", element: <PricesPage /> },
             { path: "/timetables", element: <TimetablesPage /> },
