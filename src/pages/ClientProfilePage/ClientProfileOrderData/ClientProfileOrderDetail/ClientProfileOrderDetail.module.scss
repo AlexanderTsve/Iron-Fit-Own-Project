@@ -1,0 +1,15 @@
+@import "../../../../custom.scss";
+.info {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3rem;
+  color: $dark-violet;
+  &-title {
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+  &-describe {
+    margin-top: 0.5rem;
+    text-decoration: underline;
+  }
+}

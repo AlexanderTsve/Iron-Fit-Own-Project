@@ -1,14 +1,28 @@
 @import "../../../custom.scss";
-.order-data{
-    &-container{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        font-family: $fonts;
-    }
-    &-title{
+.order-data {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: $fonts;
+    &-no-plan {
+      font-size: 1.5rem;
+      font-style: italic;
+      &-link {
+        cursor: pointer;
         text-decoration: underline;
-        font-style: italic;
-        color: $dark-violet;
+      }
+      &-link:hover {
+        color: $light-green;
+      }
+      &-link:active {
+        color: $color-primary;
+      }
     }
+  }
+  &-title {
+    text-decoration: underline;
+    font-style: italic;
+    color: $dark-violet;
+  }
 }

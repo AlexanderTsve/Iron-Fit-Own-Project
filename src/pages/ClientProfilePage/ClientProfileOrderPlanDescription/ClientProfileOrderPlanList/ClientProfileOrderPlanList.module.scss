@@ -1,0 +1,17 @@
+@import "../../../../custom.scss";
+.characteristics {
+  color: $dark-violet;
+  font-family: $fonts;
+  &-title {
+    font-style: italic;
+    text-decoration: underline;
+  }
+  &-container {
+    &-list {
+      &-item {
+        list-style-type: square;
+        padding: 0.5rem;
+      }
+    }
+  }
+}
