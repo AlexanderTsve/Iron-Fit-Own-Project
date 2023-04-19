@@ -10,7 +10,9 @@ const ErrorPage = () => {
     <div className={styles.container}>
       <div>
         <h1 className={styles.title}>Oops!</h1>
-        <p>We are really sorry, but the page you requested cannot be found. </p>
+        <p className={styles.para}>
+          We are really sorry, but the page you requested cannot be found.{" "}
+        </p>
         <img
           className={styles.image}
           src={require("../../assets/images/error.png")}

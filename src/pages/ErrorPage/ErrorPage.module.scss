@@ -1,7 +1,7 @@
 @import "../../custom.scss";
 .container {
   overflow: hidden;
-  background-color: $red;
+  background-color: $magenta;
   height: 100vh;
   text-align: center;
   color: $dark-violet;
@@ -9,6 +9,9 @@
 .title {
   padding-top: 12rem;
   margin: 0;
+}
+.para, .title{
+    color:$light-grey;
 }
 .image {
   border-radius: 1rem;
