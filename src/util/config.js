@@ -10,6 +10,24 @@ export const CLUB_NAMES = [
   "Varna Planet Mall",
   "Varna Levski",
 ];
+export const WORK_HOURS = [
+  "7.00",
+  "8.00",
+  "9.00",
+  "10.00",
+  "11.00",
+  "12.00",
+  "13.00",
+  "14.00",
+  "15.00",
+  "16.00",
+  "17.00",
+  "18.00",
+  "19.00",
+  "20.00",
+  "21.00",
+  "22.00",
+];
 export const REGEX_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export const REGEX_PASSWORD = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
 export const REGEX_PHONE = /(\+)?(359|0)8[789]\d{1}(|-| )\d{3}(|-| )\d{3}/;
@@ -32,6 +50,8 @@ export const CLUBS_URL =
   "https://react-http-requests-81638-default-rtdb.europe-west1.firebasedatabase.app/iron-fit-clubs.json";
 export const PRICES_URL =
   "https://react-http-requests-81638-default-rtdb.europe-west1.firebasedatabase.app/iron-fit-prices.json";
+export const TIMETABLES_URL =
+  "https://react-http-requests-81638-default-rtdb.europe-west1.firebasedatabase.app/iron-fit-timetables.json";
 export const REGISTRATION_AUTH_ERROR =
   "Unsuccessful registration! Please, check if the email has been used for registration already or try again later!";
 export const REGISTRATION_URL_ERROR =

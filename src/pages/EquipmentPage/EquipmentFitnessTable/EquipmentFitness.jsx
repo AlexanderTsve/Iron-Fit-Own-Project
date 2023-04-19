@@ -3,9 +3,9 @@ import { useEffect } from "react";
 import { Fragment } from "react";
 import useGetClubsRequest from "../../../hooks/use-get-clubs-request";
 import ErrorMessage from "../../../components/ErrorMessage/ErrorMessage";
-import TableTitle from "../../../components/TableTitle/TableTitle";
-import TableHeader from "../../../components/TableHeader/TableHeader";
-import TableRow from "../../../components/TableRow/TableRow";
+import TableHeader from "../TableHeader/TableHeader";
+import TableRow from "../TableRow/TableRow";
+import TableTitle from "../TableTitle/TableTitle";
 const EquipmentFitness = () => {
   const clubsObj = useGetClubsRequest();
   useEffect(() => {

@@ -2,9 +2,9 @@ import styles from "./EquipmentWellness.module.scss";
 import useGetClubsRequest from "../../../hooks/use-get-clubs-request";
 import { useEffect } from "react";
 import { Fragment } from "react";
-import TableTitle from "../../../components/TableTitle/TableTitle";
-import TableHeader from "../../../components/TableHeader/TableHeader";
-import TableRow from "../../../components/TableRow/TableRow";
+import TableHeader from "../TableHeader/TableHeader";
+import TableRow from "../TableRow/TableRow";
+import TableTitle from "../TableTitle/TableTitle";
 const EquipmentWellness = () => {
   const clubsObj = useGetClubsRequest();
   useEffect(() => {

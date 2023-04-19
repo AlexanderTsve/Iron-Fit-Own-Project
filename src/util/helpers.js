@@ -115,6 +115,14 @@ export const getUsers = async (url, error) => {
     throw error;
   }
 };
+export const getTimetables = async (url, error) => {
+  try {
+    const data = await makeGetApiCall(url, error);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
 export const updateUserOrderData = async (
   url,
   userId,
