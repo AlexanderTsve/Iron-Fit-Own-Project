@@ -11,9 +11,9 @@ export const CLUB_NAMES = [
   "Varna Levski",
 ];
 export const WORK_HOURS = [
-  "7.00",
-  "8.00",
-  "9.00",
+  "07.00",
+  "08.00",
+  "09.00",
   "10.00",
   "11.00",
   "12.00",

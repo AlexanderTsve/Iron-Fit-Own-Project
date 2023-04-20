@@ -68,14 +68,26 @@ const ClubTimetablePage = () => {
             <tbody>
               {WORK_HOURS.map((hour, index) => {
                 return (
-                  <tr key={index}>
-                    <td>{hour}</td>
+                  <tr key={index} className={styles["hour-row"]}>
+                    <td className={styles["hour-row-start"]}>{hour}</td>
+                    {Array.of(
+                      "Monday",
+                      "Tuesday",
+                      "Wednesday",
+                      "Thursday",
+                      "Friday",
+                      "Saturday"
+                    ).map((day, index) => (
+                      <td key={index} className={styles["hour-row-content"]}>
+                        {timetable.timetable
+                          .filter((days) => days.day === day)[0]
+                          .activities.find((activity) => activity.hour === hour)
+                          ?.activity || "-"}
+                      </td>
+                    ))}
                   </tr>
                 );
               })}
-              {/* <tr>
-                <td>{WORK_HOURS[0]}</td>
-              </tr> */}
             </tbody>
           </table>
         </div>
