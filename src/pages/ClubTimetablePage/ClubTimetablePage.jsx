@@ -50,7 +50,7 @@ const ClubTimetablePage = () => {
           <h1 className={styles["table-title"]}>{timetable.name} Timetable</h1>
           <table className={styles["table-content"]}>
             <thead>
-              <tr>
+              <tr className={styles["table-content-main-row"]}>
                 <th className={styles.describe}>
                   <span className={styles["describe-item-hour"]}>hour</span>
                   <span className={styles["diagonal-cross"]} />

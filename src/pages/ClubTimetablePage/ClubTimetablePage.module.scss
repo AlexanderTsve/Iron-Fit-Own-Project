@@ -29,6 +29,14 @@
     }
     &-content{
       border: solid 0.2rem $color-primary;
+      &-main-row{
+        color: $dark-violet;
+        font-style: italic;
+        &:hover{
+          background-color: $dark-violet;
+          color: $light-grey;
+        }
+      }
     }
 }
 .describe{
@@ -62,6 +70,7 @@ transform-origin: right;
 }
 .hour-row{
   font-size: 1.2rem;
+  color: $dark-violet;
   &-start{
     text-align: center;
     border: solid 0.2rem $color-primary;
@@ -69,5 +78,9 @@ transform-origin: right;
   &-content{
     text-align: center;
     border: solid 0.2rem $color-primary;
+  }
+  &:hover{
+    background-color: $dark-violet;
+    color: $light-grey;
   }
 }
