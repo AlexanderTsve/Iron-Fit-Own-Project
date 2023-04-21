@@ -38,6 +38,26 @@
         }
       }
     }
+    &-activity-dropdown{
+      display: flex;
+    flex-direction: column;
+    height: 5rem;
+    align-items: center;
+    margin-bottom: 2rem;
+    &_label{
+      margin-top: 1rem;
+      color: $dark-violet;
+      font-family: $fonts;
+      font-size: 1.25rem;
+    }
+    &_list {
+      padding: 0.5rem;
+      font-family: $fonts;
+      font-size: 1.1rem;
+      border-radius: 0.3rem;
+      text-align: center;
+    }
+    }
 }
 .describe{
   width:7vw;

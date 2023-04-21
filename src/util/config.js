@@ -28,6 +28,16 @@ export const WORK_HOURS = [
   "21.00",
   "22.00",
 ];
+export const ACTIVITIES = [
+  "BOOTY",
+  "Tabata",
+  "Pilates",
+  "LES MILLS GRIT",
+  "LES MILLS CORE",
+  "Folklore Dances",
+  "Yoga",
+  "Stretching",
+];
 export const REGEX_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export const REGEX_PASSWORD = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
 export const REGEX_PHONE = /(\+)?(359|0)8[789]\d{1}(|-| )\d{3}(|-| )\d{3}/;
