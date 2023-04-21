@@ -38,6 +38,9 @@ const ClubCard = ({ info }) => {
   const navigateToClubDetailsPageHandler = () => {
     navigate(`/clubs/${info.name}`);
   };
+  const navigateToClubTimetablePageHandler = () => {
+    navigate(`/timetables/${info.name}`);
+  };
   return (
     <div className={styles.card}>
       <div className={styles["card-header"]}>
@@ -55,7 +58,7 @@ const ClubCard = ({ info }) => {
         <span>Tel.: {info.phone}</span>
       </div>
       <div className={styles["card-btns"]}>
-        <Button>Timetable</Button>
+        <Button onClick={navigateToClubTimetablePageHandler}>Timetable</Button>
         <Button onClick={navigateToClubDetailsPageHandler}>More Info</Button>
       </div>
     </div>

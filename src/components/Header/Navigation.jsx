@@ -8,6 +8,8 @@ import { changeDropdownAction } from "../../store/active-dropdown-slice.js";
 import ClubsDropdown from "./ClubsDropdown";
 import NavigationLink from "./NavigationLink";
 import { useLocation, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 const Navigation = ({
   dropdownList,
   showLoginModal,
@@ -41,6 +43,7 @@ const Navigation = ({
       navigate("/");
     }
   };
+  const toggleResponsiveNavigation = () => {};
   return (
     <header>
       <nav>
@@ -93,6 +96,9 @@ const Navigation = ({
               Sign Up
             </li>
           )}
+          <li onClick={toggleResponsiveNavigation}>
+            <FontAwesomeIcon icon={faBars} color="white" />
+          </li>
         </ul>
       </nav>
     </header>

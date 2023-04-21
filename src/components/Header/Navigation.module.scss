@@ -1,61 +1,312 @@
 @import "../../custom.scss";
-header {
-  width: 100vw;
-  background-color: $color-primary;
-  opacity: 0.9;
-  font-family: $fonts;
-  font-size: 1.5rem;
-  position: fixed;
-  top: 0;
-  z-index: 100;
-  nav {
-    display: flex;
-    justify-content: space-between;
-    .welcome-para {
-      color: $light-grey;
-      margin-top: 2rem;
-      font-style: italic;
-      font-size: 2rem;
-    }
-    .header__logo {
-      height: 6.6rem;
-      margin: 0.5rem;
-    }
-    .nav {
-      &__list {
-        list-style: none;
-        display: flex;
-        align-items: center;
+@media only screen and (min-width: 1000px) {
+  header {
+    width: 100vw;
+    background-color: $color-primary;
+    opacity: 0.9;
+    font-family: $fonts;
+    font-size: 1.5rem;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    nav {
+      display: flex;
+      justify-content: space-around;
+      .welcome-para {
+        color: $light-grey;
+        margin-top: 2rem;
+        font-style: italic;
+        font-size: 2rem;
       }
-      &__item {
-        margin: 0 1.5rem 1.5rem 1rem;
-        cursor: pointer;
-        text-decoration: underline;
-        color: $color-secondary;
-        &:hover {
-          color: $light-green;
+      .header__logo {
+        height: 6.6rem;
+        margin: 0.5rem;
+      }
+      .nav {
+        &__list {
+          list-style: none;
+          display: flex;
+          align-items: center;
+        }
+        &__item {
+          margin: 0 1.5rem 1.5rem 1rem;
+          cursor: pointer;
           text-decoration: underline;
-        }
-        &:active {
-          color: $dark-violet;
-        }
-        a:link {
           color: $color-secondary;
-          text-decoration: none;
-        }
-        a:visited {
-          color: $color-secondary;
-          text-decoration: none;
-        }
-        a:hover {
-          color: $light-green;
-          text-decoration: underline;
-        }
-        a:active {
-          color: $dark-violet;
-          text-decoration: underline;
+          &:hover {
+            color: $light-green;
+            text-decoration: underline;
+          }
+          &:active {
+            color: $dark-violet;
+          }
+          a:link {
+            color: $color-secondary;
+            text-decoration: none;
+          }
+          a:visited {
+            color: $color-secondary;
+            text-decoration: none;
+          }
+          a:hover {
+            color: $light-green;
+            text-decoration: underline;
+          }
+          a:active {
+            color: $dark-violet;
+            text-decoration: underline;
+          }
         }
       }
     }
   }
 }
+@media only screen and (max-width: 999px) {
+  header {
+    width: 100vw;
+    background-color: $color-primary;
+    opacity: 0.9;
+    font-family: $fonts;
+    font-size: 1.5rem;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    nav {
+      display: flex;
+      justify-content: space-around;
+      .welcome-para {
+        color: $light-grey;
+        margin-top: 2rem;
+        font-style: italic;
+        font-size: 2rem;
+      }
+      .header__logo {
+        height: 6.6rem;
+        margin: 0.5rem;
+      }
+      .nav {
+        &__list {
+          list-style: none;
+          display: flex;
+          align-items: center;
+        }
+        &__item {
+          margin: 0 1.5rem 1.5rem 1rem;
+          cursor: pointer;
+          text-decoration: underline;
+          color: $color-secondary;
+          &:hover {
+            color: $light-green;
+            text-decoration: underline;
+          }
+          &:active {
+            color: $dark-violet;
+          }
+          a:link {
+            color: $color-secondary;
+            text-decoration: none;
+          }
+          a:visited {
+            color: $color-secondary;
+            text-decoration: none;
+          }
+          a:hover {
+            color: $light-green;
+            text-decoration: underline;
+          }
+          a:active {
+            color: $dark-violet;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 767px) {
+  header {
+    width: 100vw;
+    background-color: $color-primary;
+    opacity: 0.9;
+    font-family: $fonts;
+    font-size: 1.5rem;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    nav {
+      display: flex;
+      justify-content: space-around;
+      .welcome-para {
+        color: $light-grey;
+        margin-top: 2rem;
+        font-style: italic;
+        font-size: 2rem;
+      }
+      .header__logo {
+        height: 6.6rem;
+        margin: 0.5rem;
+      }
+      .nav {
+        &__list {
+          list-style: none;
+          display: flex;
+          align-items: center;
+        }
+        &__item {
+          margin: 0 1.5rem 1.5rem 1rem;
+          cursor: pointer;
+          text-decoration: underline;
+          color: $color-secondary;
+          &:hover {
+            color: $light-green;
+            text-decoration: underline;
+          }
+          &:active {
+            color: $dark-violet;
+          }
+          a:link {
+            color: $color-secondary;
+            text-decoration: none;
+          }
+          a:visited {
+            color: $color-secondary;
+            text-decoration: none;
+          }
+          a:hover {
+            color: $light-green;
+            text-decoration: underline;
+          }
+          a:active {
+            color: $dark-violet;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  header {
+    width: 100vw;
+    background-color: $color-primary;
+    opacity: 0.9;
+    font-family: $fonts;
+    font-size: 1.5rem;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    nav {
+      display: flex;
+      justify-content: space-around;
+      .welcome-para {
+        color: $light-grey;
+        margin-top: 2rem;
+        font-style: italic;
+        font-size: 2rem;
+      }
+      .header__logo {
+        height: 6.6rem;
+        margin: 0.5rem;
+      }
+      .nav {
+        &__list {
+          list-style: none;
+          display: flex;
+          align-items: center;
+        }
+        &__item {
+          margin: 0 1.5rem 1.5rem 1rem;
+          cursor: pointer;
+          text-decoration: underline;
+          color: $color-secondary;
+          &:hover {
+            color: $light-green;
+            text-decoration: underline;
+          }
+          &:active {
+            color: $dark-violet;
+          }
+          a:link {
+            color: $color-secondary;
+            text-decoration: none;
+          }
+          a:visited {
+            color: $color-secondary;
+            text-decoration: none;
+          }
+          a:hover {
+            color: $light-green;
+            text-decoration: underline;
+          }
+          a:active {
+            color: $dark-violet;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 400px) {
+  header {
+    width: 100vw;
+    background-color: $color-primary;
+    opacity: 0.9;
+    font-family: $fonts;
+    font-size: 1.5rem;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    nav {
+      display: flex;
+      justify-content: space-around;
+      .welcome-para {
+        color: $light-grey;
+        margin-top: 2rem;
+        font-style: italic;
+        font-size: 2rem;
+      }
+      .header__logo {
+        height: 6.6rem;
+        margin: 0.5rem;
+      }
+      .nav {
+        &__list {
+          list-style: none;
+          display: flex;
+          align-items: center;
+        }
+        &__item {
+          margin: 0 1.5rem 1.5rem 1rem;
+          cursor: pointer;
+          text-decoration: underline;
+          color: $color-secondary;
+          &:hover {
+            color: $light-green;
+            text-decoration: underline;
+          }
+          &:active {
+            color: $dark-violet;
+          }
+          a:link {
+            color: $color-secondary;
+            text-decoration: none;
+          }
+          a:visited {
+            color: $color-secondary;
+            text-decoration: none;
+          }
+          a:hover {
+            color: $light-green;
+            text-decoration: underline;
+          }
+          a:active {
+            color: $dark-violet;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
