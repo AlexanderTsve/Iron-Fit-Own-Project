@@ -30,6 +30,9 @@ const RegistrationModal = ({
   submitRegistrationForm,
 }) => {
   const userRef = useRef();
+  const phoneRef = useRef();
+  const pswRef = useRef();
+  const confirmedPswRef = useRef();
   const userEmailInput = useRegistrationRegInput(REGEX_EMAIL);
   const userPhoneInput = useRegistrationRegInput(REGEX_PHONE);
   const passwordInputs = useRegistrationPasswordInput();
@@ -52,8 +55,17 @@ const RegistrationModal = ({
     userEmailInput.isValidInput,
     userPhoneInput.isValidInput,
   ]);
-  const goToLoginHandler = (e) => {
-    e.preventDefault();
+  const loseFocusHandler = () => {
+    if (
+      document.activeElement === userRef.current ||
+      document.activeElement === phoneRef.current ||
+      document.activeElement === pswRef.current ||
+      document.activeElement === confirmedPswRef.current
+    ) {
+      document.activeElement.blur();
+    }
+  };
+  const goToLoginHandler = () => {
     hideModal();
     showLoginModal();
   };
@@ -151,6 +163,7 @@ const RegistrationModal = ({
                 </InputField>
                 <br />
                 <InputField
+                  reference={phoneRef}
                   required={true}
                   userInput={userPhoneInput.userInput}
                   isValidInput={userPhoneInput.isValidInput}
@@ -171,6 +184,7 @@ const RegistrationModal = ({
                 </InputField>
                 <br />
                 <InputField
+                  reference={pswRef}
                   controlId="password_input"
                   userInput={passwordInputs.userPasswordState.passwordValue}
                   isValidInput={
@@ -193,6 +207,7 @@ const RegistrationModal = ({
                 </InputField>
                 <br />
                 <InputField
+                  reference={confirmedPswRef}
                   controlId="confirmed_psw_input"
                   userInput={passwordInputs.userPasswordState.confirmedPswValue}
                   isValidInput={
@@ -225,7 +240,11 @@ const RegistrationModal = ({
                 </CustomButton>
                 <p
                   className={styles["link-to-login"]}
-                  onClick={goToLoginHandler}
+                  onMouseEnter={loseFocusHandler}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    goToLoginHandler();
+                  }}
                 >
                   Have an account already? Log in &raquo;
                 </p>
