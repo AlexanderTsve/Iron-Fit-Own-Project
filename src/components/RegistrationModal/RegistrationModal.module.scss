@@ -2,7 +2,7 @@
 .registration_modal {
   padding-top: 0;
   position: fixed;
-  z-index: 11;
+  z-index: 110;
   left: 0;
   top: 0;
   width: 100vw;
@@ -11,9 +11,9 @@
   &_content {
     background-color: $color-primary;
     color: $violet;
-    height: 36.5rem;
+    height: 41.5rem;
     width: 18vw;
-    margin: 10rem auto;
+    margin: 3rem auto;
     border: 3px solid $light-grey;
     border-radius: 1rem;
     &_form {
