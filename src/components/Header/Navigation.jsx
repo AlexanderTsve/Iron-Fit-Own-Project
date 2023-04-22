@@ -96,9 +96,9 @@ const Navigation = ({
               Sign Up
             </li>
           )}
-          <li onClick={toggleResponsiveNavigation}>
+          {/* <li onClick={toggleResponsiveNavigation}>
             <FontAwesomeIcon icon={faBars} color="white" />
-          </li>
+          </li> */}
         </ul>
       </nav>
     </header>
