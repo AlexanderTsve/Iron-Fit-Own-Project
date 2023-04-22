@@ -93,6 +93,7 @@ const LoginModal = ({ showModal, hideModal, showRegistrationModal }) => {
           show={showModal}
           onHide={showModal}
           className={styles["login_modal"]}
+          backdrop="static"
         >
           <div className={styles["login_modal_content"]}>
             <div className={styles["close_btn"]}>

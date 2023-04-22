@@ -52,7 +52,8 @@ const RegistrationModal = ({
     userEmailInput.isValidInput,
     userPhoneInput.isValidInput,
   ]);
-  const goToLoginHandler = () => {
+  const goToLoginHandler = (e) => {
+    e.preventDefault();
     hideModal();
     showLoginModal();
   };
@@ -106,7 +107,8 @@ const RegistrationModal = ({
         <Modal
           size="sm"
           show={showModal}
-          onHide={showModal}
+          onHide={hideModal}
+          backdrop="static"
           className={styles["registration_modal"]}
         >
           <div className={styles["registration_modal_content"]}>
