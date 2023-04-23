@@ -18,9 +18,9 @@ const ClientProfileOrderData = () => {
             onClick={navigateToPricesPageHandler}
             className={styles["order-data-container-no-plan-link"]}
           >
-            Prices page
+            page Prices
           </span>
-          &nbsp; in order to order one!
+          &nbsp; to order one!
         </p>
       )}
       {Object.keys(user.orderData).length > 0 && (

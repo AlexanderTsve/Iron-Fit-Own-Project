@@ -6,9 +6,10 @@ const ClientProfileOrderPlanDescription = () => {
   return (
     <div className={styles.container}>
       <ClientProfileOrderPlanList title="You get" property="characteristics" />
-      {Object.values(user.orderData)[0].dataPlan.bonuses.length > 0 && (
-        <ClientProfileOrderPlanList title="Bonuses" property="bonuses" />
-      )}
+      {Object.values(user.orderData)[0].dataPlan.bonuses &&
+        Object.values(user.orderData)[0].dataPlan.bonuses.length > 0 && (
+          <ClientProfileOrderPlanList title="Bonuses" property="bonuses" />
+        )}
     </div>
   );
 };
