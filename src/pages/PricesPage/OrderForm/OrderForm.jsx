@@ -23,6 +23,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import MessageModal from "../../../components/MessageModal/MessageModal";
 import { updateLoggedInUser } from "../../../store/active-user-slice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 const initFormState = {
   startDate: new Date(),
   showMessageModal: false,
@@ -275,6 +277,11 @@ const OrderForm = ({ plan, hideOrderForm }) => {
             </div>
             <div className={styles["order_modal_component"]}>
               <label className={styles["order_modal_component_label"]}>
+                <FontAwesomeIcon
+                  icon={faCalendarDays}
+                  color="#82b440"
+                  style={{ paddingRight: "0.3rem" }}
+                />
                 Choose starting date:
               </label>
               <DatePicker
