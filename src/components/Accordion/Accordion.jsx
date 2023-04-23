@@ -1,7 +1,7 @@
 import styles from "./Accordion.module.scss";
-import { useState, Fragment } from "react";
+import { useState, Fragment, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 import { REGEX_UPPERCASE, SPLIT_REGEX_UPPERCASE } from "../../util/config";
@@ -9,6 +9,10 @@ const Accordion = ({ type, property }) => {
   const [toggleAccordion, setToggleAccordion] = useState(false);
   const clubsList = useSelector((state) => state.clubsList);
   const params = useParams();
+  const location = useLocation();
+  useEffect(() => {
+    setToggleAccordion(false);
+  }, [location]);
   const toggleAccordionHandler = () => {
     toggleAccordion ? setToggleAccordion(false) : setToggleAccordion(true);
   };

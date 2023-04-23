@@ -44,10 +44,18 @@ const Navigation = ({
     }
   };
   const toggleResponsiveNavigation = () => {};
+  const navigateToClubsPageHandler = () => {
+    navigate("/");
+  };
   return (
     <header>
       <nav>
-        <img src={logo} alt="Logo" className={styles["header__logo"]} />
+        <img
+          src={logo}
+          alt="Logo"
+          className={styles["header__logo"]}
+          onClick={navigateToClubsPageHandler}
+        />
         <p className={styles["welcome-para"]}>
           Welcome, {user.isLogged ? user.loggedUserEmail : "Guest"}!
         </p>

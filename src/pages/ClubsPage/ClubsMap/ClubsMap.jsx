@@ -89,7 +89,7 @@ const ClubsMap = () => {
           const lat = coords[1];
           const lon = coords[0];
           centeredLocation = fromLonLat([lon, lat]);
-          map.getView().setZoom(map.getView().getZoom() + 1);
+          map.getView().setZoom(map.getView().getZoom() + 0.5);
           map.getView().setCenter(centeredLocation);
         }
       });
