@@ -1,5 +1,8 @@
 import Form from "react-bootstrap/Form";
+import { InputGroup } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../assets/images/logo.png";
 import CustomButton from "../Buttons/Button";
 import MessageModal from "../MessageModal/MessageModal";
@@ -20,6 +23,17 @@ const LoginModal = ({ showModal, hideModal, showRegistrationModal }) => {
   const [checked, setChecked] = useState(false);
   const [message, setMessage] = useState("");
   const [hideMessageModal, setHideMessageModal] = useState(false);
+  const [toggleHover, setToggleHover] = useState(false);
+  const [visiblePsw, setVisiblePsw] = useState(false);
+  const hoverHandler = () => {
+    setToggleHover(true);
+  };
+  const unhoverHandler = () => {
+    setToggleHover(false);
+  };
+  const toggleVisiblePswHandler = () => {
+    setVisiblePsw(!visiblePsw);
+  };
   const goToRegistrationHandler = () => {
     hideModal();
     showRegistrationModal();
@@ -112,6 +126,7 @@ const LoginModal = ({ showModal, hideModal, showRegistrationModal }) => {
                 <Form.Group className="mb-3" controlId="formLoginEmail">
                   <Form.Label>Enter your email:</Form.Label>
                   <Form.Control
+                    className={styles["reg-input"]}
                     required
                     type="text"
                     placeholder="Email..."
@@ -122,12 +137,33 @@ const LoginModal = ({ showModal, hideModal, showRegistrationModal }) => {
                 <br />
                 <Form.Group className="mb-3" controlId="formLoginPassword">
                   <Form.Label>Enter your password:</Form.Label>
-                  <Form.Control
-                    required
-                    type="password"
-                    placeholder="Password..."
-                    onChange={changePasswordInputHandler}
-                  />
+                  <InputGroup>
+                    <Form.Control
+                      className={styles["password-input"]}
+                      required
+                      type={visiblePsw ? "text" : "password"}
+                      placeholder="Password..."
+                      onChange={changePasswordInputHandler}
+                    />
+                    <InputGroup.Text>
+                      <span
+                        className={styles.icon}
+                        onMouseEnter={hoverHandler}
+                        onMouseLeave={unhoverHandler}
+                        onClick={toggleVisiblePswHandler}
+                      >
+                        <FontAwesomeIcon
+                          className="eye-icon"
+                          icon={visiblePsw ? faEye : faEyeSlash}
+                          style={
+                            toggleHover
+                              ? { color: "green", cursor: "pointer" }
+                              : { color: "white", cursor: "pointer" }
+                          }
+                        />
+                      </span>
+                    </InputGroup.Text>
+                  </InputGroup>
                 </Form.Group>
                 <br />
                 <Form.Group className="mb-3" controlId="formLoginCheckbox">
