@@ -173,6 +173,18 @@ const OrderForm = ({ plan, hideOrderForm }) => {
     }
   }, [dispatch, formState.startDate, plan, user.loggedUserEmail]);
   useEffect(() => {
+    if (localStorage.getItem("rememberedIronFitUser")) {
+      localStorage.setItem(
+        "rememberedIronFitUser",
+        JSON.stringify({
+          loggedUserEmail: user.loggedUserEmail,
+          loggedUserPhone: user.loggedUserPhone,
+          orderData: user.orderData,
+        })
+      );
+    }
+  }, [user.loggedUserEmail, user.loggedUserPhone, user.orderData]);
+  useEffect(() => {
     if (formState.isLoading) {
       sendOrderDataHandler();
     }

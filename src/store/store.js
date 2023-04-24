@@ -10,13 +10,12 @@ const togglePersistUserMiddleware = (storeAPI) => (next) => (action) => {
       JSON.stringify({
         loggedUserEmail: state.activeUser.loggedUserEmail,
         loggedUserPhone: state.activeUser.loggedUserPhone,
+        orderData: state.activeUser.orderData || {},
       })
     );
   }
   if (action.type === "activeUser/reset") {
     localStorage.removeItem("rememberedIronFitUser");
-  }
-  if (action.type === "activeUser/activateRememberedUser") {
   }
   return next(action);
 };

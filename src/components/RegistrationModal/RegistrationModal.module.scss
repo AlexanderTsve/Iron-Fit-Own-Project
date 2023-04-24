@@ -5,13 +5,13 @@
   z-index: 110;
   left: 0;
   top: 0;
+  height: 100vh;
   width: 100vw;
   background-color: $dark-violet;
   opacity: 0.95;
   &_content {
     background-color: $color-primary;
     color: $violet;
-    height: 41.5rem;
     width: 18vw;
     margin: 3rem auto;
     border: 3px solid $light-grey;
