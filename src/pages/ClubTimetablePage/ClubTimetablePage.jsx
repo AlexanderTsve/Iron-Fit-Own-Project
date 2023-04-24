@@ -9,6 +9,7 @@ import {
   ACTIVITIES,
 } from "../../util/config.js";
 import styles from "./ClubTimetablePage.module.scss";
+import DropdownFilter from "../../components/DropdownFilter/DropdownFilter.jsx";
 const ClubTimetablePage = () => {
   const [timetable, setTimetable] = useState({});
   const [filteredTimetable, setFilteredTimetable] = useState({});
@@ -74,23 +75,12 @@ const ClubTimetablePage = () => {
       {!isLoading && !isRejected && Object.keys(timetable).length > 0 && (
         <div className={styles.table}>
           <h1 className={styles["table-title"]}>{timetable.name} Timetable</h1>
-          <div className={styles["table-activity-dropdown"]}>
-            <label className={styles["table-activity-dropdown_label"]}>
-              Choose activity:
-            </label>
-            <select
-              ref={activityRef}
-              onChange={filterByActivityHandler}
-              className={styles["table-activity-dropdown_list"]}
-            >
-              <option value="none"></option>
-              {ACTIVITIES.map((activity, index) => (
-                <option value={activity} key={index}>
-                  {activity}
-                </option>
-              ))}
-            </select>
-          </div>
+          <DropdownFilter
+            label="Choose activity:"
+            options={ACTIVITIES}
+            onChange={filterByActivityHandler}
+            reference={activityRef}
+          />
           <table className={styles["table-content"]}>
             <thead>
               <tr className={styles["table-content-main-row"]}>

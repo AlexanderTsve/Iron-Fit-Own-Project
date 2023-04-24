@@ -1,105 +1,86 @@
 @import "../../custom.scss";
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10rem;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10rem;
 }
 .spinner {
-    margin: 12rem auto;
-    text-align: center;
-    border: 16px solid $light-grey;
-    border-radius: 50%;
-    border-top: 16px solid $color-primary;
-    width: 6rem;
-    height: 6rem;
-    animation: rotate 2s infinite linear;
-  }
-.table{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin: 12rem auto;
+  text-align: center;
+  border: 16px solid $light-grey;
+  border-radius: 50%;
+  border-top: 16px solid $color-primary;
+  width: 6rem;
+  height: 6rem;
+  animation: rotate 2s infinite linear;
+}
+.table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $fonts;
+  margin-bottom: 2rem;
+  &-title {
     font-family: $fonts;
-    margin-bottom: 2rem;
-    &-title{
-      font-family: $fonts;
+    font-style: italic;
+    text-decoration: underline;
+    color: $dark-violet;
+  }
+  &-content {
+    border: solid 0.2rem $color-primary;
+    &-main-row {
+      color: $dark-violet;
       font-style: italic;
-      text-decoration: underline;
-      color: $dark-violet;  
-    }
-    &-content{
-      border: solid 0.2rem $color-primary;
-      &-main-row{
-        color: $dark-violet;
-        font-style: italic;
-        &:hover{
-          background-color: $dark-violet;
-          color: $light-grey;
-        }
+      &:hover {
+        background-color: $dark-violet;
+        color: $light-grey;
       }
     }
-    &-activity-dropdown{
-      display: flex;
-    flex-direction: column;
-    height: 5rem;
-    align-items: center;
-    margin-bottom: 2rem;
-    &_label{
-      margin-top: 1rem;
-      color: $dark-violet;
-      font-family: $fonts;
-      font-size: 1.25rem;
-    }
-    &_list {
-      padding: 0.5rem;
-      font-family: $fonts;
-      font-size: 1.1rem;
-      border-radius: 0.3rem;
-      text-align: center;
-    }
-    }
+  }
 }
-.describe{
-  width:7vw;
+.describe {
+  width: 7vw;
   display: flex;
   justify-content: center;
-  &-item{
-   &-day, &-hour{
-    position: relative;
-    width: 3rem;
-    font-size: 1.3rem;
-  }
-  &-hour{
-    margin-top: 1rem;
-  }
+  &-item {
+    &-day,
+    &-hour {
+      position: relative;
+      width: 3rem;
+      font-size: 1.3rem;
+    }
+    &-hour {
+      margin-top: 1rem;
+    }
   }
 }
 .diagonal-cross {
   position: absolute;
-  width:6vw;
+  width: 6vw;
   height: 2rem;
   display: block;
   border-bottom: 3px solid $color-primary;
-transform: rotate(17deg);
-transform-origin: right;
+  transform: rotate(17deg);
+  transform-origin: right;
 }
-.weekday{
-  width:10vw;
+.weekday {
+  width: 10vw;
   font-size: 1.5rem;
   border: solid 0.2rem $color-primary;
 }
-.hour-row{
+.hour-row {
   font-size: 1.2rem;
   color: $dark-violet;
-  &-start{
+  &-start {
     text-align: center;
     border: solid 0.2rem $color-primary;
   }
-  &-content{
+  &-content {
     text-align: center;
     border: solid 0.2rem $color-primary;
   }
-  &:hover{
+  &:hover {
     background-color: $dark-violet;
     color: $light-grey;
   }

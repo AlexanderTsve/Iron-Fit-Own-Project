@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 const TimetablesPage = () => {
   const navigate = useNavigate();
   const navigateToCurrentTimetableHandler = (e) => {
-    console.log(e.target.value);
     navigate(`/timetables/${e.target.value}`);
   };
   return (

@@ -38,6 +38,19 @@ export const ACTIVITIES = [
   "Yoga",
   "Stretching",
 ];
+export const EQUIPMENT = [
+  "BALANCE TOOLS",
+  "DUMBBELLS",
+  "FITNESS MACHINES",
+  "ROPES",
+  "STEPPERS",
+  "FUNCTIONAL ZONE",
+  "STRETCHING ZONE",
+  "TREADMILLS",
+  "BOXING RING",
+  "WORKOUT CONSTRUCTION",
+];
+export const WELLNESS = ["SAUNA", "STEAM BATH"];
 export const REGEX_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export const REGEX_PASSWORD = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
 export const REGEX_PHONE =
