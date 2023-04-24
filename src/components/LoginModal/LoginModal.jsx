@@ -1,7 +1,6 @@
 import Form from "react-bootstrap/Form";
 import { InputGroup } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../assets/images/logo.png";
 import CustomButton from "../Buttons/Button";
@@ -10,6 +9,7 @@ import styles from "./LoginModal.module.scss";
 import { useEffect, useRef, useState, Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser, actions } from "../../store/active-user-slice";
+import EyeIcon from "../EyeIcon/EyeIcon";
 import {
   INVALID_LOGIN_INPUTS,
   LOADING_MSG,
@@ -23,14 +23,7 @@ const LoginModal = ({ showModal, hideModal, showRegistrationModal }) => {
   const [checked, setChecked] = useState(false);
   const [message, setMessage] = useState("");
   const [hideMessageModal, setHideMessageModal] = useState(false);
-  const [toggleHover, setToggleHover] = useState(false);
   const [visiblePsw, setVisiblePsw] = useState(false);
-  const hoverHandler = () => {
-    setToggleHover(true);
-  };
-  const unhoverHandler = () => {
-    setToggleHover(false);
-  };
   const toggleVisiblePswHandler = () => {
     setVisiblePsw(!visiblePsw);
   };
@@ -145,24 +138,10 @@ const LoginModal = ({ showModal, hideModal, showRegistrationModal }) => {
                       placeholder="Password..."
                       onChange={changePasswordInputHandler}
                     />
-                    <InputGroup.Text>
-                      <span
-                        className={styles.icon}
-                        onMouseEnter={hoverHandler}
-                        onMouseLeave={unhoverHandler}
-                        onClick={toggleVisiblePswHandler}
-                      >
-                        <FontAwesomeIcon
-                          className="eye-icon"
-                          icon={visiblePsw ? faEye : faEyeSlash}
-                          style={
-                            toggleHover
-                              ? { color: "green", cursor: "pointer" }
-                              : { color: "white", cursor: "pointer" }
-                          }
-                        />
-                      </span>
-                    </InputGroup.Text>
+                    <EyeIcon
+                      onClick={toggleVisiblePswHandler}
+                      icon={visiblePsw ? faEye : faEyeSlash}
+                    />
                   </InputGroup>
                 </Form.Group>
                 <br />

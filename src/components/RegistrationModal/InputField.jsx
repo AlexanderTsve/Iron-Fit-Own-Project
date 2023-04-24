@@ -3,19 +3,12 @@ import InputIcon from "./InputIcon";
 import InputInstruction from "./InputInstruction";
 import { Fragment } from "react";
 import { InputGroup } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import styles from "./InputField.module.scss";
+import EyeIcon from "../EyeIcon/EyeIcon";
 const InputField = (props) => {
-  const [toggleHover, setToggleHover] = useState(false);
   const [visiblePsw, setVisiblePsw] = useState(false);
-  const hoverHandler = () => {
-    setToggleHover(true);
-  };
-  const unhoverHandler = () => {
-    setToggleHover(false);
-  };
   const toggleVisiblePswHandler = () => {
     setVisiblePsw(!visiblePsw);
   };
@@ -50,24 +43,10 @@ const InputField = (props) => {
             }
           />
           {props.placeholder === "Password..." ? (
-            <InputGroup.Text>
-              <span
-                className={styles.icon}
-                onMouseEnter={hoverHandler}
-                onMouseLeave={unhoverHandler}
-                onClick={toggleVisiblePswHandler}
-              >
-                <FontAwesomeIcon
-                  className="eye-icon"
-                  icon={visiblePsw ? faEye : faEyeSlash}
-                  style={
-                    toggleHover
-                      ? { color: "green", cursor: "pointer" }
-                      : { color: "white", cursor: "pointer" }
-                  }
-                />
-              </span>
-            </InputGroup.Text>
+            <EyeIcon
+              onClick={toggleVisiblePswHandler}
+              icon={visiblePsw ? faEye : faEyeSlash}
+            />
           ) : (
             ""
           )}
