@@ -85,7 +85,9 @@ const PricesPlans = () => {
         <Fragment>
           <div className={styles["header-container"]}>
             <h1 className={styles["header-container-title"]}>PRICE LIST</h1>
-            <h2>STUDIO CLASSES AND SAUNA/STEAMBATH INCLUDED</h2>
+            <h2 className={styles["header-container-title-note"]}>
+              STUDIO CLASSES AND SAUNA/STEAMBATH INCLUDED
+            </h2>
           </div>
           <div className={styles["price-list-container"]}>
             {prices.map((plan, index) => (

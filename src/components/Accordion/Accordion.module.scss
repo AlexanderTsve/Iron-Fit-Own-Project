@@ -25,7 +25,7 @@
 .panel {
   margin-bottom: 2rem;
   font-family: $fonts;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   width: 100vw;
   background-color: $light-green;
   color: $color-secondary;
@@ -38,6 +38,8 @@
       margin: 1rem;
       &-text {
         margin: 1rem;
+        font-family: $new-fonts;
+        font-weight: bold;
       }
     }
   }

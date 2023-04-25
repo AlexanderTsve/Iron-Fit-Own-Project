@@ -1,8 +1,9 @@
 @import "../../../../custom.scss";
 .characteristics {
   color: $dark-violet;
-  font-family: $fonts;
+  font-family: $new-fonts;
   &-title {
+    font-family: $fonts;
     font-style: italic;
     text-decoration: underline;
   }

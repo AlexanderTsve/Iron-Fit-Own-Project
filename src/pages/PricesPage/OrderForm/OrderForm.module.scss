@@ -27,20 +27,22 @@
     height: 5rem;
     align-items: center;
     &_label {
-      margin-top: 1rem;
+      margin: 1rem 0;
       color: $color-secondary;
-      font-family: $fonts;
+      font-family: $new-fonts;
+      font-weight: 300;
       font-size: 1.25rem;
     }
     &_input {
       border-radius: 0.5rem;
-      font-family: $fonts;
+      font-family: $new-fonts;
       font-size: 1.1rem;
       padding: 0.5rem;
     }
     &_list {
       padding: 0.5rem;
-      font-family: $fonts;
+      font-family: $new-fonts;
+      font-weight: bold;
       font-size: 1.1rem;
       border-radius: 0.3rem;
       text-align: center;
@@ -52,10 +54,14 @@
   div {
     input {
       padding: 0.5rem;
-      font-family: $fonts;
+      font-family: $new-fonts;
+      font-weight: bold;
       font-size: 1.1rem;
       text-align: center;
       cursor: pointer;
     }
   }
+}
+.btns {
+  margin-top: 1rem;
 }

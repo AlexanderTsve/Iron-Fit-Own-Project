@@ -4,7 +4,8 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    font-family: $fonts;
+    font-family: $new-fonts;
+    font-weight: bold;
     &-no-plan {
       font-size: 1.5rem;
       font-style: italic;
@@ -23,6 +24,7 @@
   &-title {
     text-decoration: underline;
     font-style: italic;
+    font-family: $fonts;
     color: $dark-violet;
   }
 }

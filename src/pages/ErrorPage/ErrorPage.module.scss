@@ -9,9 +9,16 @@
 .title {
   padding-top: 12rem;
   margin: 0;
+  font-family: $fonts;
+  font-style: italic;
 }
-.para, .title{
-    color:$light-grey;
+.para {
+  font-family: $new-fonts;
+  font-size: 1.1rem;
+}
+.para,
+.title {
+  color: $light-grey;
 }
 .image {
   border-radius: 1rem;

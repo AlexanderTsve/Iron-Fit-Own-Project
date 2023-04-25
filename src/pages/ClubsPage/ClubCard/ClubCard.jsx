@@ -51,11 +51,15 @@ const ClubCard = ({ info }) => {
             color={clubStatus ? "green" : "red"}
           />
         </p>
-        <span>Mon-Sat, {info.workingHours}</span>
+        <span className={styles["card-header-work-time"]}>
+          Mon-Sat, {info.workingHours}
+        </span>
       </div>
       <div className={styles["card-info"]}>
-        <span>Address: {info.address}</span>
-        <span>Tel.: {info.phone}</span>
+        <span className={styles["card-info-details"]}>
+          Address: {info.address}
+        </span>
+        <span className={styles["card-info-details"]}>Tel.: {info.phone}</span>
       </div>
       <div className={styles["card-btns"]}>
         <Button onClick={navigateToClubTimetablePageHandler}>Timetable</Button>

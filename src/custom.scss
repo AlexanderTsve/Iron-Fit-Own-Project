@@ -12,10 +12,17 @@ $magenta: #a62db4;
   font-family: myFont;
   src: url(../src/assets/fonts/Sportage-Demo/Sportage-Demo.otf);
 }
+@font-face {
+  font-family: arial-narrow;
+  src: url(../src/assets/fonts/Arial-Narrow/Arial-Narrow.ttf);
+}
 $fonts: myFont, Arial (sans-serif), Arial Black (sans-serif),
   Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
   Impact (sans-serif), Gill Sans (sans-serif);
 $secondary-fonts: Arial (sans-serif), Arial Black (sans-serif),
+  Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+  Impact (sans-serif), Gill Sans (sans-serif);
+$new-fonts: arial-narrow, Arial (sans-serif), Arial Black (sans-serif),
   Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
   Impact (sans-serif), Gill Sans (sans-serif);
 @keyframes rotate {

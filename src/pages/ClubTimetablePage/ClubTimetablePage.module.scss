@@ -70,8 +70,10 @@
   border: solid 0.2rem $color-primary;
 }
 .hour-row {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  font-family: $new-fonts;
   color: $dark-violet;
+  font-weight: bold;
   &-start {
     text-align: center;
     border: solid 0.2rem $color-primary;

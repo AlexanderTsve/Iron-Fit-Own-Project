@@ -6,9 +6,10 @@
     padding: 2rem 0.5rem;
   }
   &-type {
-    font-size: 1.4rem;
-    font-family: $fonts;
+    font-size: 1.1rem;
+    font-family: $new-fonts;
     color: $color-primary;
     text-decoration: underline;
+    font-weight: bold;
   }
 }

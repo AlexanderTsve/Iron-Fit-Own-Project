@@ -1,5 +1,5 @@
 @import "../../custom.scss";
-.container-dropdown{
+.container-dropdown {
   background-image: url("../../assets/images/group_photo.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -7,34 +7,35 @@
   margin: 9rem auto 1.5rem auto;
   display: flex;
   flex-direction: column;
-    width: 80vw;
-    align-items: center;
-    color: $dark-violet;
-    &-title{
-      font-family: $fonts;
-      font-style: italic;
-      text-decoration: underline;
-    }
-    &_label {
-        margin: 1rem;
-        font-family: $fonts;
-        font-size: 1.25rem;
-      }
-      &_list {
-        padding: 0.5rem;
-        font-family: $fonts;
-        font-size: 1.1rem;
-        border-radius: 0.3rem;
-        text-align: center;
-      }
+  width: 80vw;
+  align-items: center;
+  color: $dark-violet;
+  &-title {
+    font-family: $fonts;
+    font-style: italic;
+    text-decoration: underline;
+  }
+  &_label {
+    margin: 1rem;
+    font-family: $fonts;
+    font-size: 1.25rem;
+  }
+  &_list {
+    padding: 0.5rem;
+    font-family: $fonts;
+    font-size: 1.1rem;
+    border-radius: 0.3rem;
+    text-align: center;
+  }
 }
-.container{
+.container {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   width: 80vw;
-  &-para{
-    font-family: $fonts;
+  &-para {
+    font-family: $new-fonts;
     font-size: 1.2rem;
+    font-weight: bold;
   }
 }

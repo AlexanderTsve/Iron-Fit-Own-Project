@@ -28,15 +28,16 @@
           width: 14rem;
           margin: 0.3rem;
           color: $color-secondary;
-          font-family: $fonts;
-          font-size: 1.15rem;
+          font-family: $new-fonts;
+          font-size: 1.2rem;
           display: flex;
           justify-content: space-evenly;
         }
         input {
           border-radius: 0.5rem;
-          font-family: $fonts;
+          font-family: $new-fonts;
           font-size: 1.1rem;
+          font-weight: bold;
           padding: 0.3rem;
         }
         p {
@@ -61,8 +62,8 @@
   cursor: pointer;
   color: $light-grey;
   text-decoration: underline;
-  font-family: $fonts !important;
-  font-size: 1.2rem !important;
+  font-family: $new-fonts !important;
+  font-size: 1.1rem !important;
 }
 .link-to-login:hover {
   color: $light-green;

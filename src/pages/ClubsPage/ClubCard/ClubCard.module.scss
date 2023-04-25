@@ -12,20 +12,23 @@
     font-style: italic;
     color: $color-primary;
     text-decoration: underline;
-    span {
+    &-work-time {
+      font-weight: bold;
+      font-family: $new-fonts;
       margin-bottom: 1rem;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
   }
   &-info {
-    font-family: $fonts;
+    font-family: $new-fonts;
+    font-weight: bold;
     color: $color-primary;
     font-style: italic;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin: 0.5rem;
     display: flex;
     justify-content: space-between;
-    span {
+    &-details {
       margin-bottom: 1rem;
     }
   }

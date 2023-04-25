@@ -1,15 +1,18 @@
 @import "../../../custom.scss";
-.general-info{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    color: $dark-violet;
-    font-style: italic;
+.general-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: $dark-violet;
+  font-style: italic;
+  font-family: $new-fonts;
+  &-title {
+    text-decoration: underline;
     font-family: $fonts;
-    &-title{
-        text-decoration: underline;
-    }
-    &-email, &-phone{
-        font-size: 1.5rem;
-    }
+  }
+  &-email,
+  &-phone {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
 }

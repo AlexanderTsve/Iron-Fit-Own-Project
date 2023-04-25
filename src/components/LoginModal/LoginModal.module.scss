@@ -28,26 +28,27 @@
         label {
           margin: 1rem;
           color: $color-secondary;
-          font-family: $fonts;
-          font-size: 1.25rem;
+          font-family: $new-fonts;
+          font-size: 1.2rem;
         }
         input {
           border-radius: 0.5rem;
-          font-family: $fonts;
-          font-size: 1.25rem;
+          font-family: $new-fonts;
+          font-size: 1.1rem;
           padding: 0.5rem;
+          font-weight: bold;
         }
       }
     }
   }
 }
-.password-input{
+.password-input {
   width: 10rem;
 }
-.reg-input{
+.reg-input {
   width: 12rem;
 }
-.icon{
+.icon {
   margin-left: 0.2rem;
 }
 .login__logo {
@@ -61,8 +62,8 @@
   cursor: pointer;
   color: $light-grey;
   text-decoration: underline;
-  font-family: $fonts;
-  font-size: 1.05rem;
+  font-family: $new-fonts;
+  font-size: 1.1rem;
   font-style: italic;
 }
 .link-to-sign-up:hover {

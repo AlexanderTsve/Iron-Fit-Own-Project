@@ -14,10 +14,11 @@
     }
     &_list {
       padding: 0.5rem;
-      font-family: $fonts;
+      font-family: $new-fonts;
       font-size: 1.1rem;
       border-radius: 0.3rem;
       text-align: center;
+      font-weight: bold;
     }
   }
 }

@@ -303,7 +303,7 @@ const OrderForm = ({ plan, hideOrderForm }) => {
                 minDate={new Date()}
               />
             </div>
-            <div>
+            <div className={styles.btns}>
               <CustomButton onClick={hideModalHandler}>Cancel</CustomButton>
               <CustomButton type="submit">Submit</CustomButton>
             </div>
