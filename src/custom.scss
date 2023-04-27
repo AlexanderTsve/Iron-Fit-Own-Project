@@ -13,8 +13,8 @@ $magenta: #a62db4;
   src: url(../src/assets/fonts/Sportage-Demo/Sportage-Demo.otf);
 }
 @font-face {
-  font-family: arial-narrow;
-  src: url(../src/assets/fonts/Arial-Narrow/Arial-Narrow.ttf);
+  font-family: josefine-sans;
+  src: url(../src/assets/fonts/Josefine-Sans/JosefinSans-Regular.ttf);
 }
 $fonts: myFont, Arial (sans-serif), Arial Black (sans-serif),
   Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
@@ -22,7 +22,7 @@ $fonts: myFont, Arial (sans-serif), Arial Black (sans-serif),
 $secondary-fonts: Arial (sans-serif), Arial Black (sans-serif),
   Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
   Impact (sans-serif), Gill Sans (sans-serif);
-$new-fonts: arial-narrow, Arial (sans-serif), Arial Black (sans-serif),
+$new-fonts: josefine-sans, Arial (sans-serif), Arial Black (sans-serif),
   Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
   Impact (sans-serif), Gill Sans (sans-serif);
 @keyframes rotate {
