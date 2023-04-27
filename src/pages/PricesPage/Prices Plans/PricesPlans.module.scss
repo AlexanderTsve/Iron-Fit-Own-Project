@@ -1,78 +1,320 @@
 @import "../../../custom.scss";
-.header-container {
-  text-align: center;
-  font-family: $fonts;
-  color: $dark-violet;
-  &-title {
-    font-style: italic;
-    text-decoration: underline;
-    &-note {
-      font-family: $new-fonts;
-      font-weight: bold;
-      font-size: 1rem;
+@media only screen and (min-width: 1000px) {
+  .header-container {
+    text-align: center;
+    font-family: $fonts;
+    color: $dark-violet;
+    &-title {
+      font-style: italic;
+      text-decoration: underline;
+      &-note {
+        font-family: $new-fonts;
+        font-weight: bold;
+        font-size: 1rem;
+      }
     }
   }
-}
-.spinner {
-  margin: 12rem auto;
-  text-align: center;
-  border: 16px solid $light-grey;
-  border-radius: 50%;
-  border-top: 16px solid $color-primary;
-  width: 6rem;
-  height: 6rem;
-  animation: rotate 2s infinite linear;
-}
-.container {
-  margin-top: 11rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-.price-list {
-  &-container {
-    display: flex;
-    justify-content: space-around;
-    width: 100vw;
-    background-color: $light-grey;
+  .spinner {
+    margin: 12rem auto;
+    text-align: center;
+    border: 16px solid $light-grey;
+    border-radius: 50%;
+    border-top: 16px solid $color-primary;
+    width: 6rem;
+    height: 6rem;
+    animation: rotate 2s infinite linear;
   }
-  &-item {
-    margin: 3rem 0;
+  .container {
+    margin-top: 11rem;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 15vw;
-    border: solid $dark-violet 0.25rem;
-    border-radius: 0.5rem;
-    background-color: $pink;
-    font-family: $new-fonts;
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: $color-primary;
-    &-characteristics,
-    &-bonuses {
-      padding: 0;
+    overflow: hidden;
+  }
+  .price-list {
+    &-container {
+      display: flex;
+      justify-content: space-around;
+      width: 100vw;
+      background-color: $light-grey;
     }
-    &-term {
+    &-item {
+      margin: 3rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 20vw;
+      border: solid $dark-violet 0.25rem;
+      border-radius: 0.5rem;
+      background-color: $pink;
+      font-family: $new-fonts;
+      font-weight: bold;
       font-size: 1.2rem;
+      color: $color-primary;
+      &-characteristics,
+      &-bonuses {
+        padding: 0;
+      }
+      &-term {
+        font-size: 1.2rem;
+      }
+      &-name {
+        text-decoration: underline;
+        font-family: $fonts;
+      }
+      &-price {
+        font-size: 1.3rem;
+        font-style: italic;
+      }
+      &-characteristic,
+      &-bonus {
+        font-size: 1rem;
+        font-style: italic;
+        list-style: none;
+        padding: 0;
+        margin: 0.8rem 0 0 0;
+      }
     }
-    &-name {
+  }
+}
+@media only screen and (max-width: 999px) {
+  .header-container {
+    text-align: center;
+    font-family: $fonts;
+    color: $dark-violet;
+    &-title {
+      font-style: italic;
       text-decoration: underline;
-      font-family: $fonts;
+      &-note {
+        font-family: $new-fonts;
+        font-weight: bold;
+        font-size: 1rem;
+      }
     }
-    &-price {
-      font-size: 1.3rem;
-      font-style: italic;
+  }
+  .spinner {
+    margin: 12rem auto;
+    text-align: center;
+    border: 16px solid $light-grey;
+    border-radius: 50%;
+    border-top: 16px solid $color-primary;
+    width: 6rem;
+    height: 6rem;
+    animation: rotate 2s infinite linear;
+  }
+  .container {
+    margin-top: 11rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .price-list {
+    &-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100vw;
+      background-color: $light-grey;
     }
-    &-characteristic,
-    &-bonus {
-      font-size: 1rem;
+    &-item {
+      margin: 3rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 60vw;
+      border: solid $dark-violet 0.25rem;
+      border-radius: 0.5rem;
+      background-color: $pink;
+      font-family: $new-fonts;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: $color-primary;
+      &-characteristics,
+      &-bonuses {
+        padding: 0;
+      }
+      &-term {
+        font-size: 1.2rem;
+      }
+      &-name {
+        text-decoration: underline;
+        font-family: $fonts;
+      }
+      &-price {
+        font-size: 1.3rem;
+        font-style: italic;
+      }
+      &-characteristic,
+      &-bonus {
+        font-size: 1rem;
+        font-style: italic;
+        list-style: none;
+        padding: 0;
+        margin: 0.8rem 0 0 0;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 767px) {
+  .header-container {
+    text-align: center;
+    font-family: $fonts;
+    color: $dark-violet;
+    &-title {
       font-style: italic;
-      list-style: none;
-      padding: 0;
-      margin: 0.8rem 0 0 0;
+      text-decoration: underline;
+      &-note {
+        font-family: $new-fonts;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+    }
+  }
+  .spinner {
+    margin: 12rem auto;
+    text-align: center;
+    border: 16px solid $light-grey;
+    border-radius: 50%;
+    border-top: 16px solid $color-primary;
+    width: 6rem;
+    height: 6rem;
+    animation: rotate 2s infinite linear;
+  }
+  .container {
+    margin-top: 11rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .price-list {
+    &-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100vw;
+      background-color: $light-grey;
+    }
+    &-item {
+      margin: 3rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 75vw;
+      border: solid $dark-violet 0.25rem;
+      border-radius: 0.5rem;
+      background-color: $pink;
+      font-family: $new-fonts;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: $color-primary;
+      &-characteristics,
+      &-bonuses {
+        padding: 0;
+      }
+      &-term {
+        font-size: 1.2rem;
+      }
+      &-name {
+        text-decoration: underline;
+        font-family: $fonts;
+      }
+      &-price {
+        font-size: 1.3rem;
+        font-style: italic;
+      }
+      &-characteristic,
+      &-bonus {
+        font-size: 1rem;
+        font-style: italic;
+        list-style: none;
+        padding: 0;
+        margin: 0.8rem 0 0 0;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .header-container {
+    text-align: center;
+    font-family: $fonts;
+    color: $dark-violet;
+    &-title {
+      font-style: italic;
+      text-decoration: underline;
+      &-note {
+        font-family: $new-fonts;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+    }
+  }
+  .spinner {
+    margin: 12rem auto;
+    text-align: center;
+    border: 16px solid $light-grey;
+    border-radius: 50%;
+    border-top: 16px solid $color-primary;
+    width: 6rem;
+    height: 6rem;
+    animation: rotate 2s infinite linear;
+  }
+  .container {
+    margin-top: 11rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .price-list {
+    &-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100vw;
+      background-color: $light-grey;
+    }
+    &-item {
+      margin: 3rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 95vw;
+      border: solid $dark-violet 0.25rem;
+      border-radius: 0.5rem;
+      background-color: $pink;
+      font-family: $new-fonts;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: $color-primary;
+      &-characteristics,
+      &-bonuses {
+        padding: 0;
+      }
+      &-term {
+        font-size: 1.2rem;
+      }
+      &-name {
+        text-decoration: underline;
+        font-family: $fonts;
+      }
+      &-price {
+        font-size: 1.3rem;
+        font-style: italic;
+      }
+      &-characteristic,
+      &-bonus {
+        font-size: 1rem;
+        font-style: italic;
+        list-style: none;
+        padding: 0;
+        margin: 0.8rem 0 0 0;
+      }
     }
   }
 }

@@ -1,12 +1,69 @@
 @import "../../../../custom.scss";
-.info-para {
-  margin-top: 2.5rem;
-  span {
-    font-family: $new-fonts;
-    font-weight: bold;
-    text-decoration: underline;
-    font-size: 1.5rem;
-    color: $dark-violet;
-    font-style: italic;
+@media only screen and (min-width: 1000px) {
+  .info-para {
+    margin-top: 2.5rem;
+    span {
+      font-family: $new-fonts;
+      font-weight: bold;
+      text-decoration: underline;
+      font-size: 1.5rem;
+      color: $dark-violet;
+      font-style: italic;
+    }
+  }
+}
+@media only screen and (max-width: 999px) {
+  .info-para {
+    margin-top: 2.5rem;
+    span {
+      font-family: $new-fonts;
+      font-weight: bold;
+      text-decoration: underline;
+      font-size: 1.5rem;
+      color: $dark-violet;
+      font-style: italic;
+    }
+  }
+}
+@media only screen and (max-width: 767px) {
+  .info-para {
+    margin-top: 2.5rem;
+    span {
+      font-family: $new-fonts;
+      font-weight: bold;
+      text-decoration: underline;
+      font-size: 1.5rem;
+      color: $dark-violet;
+      font-style: italic;
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .info-para {
+    margin-top: 2.5rem;
+    span {
+      font-family: $new-fonts;
+      font-weight: bold;
+      text-decoration: underline;
+      font-size: 1.5rem;
+      color: $dark-violet;
+      font-style: italic;
+    }
+  }
+}
+@media only screen and (max-width: 400px) {
+  .info-para {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    span {
+      margin-bottom: 0.5rem;
+      font-family: $new-fonts;
+      font-weight: bold;
+      text-decoration: underline;
+      font-size: 1.1rem;
+      color: $dark-violet;
+      font-style: italic;
+    }
   }
 }
