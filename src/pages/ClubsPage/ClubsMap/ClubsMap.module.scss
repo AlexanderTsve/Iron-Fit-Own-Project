@@ -1,25 +1,80 @@
 @import "../../../custom.scss";
-.map-element {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+@import "../../../../node_modules/ol/ol.css";
+@media only screen and (min-width: 1000px) {
+  .map-element {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .map-container {
+    width: 60vw;
+    height: 25rem;
+    margin-bottom: 5rem;
+    border: 2px $violet solid;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  .spinner {
+    margin: 12rem auto;
+    text-align: center;
+    border: 16px solid $light-grey;
+    border-radius: 50%;
+    border-top: 16px solid $color-primary;
+    width: 6rem;
+    height: 6rem;
+    animation: rotate 2s infinite linear;
+  }
 }
-.map-container {
-  width: 50vw;
-  height: 25rem;
-  margin-bottom: 5rem;
-  border: 2px $violet solid;
-  border-radius: 1rem;
-  overflow: hidden;
+@media only screen and (max-width: 999px) {
+  .map-element {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .map-container {
+    width: 75vw;
+    height: 25rem;
+    margin-bottom: 5rem;
+    border: 2px $violet solid;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  .spinner {
+    margin: 12rem auto;
+    text-align: center;
+    border: 16px solid $light-grey;
+    border-radius: 50%;
+    border-top: 16px solid $color-primary;
+    width: 6rem;
+    height: 6rem;
+    animation: rotate 2s infinite linear;
+  }
 }
-.spinner {
-  margin: 12rem auto;
-  text-align: center;
-  border: 16px solid $light-grey;
-  border-radius: 50%;
-  border-top: 16px solid $color-primary;
-  width: 6rem;
-  height: 6rem;
-  animation: rotate 2s infinite linear;
+@media only screen and (max-width: 600px) {
+  .map-element {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .map-container {
+    width: 95vw;
+    height: 25rem;
+    margin-bottom: 5rem;
+    border: 2px $violet solid;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  .spinner {
+    margin: 12rem auto;
+    text-align: center;
+    border: 16px solid $light-grey;
+    border-radius: 50%;
+    border-top: 16px solid $color-primary;
+    width: 6rem;
+    height: 6rem;
+    animation: rotate 2s infinite linear;
+  }
 }

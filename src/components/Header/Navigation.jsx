@@ -17,6 +17,7 @@ const Navigation = ({
 }) => {
   const [showClubsDropdown, setShowClubsDropdown] = useState(false);
   const [showTimetablesDropdown, setShowTimetablesDropdown] = useState(false);
+  const [showResponsiveNav, setShowResponsiveNav] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const user = useSelector((state) => state.activeUser);
@@ -43,7 +44,9 @@ const Navigation = ({
       navigate("/");
     }
   };
-  const toggleResponsiveNavigation = () => {};
+  const toggleResponsiveNavigation = () => {
+    setShowResponsiveNav(!showResponsiveNav);
+  };
   const navigateToClubsPageHandler = () => {
     navigate("/");
   };
@@ -104,9 +107,57 @@ const Navigation = ({
               Sign Up
             </li>
           )}
-          {/* <li onClick={toggleResponsiveNavigation}>
+          <li
+            className={styles["responsive-navbar"]}
+            onClick={toggleResponsiveNavigation}
+          >
             <FontAwesomeIcon icon={faBars} color="white" />
-          </li> */}
+            {showResponsiveNav && (
+              <ul className={styles["responsive-navbar-list"]}>
+                <li className={styles["responsive-navbar-list-item"]}>
+                  <NavigationLink to="/">Clubs</NavigationLink>
+                </li>
+                <li className={styles["responsive-navbar-list-item"]}>
+                  <NavigationLink to="/prices">Prices</NavigationLink>
+                </li>
+                <li className={styles["responsive-navbar-list-item"]}>
+                  <NavigationLink to="/equipment">Equipment</NavigationLink>
+                </li>
+                <li className={styles["responsive-navbar-list-item"]}>
+                  <NavigationLink to="/timetables">Timetables</NavigationLink>
+                </li>
+                {!user.isLogged && (
+                  <li
+                    className={styles["responsive-navbar-list-item"]}
+                    onClick={showLoginModal}
+                  >
+                    Login
+                  </li>
+                )}
+                {!user.isLogged && (
+                  <li
+                    className={styles["responsive-navbar-list-item"]}
+                    onClick={showRegistrationModal}
+                  >
+                    Sign Up
+                  </li>
+                )}
+                {user.isLogged && (
+                  <li className={styles["responsive-navbar-list-item"]}>
+                    <NavigationLink to="/profile">My Profile</NavigationLink>
+                  </li>
+                )}
+                {user.isLogged && (
+                  <li
+                    className={styles["responsive-navbar-list-item"]}
+                    onClick={logoutHandler}
+                  >
+                    Logout
+                  </li>
+                )}
+              </ul>
+            )}
+          </li>
         </ul>
       </nav>
     </header>

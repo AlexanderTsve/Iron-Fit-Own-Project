@@ -1,43 +1,136 @@
 @import "../../../custom.scss";
-.card {
-  width: 50vw;
-  margin-bottom: 2rem;
-  border: 0.3rem $dark-violet solid;
-  border-radius: 1rem;
-  background-color: $pink;
-  &-header {
-    text-align: center;
-    font-family: $fonts;
-    font-size: 1.5rem;
-    font-style: italic;
-    color: $color-primary;
-    text-decoration: underline;
-    &-work-time {
-      font-weight: bold;
+@media only screen and (min-width: 1000px) {
+  .card {
+    width: 60vw;
+    margin-bottom: 2rem;
+    border: 0.2rem $dark-violet solid;
+    border-radius: 1rem;
+    background-color: $pink;
+    &-header {
+      text-align: center;
+      font-family: $fonts;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: $color-primary;
+      text-decoration: underline;
+      &-work-time {
+        font-weight: bold;
+        font-family: $new-fonts;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+    }
+    &-info {
       font-family: $new-fonts;
-      margin-bottom: 1rem;
+      font-weight: bold;
+      color: $color-primary;
+      font-style: italic;
       font-size: 1.2rem;
-    }
-  }
-  &-info {
-    font-family: $new-fonts;
-    font-weight: bold;
-    color: $color-primary;
-    font-style: italic;
-    font-size: 1.2rem;
-    margin: 0.5rem;
-    display: flex;
-    justify-content: space-between;
-    &-details {
-      margin-bottom: 1rem;
-    }
-  }
-  &-btns {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
-    button {
       margin: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      &-details {
+        margin-bottom: 1rem;
+      }
+    }
+    &-btns {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+      button {
+        margin: 0.5rem;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 999px) {
+  .card {
+    width: 75vw;
+    margin-bottom: 2rem;
+    border: 0.3rem $dark-violet solid;
+    border-radius: 1rem;
+    background-color: $pink;
+    &-header {
+      text-align: center;
+      font-family: $fonts;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: $color-primary;
+      text-decoration: underline;
+      &-work-time {
+        font-weight: bold;
+        font-family: $new-fonts;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+    }
+    &-info {
+      font-family: $new-fonts;
+      font-weight: bold;
+      color: $color-primary;
+      font-style: italic;
+      font-size: 1.2rem;
+      margin: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &-details {
+        margin-bottom: 1rem;
+      }
+    }
+    &-btns {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+      button {
+        margin: 0.5rem;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 95vw;
+    margin-bottom: 2rem;
+    border: 0.3rem $dark-violet solid;
+    border-radius: 1rem;
+    background-color: $pink;
+    &-header {
+      text-align: center;
+      font-family: $fonts;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: $color-primary;
+      text-decoration: underline;
+      &-work-time {
+        font-weight: bold;
+        font-family: $new-fonts;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+    }
+    &-info {
+      font-family: $new-fonts;
+      font-weight: bold;
+      color: $color-primary;
+      font-style: italic;
+      font-size: 1.1rem;
+      margin: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &-details {
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+    }
+    &-btns {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+      button {
+        margin: 0.5rem;
+      }
     }
   }
 }

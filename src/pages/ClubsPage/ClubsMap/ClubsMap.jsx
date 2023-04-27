@@ -51,7 +51,7 @@ const ClubsMap = () => {
       const initialMap = new Map({
         view: new View({
           center: centeredLocation,
-          zoom: 6.6,
+          zoom: 5.7,
         }),
         layers: [
           new TileLayer({
