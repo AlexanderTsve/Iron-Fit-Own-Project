@@ -37,6 +37,9 @@ export const loginUser = createAsyncThunk(
         USERS_URL,
         LOGIN_URL_ERROR
       );
+      if (!Object.values(response).find((user) => user.email === emailInput)) {
+        throw new Error(LOGIN_AUTH_ERROR);
+      }
       return Object.values(response).find((user) => user.email === emailInput);
     } catch (err) {
       return rejectWithValue(err.message);
