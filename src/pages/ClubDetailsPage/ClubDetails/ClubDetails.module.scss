@@ -194,61 +194,6 @@
     }
     &-important {
       display: flex;
-      justify-content: space-around;
-      width: 90vw;
-      margin-left: 4rem;
-      &-image {
-        width: 40vw;
-      }
-    }
-    &-useful {
-      text-align: center;
-      width: 45vw;
-      &-info {
-        font-family: $fonts;
-        font-size: 1.4rem;
-        color: $dark-violet;
-        ul {
-          padding: 0;
-          li {
-            list-style: none;
-            margin: 1rem;
-          }
-        }
-      }
-    }
-  }
-}
-@media only screen and (max-width: 400px) {
-  .spinner {
-    margin: 12rem auto;
-    text-align: center;
-    border: 16px solid $light-grey;
-    border-radius: 50%;
-    border-top: 16px solid $color-primary;
-    width: 6rem;
-    height: 6rem;
-    animation: rotate 2s infinite linear;
-  }
-  .container {
-    margin-top: 11rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-  }
-  .details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    &-name,
-    &-useful-name {
-      font-family: $fonts;
-      text-decoration: underline;
-      font-size: 1.5rem;
-      color: $dark-violet;
-    }
-    &-important {
-      display: flex;
       flex-direction: column;
       align-items: center;
       width: 90vw;
