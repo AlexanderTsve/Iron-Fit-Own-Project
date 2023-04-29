@@ -1,41 +1,174 @@
 @import "../../custom.scss";
-.container-dropdown {
-  background-image: url("../../assets/images/group_photo.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 70vh;
-  margin: 9rem auto 1.5rem auto;
-  display: flex;
-  flex-direction: column;
-  width: 80vw;
-  align-items: center;
-  color: $dark-violet;
-  &-title {
-    font-family: $fonts;
-    font-style: italic;
-    text-decoration: underline;
+@media only screen and (min-width: 1000px) {
+  .container-dropdown {
+    background-image: url("../../assets/images/group_photo.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 70vh;
+    margin: 9rem auto 1.5rem auto;
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    align-items: center;
+    color: $dark-violet;
+    &-title {
+      font-family: $fonts;
+      font-style: italic;
+      text-decoration: underline;
+    }
+    &_label {
+      margin: 1rem;
+      font-family: $fonts;
+      font-size: 1.45rem;
+    }
+    &_list {
+      padding: 0.5rem;
+      font-family: $fonts;
+      font-size: 1.3rem;
+      border-radius: 0.3rem;
+      text-align: center;
+    }
   }
-  &_label {
-    margin: 1rem;
-    font-family: $fonts;
-    font-size: 1.25rem;
-  }
-  &_list {
-    padding: 0.5rem;
-    font-family: $fonts;
-    font-size: 1.1rem;
-    border-radius: 0.3rem;
+  .container {
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
+    width: 80vw;
+    &-para {
+      font-family: $new-fonts;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
   }
 }
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  width: 80vw;
-  &-para {
-    font-family: $new-fonts;
-    font-size: 1.2rem;
-    font-weight: bold;
+@media only screen and (max-width: 999px) {
+  .container-dropdown {
+    background-image: url("../../assets/images/group_photo.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 60vh;
+    margin: 9rem auto 1.5rem auto;
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    align-items: center;
+    color: $dark-violet;
+    &-title {
+      margin-top: 10rem;
+      font-family: $fonts;
+      font-style: italic;
+      text-decoration: underline;
+    }
+    &_label {
+      margin: 1rem;
+      font-family: $fonts;
+      font-size: 1.45rem;
+    }
+    &_list {
+      padding: 0.5rem;
+      font-family: $fonts;
+      font-size: 1.3rem;
+      border-radius: 0.3rem;
+      text-align: center;
+    }
+  }
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 80vw;
+    &-para {
+      font-family: $new-fonts;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
   }
 }
+@media only screen and (max-width: 600px) {
+  .container-dropdown {
+    background-image: url("../../assets/images/group_photo.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 60vh;
+    margin: 9rem auto 1.5rem auto;
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    align-items: center;
+    color: $dark-violet;
+    &-title {
+      margin-top: 10rem;
+      font-family: $fonts;
+      font-style: italic;
+      text-decoration: underline;
+    }
+    &_label {
+      margin: 1rem;
+      font-family: $fonts;
+      font-size: 1.45rem;
+    }
+    &_list {
+      padding: 0.5rem;
+      font-family: $fonts;
+      font-size: 1.3rem;
+      border-radius: 0.3rem;
+      text-align: center;
+    }
+  }
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 80vw;
+    &-para {
+      font-family: $new-fonts;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+}
+@media only screen and (max-width: 400px) {
+  .container-dropdown {
+    background-image: url("../../assets/images/group_photo.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40vh;
+    margin: 9rem auto 1.5rem auto;
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    align-items: center;
+    color: $color-primary;
+    &-title {
+      margin-top: 5rem;
+      font-family: $fonts;
+      font-style: italic;
+      text-decoration: underline;
+    }
+    &_label {
+      margin: 0.5rem;
+      font-family: $fonts;
+      font-size: 1.45rem;
+    }
+    &_list {
+      padding: 0.5rem;
+      font-family: $fonts;
+      font-size: 1.3rem;
+      border-radius: 0.3rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+  }
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 80vw;
+    &-para {
+      font-family: $new-fonts;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  }
+}
+

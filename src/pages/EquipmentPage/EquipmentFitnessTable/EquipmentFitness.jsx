@@ -8,6 +8,7 @@ import TableRow from "../TableRow/TableRow";
 import TableTitle from "../TableTitle/TableTitle";
 import DropdownFilter from "../../../components/DropdownFilter/DropdownFilter";
 import { EQUIPMENT, SPLIT_REGEX_UPPERCASE } from "../../../util/config";
+import ListOfItems from "../ListOfItems/ListOfItems";
 const EquipmentFitness = () => {
   const clubsObj = useGetClubsRequest();
   const equipmentRef = useRef("none");
@@ -63,18 +64,29 @@ const EquipmentFitness = () => {
             onChange={filterByEquipmentTypeHandler}
             reference={equipmentRef}
           />
-          {clubsObj.clubs.list.length > 0 && (
-            <table className={styles["fitness-table"]}>
-              <TableHeader list={clubsObj.clubs.list} />
-              <tbody>
-                <TableRow
-                  equipment={filteredTools}
-                  list={clubsObj.clubs.list}
-                  isEquipmentTable={true}
-                />
-              </tbody>
-            </table>
-          )}
+          <div className={styles.table}>
+            {clubsObj.clubs.list.length > 0 && (
+              <table className={styles["fitness-table"]}>
+                <TableHeader list={clubsObj.clubs.list} />
+                <tbody>
+                  <TableRow
+                    equipment={filteredTools}
+                    list={clubsObj.clubs.list}
+                    isEquipmentTable={true}
+                  />
+                </tbody>
+              </table>
+            )}
+          </div>
+          <div className={styles.list}>
+            {clubsObj.clubs.list.length > 0 && (
+              <ListOfItems
+                filtered={filteredTools}
+                isEquipmentList={true}
+                listOfClubs={clubsObj.clubs.list}
+              />
+            )}
+          </div>
         </Fragment>
       )}
     </div>

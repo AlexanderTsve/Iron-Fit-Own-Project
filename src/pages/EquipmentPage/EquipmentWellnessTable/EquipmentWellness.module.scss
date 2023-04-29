@@ -1,5 +1,6 @@
 @import "../../../custom.scss";
-.wellness-table {
+@media only screen and (min-width: 1000px) {
+  .wellness-table {
   width: 85vw;
   border-collapse: collapse;
   tr:nth-child(even) {
@@ -9,6 +10,9 @@
     background-color: $yellow;
   }
 }
+.list{
+  display:none;
+ }
 .container {
   display: flex;
   flex-direction: column;
@@ -16,4 +20,46 @@
   h1 {
     margin-top: 4rem;
   }
+}}
+@media only screen and (max-width: 999px) {
+  .list{
+    display:none;
+   }
+  .wellness-table {
+    width: 95vw;
+    border-collapse: collapse;
+    tr:nth-child(even) {
+      background-color: $light-grey;
+    }
+    tr:hover {
+      background-color: $yellow;
+    }
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+      margin-top: 4rem;
+    }
+  }
 }
+@media only screen and (max-width: 767px) {
+  .table{
+    display: none;
+  }
+  .list{
+    width: 75vw;
+    display: block;
+  }
+  .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    h1 {
+    margin-top: 4rem;
+    }
+  }
+}
+
+

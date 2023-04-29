@@ -6,6 +6,7 @@ import TableRow from "../TableRow/TableRow";
 import TableTitle from "../TableTitle/TableTitle";
 import DropdownFilter from "../../../components/DropdownFilter/DropdownFilter";
 import { WELLNESS, SPLIT_REGEX_UPPERCASE } from "../../../util/config";
+import ListOfItems from "../ListOfItems/ListOfItems";
 const EquipmentWellness = () => {
   const clubsObj = useGetClubsRequest();
   const wellnessRef = useRef();
@@ -54,18 +55,29 @@ const EquipmentWellness = () => {
             label="Filter wellness activity:"
             onChange={filterByWellnessTypeHandler}
           />
-          {clubsObj.clubs.list.length > 0 && (
-            <table className={styles["wellness-table"]}>
-              <TableHeader list={clubsObj.clubs.list} />
-              <tbody>
-                <TableRow
-                  equipment={filteredWellness}
-                  list={clubsObj.clubs.list}
-                  isEquipmentTable={false}
-                />
-              </tbody>
-            </table>
-          )}
+          <div className={styles.table}>
+            {clubsObj.clubs.list.length > 0 && (
+              <table className={styles["wellness-table"]}>
+                <TableHeader list={clubsObj.clubs.list} />
+                <tbody>
+                  <TableRow
+                    equipment={filteredWellness}
+                    list={clubsObj.clubs.list}
+                    isEquipmentTable={false}
+                  />
+                </tbody>
+              </table>
+            )}
+          </div>
+          <div className={styles.list}>
+            {clubsObj.clubs.list.length > 0 && (
+              <ListOfItems
+                filtered={filteredWellness}
+                isEquipmentList={false}
+                listOfClubs={clubsObj.clubs.list}
+              />
+            )}
+          </div>
         </Fragment>
       )}
     </div>

@@ -1,0 +1,22 @@
+@import "../../../custom.scss";
+.list{
+    &-content{
+      &-title{
+        text-align: center;
+        font-family: $fonts;
+        font-size: 1.5rem;
+        color: $dark-violet;
+        text-decoration: underline;
+        font-style: italic;
+      }
+      &-item{
+        padding: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        &-title{
+          font-family: $new-fonts;
+        }
+      }
+    }
+  }

@@ -1,26 +1,81 @@
 @import "../../../custom.scss";
-.spinner {
-  margin: 12rem auto;
-  text-align: center;
-  border: 16px solid $light-grey;
-  border-radius: 50%;
-  border-top: 16px solid $color-primary;
-  width: 6rem;
-  height: 6rem;
-  animation: rotate 2s infinite linear;
-}
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.fitness-table {
-  width: 85vw;
-  border-collapse: collapse;
-  tr:nth-child(even) {
-    background-color: $light-grey;
+@media only screen and (min-width: 1000px) {
+  .list{
+    display:none;
+   }
+  .spinner {
+    margin: 12rem auto;
+    text-align: center;
+    border: 16px solid $light-grey;
+    border-radius: 50%;
+    border-top: 16px solid $color-primary;
+    width: 6rem;
+    height: 6rem;
+    animation: rotate 2s infinite linear;
   }
-  tr:hover {
-    background-color: $yellow;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .fitness-table {
+    width: 85vw;
+    border-collapse: collapse;
+    tr:nth-child(even) {
+      background-color: $light-grey;
+    }
+    tr:hover {
+      background-color: $yellow;
+    }
+  }  
+}
+@media only screen and (max-width: 999px) {
+  .spinner {
+    margin: 12rem auto;
+    text-align: center;
+    border: 16px solid $light-grey;
+    border-radius: 50%;
+    border-top: 16px solid $color-primary;
+    width: 6rem;
+    height: 6rem;
+    animation: rotate 2s infinite linear;
+  }
+  .list{
+   display:none;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .fitness-table {
+    width: 95vw;
+    border-collapse: collapse;
+    tr:nth-child(even) {
+      background-color: $light-grey;
+    }
+    tr:hover {
+      background-color: $yellow;
+    }
+  }  
+}
+@media only screen and (max-width: 767px) {
+  .table{
+    display: none;
+  }
+  .list{
+    width: 75vw;
+    display: block;
+  }
+  .spinner {
+    margin: 12rem auto;
+    text-align: center;
+    border: 16px solid $light-grey;
+    border-radius: 50%;
+    border-top: 16px solid $color-primary;
+    width: 6rem;
+    height: 6rem;
+    animation: rotate 2s infinite linear;
   }
 }
+
