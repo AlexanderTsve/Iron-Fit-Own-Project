@@ -1,84 +1,517 @@
 @import "../../custom.scss";
-.registration_modal {
-  padding-top: 0;
-  position: fixed;
-  z-index: 110;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: $dark-violet;
-  opacity: 0.95;
-  &_content {
-    background-color: $color-primary;
-    color: $violet;
-    width: 18vw;
-    margin: 3rem auto;
-    border: 3px solid $light-grey;
-    border-radius: 1rem;
-    &_form {
-      div {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        button {
-          max-height: 3rem;
-        }
-        label {
-          width: 14rem;
-          margin: 0.3rem;
-          color: $color-secondary;
-          font-family: $new-fonts;
-          font-size: 1.2rem;
+@media only screen and (min-width: 1200px) {
+  .registration_modal {
+    padding-top: 0;
+    position: fixed;
+    z-index: 110;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: $dark-violet;
+    opacity: 0.95;
+    &_content {
+      background-color: $color-primary;
+      color: $violet;
+      width: 18vw;
+      margin: 0.5rem auto;
+      border: 3px solid $light-grey;
+      border-radius: 1rem;
+      &_form {
+        div {
           display: flex;
-          justify-content: space-evenly;
-        }
-        input {
-          border-radius: 0.5rem;
-          font-family: $new-fonts;
-          font-size: 1.1rem;
-          font-weight: bold;
-          padding: 0.3rem;
-        }
-        p {
-          color: $light-grey;
-          font-size: 0.85rem;
-          text-align: center;
-          font-family: $secondary-fonts;
-          font-style: italic;
+          justify-content: center;
+          flex-wrap: wrap;
+          button {
+            max-height: 3rem;
+          }
+          label {
+            width: 14rem;
+            margin: 0.2rem;
+            color: $color-secondary;
+            font-family: $new-fonts;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-evenly;
+          }
+          input {
+            border-radius: 0.5rem;
+            font-family: $new-fonts;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 0.3rem;
+          }
+          p {
+            color: $light-grey;
+            font-size: 0.85rem;
+            text-align: center;
+            font-family: $secondary-fonts;
+            font-style: italic;
+            margin-bottom: 0.4rem;
+          }
         }
       }
     }
   }
-}
-.registration__logo {
-  height: 6.6rem;
-}
-.close_btn {
-  display: flex;
-  justify-content: flex-end;
-}
-.link-to-login {
-  cursor: pointer;
-  color: $light-grey;
-  text-decoration: underline;
-  font-family: $new-fonts !important;
-  font-size: 1.1rem !important;
-}
-.link-to-login:hover {
-  color: $light-green;
-}
-.link-to-login:active {
-  color: $pink;
-}
-.msg {
-  &_err {
-    color: $red;
+  .registration__logo {
+    height: 6rem;
   }
-  &_instructions {
+  .close_btn {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .link-to-login {
+    cursor: pointer;
     color: $light-grey;
+    text-decoration: underline;
+    font-family: $new-fonts !important;
+    font-size: 0.9rem !important;
+  }
+  .link-to-login:hover {
+    color: $light-green;
+  }
+  .link-to-login:active {
+    color: $pink;
+  }
+  .msg {
+    &_err {
+      color: $red;
+    }
+    &_instructions {
+      color: $light-grey;
+    }
+  }
+  .offscreen {
+    display: none;
   }
 }
-.offscreen {
-  display: none;
+@media only screen and (max-width: 1199px) {
+  .registration_modal {
+    padding-top: 0;
+    position: fixed;
+    z-index: 110;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: $dark-violet;
+    opacity: 0.95;
+    &_content {
+      background-color: $color-primary;
+      color: $violet;
+      width: 28vw;
+      margin: 0.1rem auto;
+      border: 3px solid $light-grey;
+      border-radius: 1rem;
+      &_form {
+        div {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          button {
+            max-height: 3rem;
+          }
+          label {
+            width: 14rem;
+            margin: 0.2rem;
+            color: $color-secondary;
+            font-family: $new-fonts;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-evenly;
+          }
+          input {
+            border-radius: 0.5rem;
+            font-family: $new-fonts;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 0.3rem;
+          }
+          p {
+            color: $light-grey;
+            font-size: 0.85rem;
+            text-align: center;
+            font-family: $secondary-fonts;
+            font-style: italic;
+            margin-bottom: 0.4rem;
+          }
+        }
+      }
+    }
+  }
+  .registration__logo {
+    height: 6rem;
+  }
+  .close_btn {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .link-to-login {
+    cursor: pointer;
+    color: $light-grey;
+    text-decoration: underline;
+    font-family: $new-fonts !important;
+    font-size: 0.9rem !important;
+  }
+  .link-to-login:hover {
+    color: $light-green;
+  }
+  .link-to-login:active {
+    color: $pink;
+  }
+  .msg {
+    &_err {
+      color: $red;
+    }
+    &_instructions {
+      color: $light-grey;
+    }
+  }
+  .offscreen {
+    display: none;
+  }
+}
+@media only screen and (max-width: 999px) {
+  .registration_modal {
+    padding-top: 0;
+    position: fixed;
+    z-index: 110;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: $dark-violet;
+    opacity: 0.95;
+    &_content {
+      background-color: $color-primary;
+      color: $violet;
+      width: 40vw;
+      margin: 0.5rem auto;
+      border: 3px solid $light-grey;
+      border-radius: 1rem;
+      &_form {
+        div {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          button {
+            max-height: 3rem;
+          }
+          label {
+            width: 14rem;
+            margin: 0.3rem;
+            color: $color-secondary;
+            font-family: $new-fonts;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-evenly;
+          }
+          input {
+            border-radius: 0.5rem;
+            font-family: $new-fonts;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 0.3rem;
+          }
+          p {
+            color: $light-grey;
+            font-size: 0.85rem;
+            text-align: center;
+            font-family: $secondary-fonts;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+  .registration__logo {
+    height: 6.6rem;
+  }
+  .close_btn {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .link-to-login {
+    cursor: pointer;
+    color: $light-grey;
+    text-decoration: underline;
+    font-family: $new-fonts !important;
+    font-size: 1rem !important;
+  }
+  .link-to-login:hover {
+    color: $light-green;
+  }
+  .link-to-login:active {
+    color: $pink;
+  }
+  .msg {
+    &_err {
+      color: $red;
+    }
+    &_instructions {
+      color: $light-grey;
+    }
+  }
+  .offscreen {
+    display: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .registration_modal {
+    padding-top: 0;
+    position: fixed;
+    z-index: 110;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: $dark-violet;
+    opacity: 0.95;
+    &_content {
+      background-color: $color-primary;
+      color: $violet;
+      width: 50vw;
+      margin: 0.5rem auto;
+      border: 3px solid $light-grey;
+      border-radius: 1rem;
+      &_form {
+        div {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          button {
+            max-height: 3rem;
+          }
+          label {
+            width: 14rem;
+            margin: 0.3rem;
+            color: $color-secondary;
+            font-family: $new-fonts;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-evenly;
+          }
+          input {
+            border-radius: 0.5rem;
+            font-family: $new-fonts;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 0.3rem;
+          }
+          p {
+            color: $light-grey;
+            font-size: 0.85rem;
+            text-align: center;
+            font-family: $secondary-fonts;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+  .registration__logo {
+    height: 6.6rem;
+  }
+  .close_btn {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .link-to-login {
+    cursor: pointer;
+    color: $light-grey;
+    text-decoration: underline;
+    font-family: $new-fonts !important;
+    font-size: 1rem !important;
+  }
+  .link-to-login:hover {
+    color: $light-green;
+  }
+  .link-to-login:active {
+    color: $pink;
+  }
+  .msg {
+    &_err {
+      color: $red;
+    }
+    &_instructions {
+      color: $light-grey;
+    }
+  }
+  .offscreen {
+    display: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .registration_modal {
+    padding-top: 0;
+    position: fixed;
+    z-index: 110;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: $dark-violet;
+    opacity: 0.95;
+    &_content {
+      background-color: $color-primary;
+      color: $violet;
+      width: 60vw;
+      margin: 0.5rem auto;
+      border: 3px solid $light-grey;
+      border-radius: 1rem;
+      &_form {
+        div {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          button {
+            max-height: 3rem;
+          }
+          label {
+            width: 14rem;
+            margin: 0.3rem;
+            color: $color-secondary;
+            font-family: $new-fonts;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-evenly;
+          }
+          input {
+            border-radius: 0.5rem;
+            font-family: $new-fonts;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 0.3rem;
+          }
+          p {
+            color: $light-grey;
+            font-size: 0.85rem;
+            text-align: center;
+            font-family: $secondary-fonts;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+  .registration__logo {
+    height: 6.6rem;
+  }
+  .close_btn {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .link-to-login {
+    cursor: pointer;
+    color: $light-grey;
+    text-decoration: underline;
+    font-family: $new-fonts !important;
+    font-size: 0.9rem !important;
+  }
+  .link-to-login:hover {
+    color: $light-green;
+  }
+  .link-to-login:active {
+    color: $pink;
+  }
+  .msg {
+    &_err {
+      color: $red;
+    }
+    &_instructions {
+      color: $light-grey;
+    }
+  }
+  .offscreen {
+    display: none;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .registration_modal {
+    padding-top: 0;
+    position: fixed;
+    z-index: 110;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: $dark-violet;
+    opacity: 0.95;
+    &_content {
+      background-color: $color-primary;
+      color: $violet;
+      width: 80vw;
+      margin: 0.5rem auto;
+      border: 3px solid $light-grey;
+      border-radius: 1rem;
+      &_form {
+        div {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          button {
+            max-height: 3rem;
+          }
+          label {
+            width: 14rem;
+            margin: 0.3rem;
+            color: $color-secondary;
+            font-family: $new-fonts;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-evenly;
+          }
+          input {
+            border-radius: 0.5rem;
+            font-family: $new-fonts;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 0.3rem;
+          }
+          p {
+            color: $light-grey;
+            font-size: 0.85rem;
+            text-align: center;
+            font-family: $secondary-fonts;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+  .registration__logo {
+    height: 6.6rem;
+  }
+  .close_btn {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .link-to-login {
+    cursor: pointer;
+    color: $light-grey;
+    text-decoration: underline;
+    font-family: $new-fonts !important;
+    font-size: 0.85rem !important;
+  }
+  .link-to-login:hover {
+    color: $light-green;
+  }
+  .link-to-login:active {
+    color: $pink;
+  }
+  .msg {
+    &_err {
+      color: $red;
+    }
+    &_instructions {
+      color: $light-grey;
+    }
+  }
+  .offscreen {
+    display: none;
+  }
 }
