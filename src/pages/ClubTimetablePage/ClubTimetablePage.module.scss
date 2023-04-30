@@ -1,89 +1,224 @@
 @import "../../custom.scss";
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10rem;
+@media only screen and (min-width: 1000px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10rem;
+  }
+  .spinner {
+    margin: 12rem auto;
+    text-align: center;
+    border: 16px solid $light-grey;
+    border-radius: 50%;
+    border-top: 16px solid $color-primary;
+    width: 6rem;
+    height: 6rem;
+    animation: rotate 2s infinite linear;
+  }
+  .table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $fonts;
+    margin-bottom: 2rem;
+    &-title {
+      font-family: $fonts;
+      font-style: italic;
+      text-decoration: underline;
+      color: $dark-violet;
+    }
+    &-content {
+      border: solid 0.2rem $color-primary;
+      &-main-row {
+        color: $dark-violet;
+        font-style: italic;
+        &:hover {
+          background-color: $dark-violet;
+          color: $light-grey;
+        }
+      }
+    }
+  }
+  .describe {
+    width: 7vw;
+    display: flex;
+    justify-content: center;
+    &-item {
+      &-day,
+      &-hour {
+        position: relative;
+        width: 3rem;
+        font-size: 1.3rem;
+      }
+      &-hour {
+        margin-top: 1rem;
+      }
+    }
+  }
+  .weekday {
+    width: 10vw;
+    font-size: 1.5rem;
+    border: solid 0.2rem $color-primary;
+  }
+  .hour-row {
+    font-size: 1.1rem;
+    font-family: $new-fonts;
+    color: $dark-violet;
+    font-weight: bold;
+    &-start {
+      text-align: center;
+      border: solid 0.2rem $color-primary;
+    }
+    &-content {
+      text-align: center;
+      border: solid 0.2rem $color-primary;
+    }
+    &:hover {
+      background-color: $dark-violet;
+      color: $light-grey;
+    }
+  }
+  .list {
+    display: none;
+  }
 }
-.spinner {
-  margin: 12rem auto;
-  text-align: center;
-  border: 16px solid $light-grey;
-  border-radius: 50%;
-  border-top: 16px solid $color-primary;
-  width: 6rem;
-  height: 6rem;
-  animation: rotate 2s infinite linear;
+@media only screen and (max-width: 999px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10rem;
+  }
+  .spinner {
+    margin: 12rem auto;
+    text-align: center;
+    border: 16px solid $light-grey;
+    border-radius: 50%;
+    border-top: 16px solid $color-primary;
+    width: 6rem;
+    height: 6rem;
+    animation: rotate 2s infinite linear;
+  }
+  .table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $fonts;
+    margin-bottom: 2rem;
+    &-title {
+      font-family: $fonts;
+      font-style: italic;
+      text-decoration: underline;
+      color: $dark-violet;
+    }
+    &-content {
+      border: solid 0.2rem $color-primary;
+      &-main-row {
+        color: $dark-violet;
+        font-style: italic;
+        &:hover {
+          background-color: $dark-violet;
+          color: $light-grey;
+        }
+      }
+    }
+  }
+  .describe {
+    width: 7vw;
+    display: flex;
+    justify-content: center;
+    &-item {
+      &-day,
+      &-hour {
+        position: relative;
+        width: 3rem;
+        font-size: 0.9rem;
+      }
+      &-hour {
+        margin-top: 1rem;
+      }
+    }
+  }
+  .weekday {
+    width: 10vw;
+    font-size: 1.2rem;
+    border: solid 0.2rem $color-primary;
+  }
+  .hour-row {
+    font-size: 1rem;
+    font-family: $new-fonts;
+    color: $dark-violet;
+    font-weight: bold;
+    &-start {
+      text-align: center;
+      border: solid 0.2rem $color-primary;
+    }
+    &-content {
+      text-align: center;
+      border: solid 0.2rem $color-primary;
+    }
+    &:hover {
+      background-color: $dark-violet;
+      color: $light-grey;
+    }
+  }
+  .list {
+    display: none;
+  }
 }
-.table {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: $fonts;
-  margin-bottom: 2rem;
-  &-title {
+@media only screen and (max-width: 600px) {
+  .title {
     font-family: $fonts;
     font-style: italic;
     text-decoration: underline;
     color: $dark-violet;
+    text-align: center;
   }
-  &-content {
-    border: solid 0.2rem $color-primary;
-    &-main-row {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10rem;
+  }
+  .spinner {
+    margin: 12rem auto;
+    text-align: center;
+    border: 16px solid $light-grey;
+    border-radius: 50%;
+    border-top: 16px solid $color-primary;
+    width: 6rem;
+    height: 6rem;
+    animation: rotate 2s infinite linear;
+  }
+  .list {
+    display: block;
+    &-day {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90vw;
       color: $dark-violet;
-      font-style: italic;
-      &:hover {
-        background-color: $dark-violet;
-        color: $light-grey;
+      &-title {
+        font-family: $fonts;
+        font-size: 1.5rem;
+        font-style: italic;
+        text-decoration: underline;
+      }
+      &-container {
+        display: flex;
+        justify-content: space-between;
+        width: 80vw;
+        &-hour,
+        &-activity {
+          font-family: $new-fonts;
+          font-size: 0.8rem;
+          margin: 1rem;
+        }
       }
     }
   }
-}
-.describe {
-  width: 7vw;
-  display: flex;
-  justify-content: center;
-  &-item {
-    &-day,
-    &-hour {
-      position: relative;
-      width: 3rem;
-      font-size: 1.3rem;
-    }
-    &-hour {
-      margin-top: 1rem;
-    }
-  }
-}
-.diagonal-cross {
-  position: absolute;
-  width: 6vw;
-  height: 2rem;
-  display: block;
-  border-bottom: 3px solid $color-primary;
-  transform: rotate(17deg);
-  transform-origin: right;
-}
-.weekday {
-  width: 10vw;
-  font-size: 1.5rem;
-  border: solid 0.2rem $color-primary;
-}
-.hour-row {
-  font-size: 1.1rem;
-  font-family: $new-fonts;
-  color: $dark-violet;
-  font-weight: bold;
-  &-start {
-    text-align: center;
-    border: solid 0.2rem $color-primary;
-  }
-  &-content {
-    text-align: center;
-    border: solid 0.2rem $color-primary;
-  }
-  &:hover {
-    background-color: $dark-violet;
-    color: $light-grey;
+  .table {
+    display: none;
   }
 }

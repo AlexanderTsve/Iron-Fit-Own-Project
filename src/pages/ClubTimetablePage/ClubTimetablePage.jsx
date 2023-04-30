@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useCallback, useEffect, useState, useRef } from "react";
+import { useCallback, useEffect, useState, useRef, Fragment } from "react";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage.jsx";
 import { getTimetables } from "../../util/helpers.js";
 import {
@@ -73,57 +73,81 @@ const ClubTimetablePage = () => {
       {isLoading && <div className={styles.spinner} />}
       {isRejected && <ErrorMessage errorMsg={error} />}
       {!isLoading && !isRejected && Object.keys(timetable).length > 0 && (
-        <div className={styles.table}>
-          <h1 className={styles["table-title"]}>{timetable.name} Timetable</h1>
+        <Fragment>
+          <h1 className={styles.title}>{timetable.name} Timetable</h1>
           <DropdownFilter
             label="Choose activity:"
             options={ACTIVITIES}
             onChange={filterByActivityHandler}
             reference={activityRef}
           />
-          <table className={styles["table-content"]}>
-            <thead>
-              <tr className={styles["table-content-main-row"]}>
-                <th className={styles.describe}>
-                  <span className={styles["describe-item-hour"]}>hour</span>
-                  <span className={styles["diagonal-cross"]} />
-                  <span className={styles["describe-item-day"]}>day</span>
-                </th>
-                {timetable.timetable.map((day, index) => {
+          <div className={styles.table}>
+            <table className={styles["table-content"]}>
+              <thead>
+                <tr className={styles["table-content-main-row"]}>
+                  <th className={styles.describe}>
+                    <span className={styles["describe-item-hour"]}>hour</span>
+                    <span className={styles["describe-item-day"]}>day</span>
+                  </th>
+                  {timetable.timetable.map((day, index) => {
+                    return (
+                      <th key={index} className={styles.weekday}>
+                        {day.day}
+                      </th>
+                    );
+                  })}
+                </tr>
+              </thead>
+              <tbody>
+                {WORK_HOURS.map((hour, index) => {
                   return (
-                    <th key={index} className={styles.weekday}>
-                      {day.day}
-                    </th>
+                    <tr key={index} className={styles["hour-row"]}>
+                      <td className={styles["hour-row-start"]}>{hour}</td>
+                      {Array.of(
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday"
+                      ).map((day, index) => (
+                        <td key={index} className={styles["hour-row-content"]}>
+                          {filteredTimetable.timetable
+                            .filter((days) => days.day === day)[0]
+                            .activities.find(
+                              (activity) => activity.hour === hour
+                            )?.activity || "-"}
+                        </td>
+                      ))}
+                    </tr>
                   );
                 })}
-              </tr>
-            </thead>
-            <tbody>
-              {WORK_HOURS.map((hour, index) => {
-                return (
-                  <tr key={index} className={styles["hour-row"]}>
-                    <td className={styles["hour-row-start"]}>{hour}</td>
-                    {Array.of(
-                      "Monday",
-                      "Tuesday",
-                      "Wednesday",
-                      "Thursday",
-                      "Friday",
-                      "Saturday"
-                    ).map((day, index) => (
-                      <td key={index} className={styles["hour-row-content"]}>
+              </tbody>
+            </table>
+          </div>
+          <div className={styles.list}>
+            {timetable.timetable.map((day, index) => {
+              return (
+                <div key={index} className={styles["list-day"]}>
+                  <p className={styles["list-day-title"]}>{day.day}</p>
+                  {WORK_HOURS.map((hour, index) => (
+                    <div key={index} className={styles["list-day-container"]}>
+                      <span className={styles["list-day-container-hour"]}>
+                        {hour}
+                      </span>
+                      <span className={styles["list-day-container-activity"]}>
                         {filteredTimetable.timetable
-                          .filter((days) => days.day === day)[0]
+                          .filter((days) => days.day === day.day)[0]
                           .activities.find((activity) => activity.hour === hour)
-                          ?.activity || "-"}
-                      </td>
-                    ))}
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
+                          ?.activity ?? "---"}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              );
+            })}
+          </div>
+        </Fragment>
       )}
     </div>
   );
