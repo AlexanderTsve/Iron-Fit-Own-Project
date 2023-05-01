@@ -3,7 +3,9 @@
     &-content{
       &-title{
         text-align: center;
-        font-family: $fonts;
+        font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+        Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+        Impact (sans-serif), Gill Sans (sans-serif);
         font-size: 1.5rem;
         color: $dark-violet;
         text-decoration: underline;
@@ -15,7 +17,9 @@
         justify-content: space-between;
         align-items: flex-end;
         &-title{
-          font-family: $new-fonts;
+          font-family: josefine-sans, Arial (sans-serif), Arial Black (sans-serif),
+          Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+          Impact (sans-serif), Gill Sans (sans-serif);
         }
       }
     }

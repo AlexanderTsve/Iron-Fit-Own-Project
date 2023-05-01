@@ -22,7 +22,9 @@
     align-items: center;
     &-name,
     &-useful-name {
-      font-family: $fonts;
+      font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       text-decoration: underline;
       font-size: 1.8rem;
       color: $dark-violet;
@@ -40,7 +42,9 @@
       text-align: center;
       width: 45vw;
       &-info {
-        font-family: $fonts;
+        font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+        Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+        Impact (sans-serif), Gill Sans (sans-serif);
         font-size: 1.4rem;
         color: $dark-violet;
         ul {
@@ -77,7 +81,9 @@
     align-items: center;
     &-name,
     &-useful-name {
-      font-family: $fonts;
+      font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       text-decoration: underline;
       font-size: 1.8rem;
       color: $dark-violet;
@@ -95,7 +101,9 @@
       text-align: center;
       width: 45vw;
       &-info {
-        font-family: $fonts;
+        font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+        Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+        Impact (sans-serif), Gill Sans (sans-serif);
         font-size: 1.4rem;
         color: $dark-violet;
         ul {
@@ -132,7 +140,9 @@
     align-items: center;
     &-name,
     &-useful-name {
-      font-family: $fonts;
+      font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       text-decoration: underline;
       font-size: 1.8rem;
       color: $dark-violet;
@@ -151,7 +161,9 @@
       text-align: center;
       width: 95vw;
       &-info {
-        font-family: $fonts;
+        font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+        Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+        Impact (sans-serif), Gill Sans (sans-serif);
         font-size: 1.2rem;
         color: $dark-violet;
         ul {

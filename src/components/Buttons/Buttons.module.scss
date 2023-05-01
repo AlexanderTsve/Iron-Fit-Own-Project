@@ -1,6 +1,8 @@
 @import "../../custom.scss";
 .iron_fit_app_button {
-  font-family: $fonts;
+  font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+  Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+  Impact (sans-serif), Gill Sans (sans-serif);
   font-size: 1.4rem;
   cursor: pointer;
   border-radius: 0.5rem;

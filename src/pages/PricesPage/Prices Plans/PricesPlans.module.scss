@@ -2,13 +2,17 @@
 @media only screen and (min-width: 1000px) {
   .header-container {
     text-align: center;
-    font-family: $fonts;
+    font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+    Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+    Impact (sans-serif), Gill Sans (sans-serif);
     color: $dark-violet;
     &-title {
       font-style: italic;
       text-decoration: underline;
       &-note {
-        font-family: $new-fonts;
+        font-family: josefine-sans, Arial (sans-serif), Arial Black (sans-serif),
+        Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+        Impact (sans-serif), Gill Sans (sans-serif);
         font-weight: bold;
         font-size: 1rem;
       }
@@ -48,7 +52,9 @@
       border: solid $dark-violet 0.25rem;
       border-radius: 0.5rem;
       background-color: $pink;
-      font-family: $new-fonts;
+      font-family: josefine-sans, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-weight: bold;
       font-size: 1.2rem;
       color: $color-primary;
@@ -61,7 +67,9 @@
       }
       &-name {
         text-decoration: underline;
-        font-family: $fonts;
+        font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+        Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+        Impact (sans-serif), Gill Sans (sans-serif);
       }
       &-price {
         font-size: 1.3rem;
@@ -81,13 +89,17 @@
 @media only screen and (max-width: 999px) {
   .header-container {
     text-align: center;
-    font-family: $fonts;
+    font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+    Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+    Impact (sans-serif), Gill Sans (sans-serif);
     color: $dark-violet;
     &-title {
       font-style: italic;
       text-decoration: underline;
       &-note {
-        font-family: $new-fonts;
+        font-family: josefine-sans, Arial (sans-serif), Arial Black (sans-serif),
+        Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+        Impact (sans-serif), Gill Sans (sans-serif);
         font-weight: bold;
         font-size: 1rem;
       }
@@ -128,7 +140,9 @@
       border: solid $dark-violet 0.25rem;
       border-radius: 0.5rem;
       background-color: $pink;
-      font-family: $new-fonts;
+      font-family: josefine-sans, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-weight: bold;
       font-size: 1.2rem;
       color: $color-primary;
@@ -141,7 +155,9 @@
       }
       &-name {
         text-decoration: underline;
-        font-family: $fonts;
+        font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+        Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+        Impact (sans-serif), Gill Sans (sans-serif);
       }
       &-price {
         font-size: 1.3rem;
@@ -161,13 +177,17 @@
 @media only screen and (max-width: 767px) {
   .header-container {
     text-align: center;
-    font-family: $fonts;
+    font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+    Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+    Impact (sans-serif), Gill Sans (sans-serif);
     color: $dark-violet;
     &-title {
       font-style: italic;
       text-decoration: underline;
       &-note {
-        font-family: $new-fonts;
+        font-family: josefine-sans, Arial (sans-serif), Arial Black (sans-serif),
+        Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+        Impact (sans-serif), Gill Sans (sans-serif);
         font-weight: bold;
         font-size: 1rem;
       }
@@ -208,7 +228,9 @@
       border: solid $dark-violet 0.25rem;
       border-radius: 0.5rem;
       background-color: $pink;
-      font-family: $new-fonts;
+      font-family: josefine-sans, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-weight: bold;
       font-size: 1.2rem;
       color: $color-primary;
@@ -221,7 +243,9 @@
       }
       &-name {
         text-decoration: underline;
-        font-family: $fonts;
+        font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+        Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+        Impact (sans-serif), Gill Sans (sans-serif);
       }
       &-price {
         font-size: 1.3rem;
@@ -241,13 +265,17 @@
 @media only screen and (max-width: 600px) {
   .header-container {
     text-align: center;
-    font-family: $fonts;
+    font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+    Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+    Impact (sans-serif), Gill Sans (sans-serif);
     color: $dark-violet;
     &-title {
       font-style: italic;
       text-decoration: underline;
       &-note {
-        font-family: $new-fonts;
+        font-family: josefine-sans, Arial (sans-serif), Arial Black (sans-serif),
+        Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+        Impact (sans-serif), Gill Sans (sans-serif);
         font-weight: bold;
         font-size: 1rem;
       }
@@ -288,7 +316,9 @@
       border: solid $dark-violet 0.25rem;
       border-radius: 0.5rem;
       background-color: $pink;
-      font-family: $new-fonts;
+      font-family: josefine-sans, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-weight: bold;
       font-size: 1.2rem;
       color: $color-primary;
@@ -301,7 +331,9 @@
       }
       &-name {
         text-decoration: underline;
-        font-family: $fonts;
+        font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+        Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+        Impact (sans-serif), Gill Sans (sans-serif);
       }
       &-price {
         font-size: 1.3rem;

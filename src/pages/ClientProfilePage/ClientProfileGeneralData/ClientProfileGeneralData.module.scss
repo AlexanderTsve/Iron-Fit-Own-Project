@@ -5,10 +5,14 @@
   flex-direction: column;
   color: $dark-violet;
   font-style: italic;
-  font-family: $new-fonts;
+  font-family: josefine-sans, Arial (sans-serif), Arial Black (sans-serif),
+  Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+  Impact (sans-serif), Gill Sans (sans-serif);
   &-title {
     text-decoration: underline;
-    font-family: $fonts;
+    font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+    Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+    Impact (sans-serif), Gill Sans (sans-serif);
   }
   &-email,
   &-phone {

@@ -3,7 +3,9 @@
   margin-bottom: 2rem;
 }
 .accordion {
-  font-family: $fonts;
+  font-family:  myFont, Arial (sans-serif), Arial Black (sans-serif),
+  Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+  Impact (sans-serif), Gill Sans (sans-serif);
   color: $color-primary;
   background-color: $light-grey;
   cursor: pointer;
@@ -24,7 +26,9 @@
 }
 .panel {
   margin-bottom: 2rem;
-  font-family: $fonts;
+  font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+  Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+  Impact (sans-serif), Gill Sans (sans-serif);
   font-size: 1rem;
   width: 100vw;
   background-color: $light-green;
@@ -38,7 +42,9 @@
       margin: 1rem;
       &-text {
         margin: 1rem;
-        font-family: $new-fonts;
+        font-family: josefine-sans, Arial (sans-serif), Arial Black (sans-serif),
+        Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+        Impact (sans-serif), Gill Sans (sans-serif);
         font-weight: bold;
       }
     }

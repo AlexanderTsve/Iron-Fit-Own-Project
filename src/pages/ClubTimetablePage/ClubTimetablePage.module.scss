@@ -20,10 +20,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: $fonts;
+    font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+    Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+    Impact (sans-serif), Gill Sans (sans-serif);
     margin-bottom: 2rem;
     &-title {
-      font-family: $fonts;
+      font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-style: italic;
       text-decoration: underline;
       color: $dark-violet;
@@ -63,7 +67,9 @@
   }
   .hour-row {
     font-size: 1.1rem;
-    font-family: $new-fonts;
+    font-family: josefine-sans, Arial (sans-serif), Arial Black (sans-serif),
+    Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+    Impact (sans-serif), Gill Sans (sans-serif);
     color: $dark-violet;
     font-weight: bold;
     &-start {
@@ -104,10 +110,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: $fonts;
+    font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+    Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+    Impact (sans-serif), Gill Sans (sans-serif);
     margin-bottom: 2rem;
     &-title {
-      font-family: $fonts;
+      font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-style: italic;
       text-decoration: underline;
       color: $dark-violet;
@@ -147,7 +157,9 @@
   }
   .hour-row {
     font-size: 1rem;
-    font-family: $new-fonts;
+    font-family: josefine-sans, Arial (sans-serif), Arial Black (sans-serif),
+    Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+    Impact (sans-serif), Gill Sans (sans-serif);
     color: $dark-violet;
     font-weight: bold;
     &-start {
@@ -169,7 +181,9 @@
 }
 @media only screen and (max-width: 600px) {
   .title {
-    font-family: $fonts;
+    font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+    Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+    Impact (sans-serif), Gill Sans (sans-serif);
     font-style: italic;
     text-decoration: underline;
     color: $dark-violet;
@@ -200,7 +214,9 @@
       width: 90vw;
       color: $dark-violet;
       &-title {
-        font-family: $fonts;
+        font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+        Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+        Impact (sans-serif), Gill Sans (sans-serif);
         font-size: 1.5rem;
         font-style: italic;
         text-decoration: underline;
@@ -211,7 +227,9 @@
         width: 80vw;
         &-hour,
         &-activity {
-          font-family: $new-fonts;
+          font-family: josefine-sans, Arial (sans-serif), Arial Black (sans-serif),
+          Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+          Impact (sans-serif), Gill Sans (sans-serif);
           font-size: 0.8rem;
           margin: 1rem;
         }

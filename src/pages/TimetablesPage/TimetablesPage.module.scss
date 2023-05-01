@@ -12,18 +12,24 @@
     align-items: center;
     color: $dark-violet;
     &-title {
-      font-family: $fonts;
+      font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-style: italic;
       text-decoration: underline;
     }
     &_label {
       margin: 1rem;
-      font-family: $fonts;
+      font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-size: 1.45rem;
     }
     &_list {
       padding: 0.5rem;
-      font-family: $fonts;
+      font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-size: 1.3rem;
       border-radius: 0.3rem;
       text-align: center;
@@ -35,7 +41,9 @@
     text-align: center;
     width: 80vw;
     &-para {
-      font-family: $new-fonts;
+      font-family: josefine-sans, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-size: 1.2rem;
       font-weight: bold;
     }
@@ -55,18 +63,24 @@
     color: $dark-violet;
     &-title {
       margin-top: 10rem;
-      font-family: $fonts;
+      font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-style: italic;
       text-decoration: underline;
     }
     &_label {
       margin: 1rem;
-      font-family: $fonts;
+      font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-size: 1.45rem;
     }
     &_list {
       padding: 0.5rem;
-      font-family: $fonts;
+      font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-size: 1.3rem;
       border-radius: 0.3rem;
       text-align: center;
@@ -78,7 +92,9 @@
     text-align: center;
     width: 80vw;
     &-para {
-      font-family: $new-fonts;
+      font-family: josefine-sans, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-size: 1.2rem;
       font-weight: bold;
     }
@@ -98,18 +114,24 @@
     color: $dark-violet;
     &-title {
       margin-top: 10rem;
-      font-family: $fonts;
+      font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-style: italic;
       text-decoration: underline;
     }
     &_label {
       margin: 1rem;
-      font-family: $fonts;
+      font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-size: 1.45rem;
     }
     &_list {
       padding: 0.5rem;
-      font-family: $fonts;
+      font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-size: 1.3rem;
       border-radius: 0.3rem;
       text-align: center;
@@ -121,7 +143,9 @@
     text-align: center;
     width: 80vw;
     &-para {
-      font-family: $new-fonts;
+      font-family: josefine-sans, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-size: 1.2rem;
       font-weight: bold;
     }
@@ -141,18 +165,24 @@
     color: $color-primary;
     &-title {
       margin-top: 5rem;
-      font-family: $fonts;
+      font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-style: italic;
       text-decoration: underline;
     }
     &_label {
       margin: 0.5rem;
-      font-family: $fonts;
+      font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-size: 1.45rem;
     }
     &_list {
       padding: 0.5rem;
-      font-family: $fonts;
+      font-family: myFont, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-size: 1.3rem;
       border-radius: 0.3rem;
       text-align: center;
@@ -165,7 +195,9 @@
     text-align: center;
     width: 80vw;
     &-para {
-      font-family: $new-fonts;
+      font-family: josefine-sans, Arial (sans-serif), Arial Black (sans-serif),
+      Verdana (sans-serif), Tahoma (sans-serif), Trebuchet MS (sans-serif),
+      Impact (sans-serif), Gill Sans (sans-serif);
       font-size: 1rem;
       font-weight: bold;
     }
