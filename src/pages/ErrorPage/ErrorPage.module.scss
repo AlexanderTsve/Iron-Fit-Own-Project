@@ -1,28 +1,121 @@
 @import "../../custom.scss";
-.container {
-  overflow: hidden;
-  background-color: $magenta;
-  height: 100vh;
-  text-align: center;
-  color: $dark-violet;
+@media only screen and (min-width: 1000px) {
+  .container {
+    overflow: hidden;
+    background-color: $magenta;
+    height: 100vh;
+    text-align: center;
+    color: $dark-violet;
+  }
+  .title {
+    padding-top: 8rem;
+    margin: 0;
+    font-family: $fonts;
+    font-style: italic;
+  }
+  .para {
+    font-family: $new-fonts;
+    font-size: 1.1rem;
+  }
+  .para,
+  .title {
+    color: $light-grey;
+  }
+  .image {
+    border-radius: 1rem;
+    width: 40rem;
+  }
+  .button-container {
+    margin-top: 1rem;
+  }
 }
-.title {
-  padding-top: 12rem;
-  margin: 0;
-  font-family: $fonts;
-  font-style: italic;
+@media only screen and (max-width: 999px) {
+  .container {
+    overflow: hidden;
+    background-color: $magenta;
+    height: 100vh;
+    text-align: center;
+    color: $dark-violet;
+  }
+  .title {
+    padding-top: 8rem;
+    margin: 0;
+    font-family: $fonts;
+    font-style: italic;
+  }
+  .para {
+    font-family: $new-fonts;
+    font-size: 1.1rem;
+  }
+  .para,
+  .title {
+    color: $light-grey;
+  }
+  .image {
+    border-radius: 1rem;
+    width: 35rem;
+  }
+  .button-container {
+    margin-top: 1rem;
+  }
 }
-.para {
-  font-family: $new-fonts;
-  font-size: 1.1rem;
+@media only screen and (max-width: 600px) {
+  .container {
+    overflow: hidden;
+    background-color: $magenta;
+    height: 100vh;
+    text-align: center;
+    color: $dark-violet;
+  }
+  .title {
+    padding-top: 8rem;
+    margin: 0;
+    font-family: $fonts;
+    font-style: italic;
+  }
+  .para {
+    font-family: $new-fonts;
+    font-size: 1.1rem;
+  }
+  .para,
+  .title {
+    color: $light-grey;
+  }
+  .image {
+    border-radius: 1rem;
+    width: 25rem;
+  }
+  .button-container {
+    margin-top: 1rem;
+  }
 }
-.para,
-.title {
-  color: $light-grey;
-}
-.image {
-  border-radius: 1rem;
-}
-.button-container {
-  margin-top: 1rem;
+@media only screen and (max-width: 400px) {
+  .container {
+    overflow: hidden;
+    background-color: $magenta;
+    height: 100vh;
+    text-align: center;
+    color: $dark-violet;
+  }
+  .title {
+    padding-top: 8rem;
+    margin: 0;
+    font-family: $fonts;
+    font-style: italic;
+  }
+  .para {
+    font-family: $new-fonts;
+    font-size: 1.1rem;
+  }
+  .para,
+  .title {
+    color: $light-grey;
+  }
+  .image {
+    border-radius: 1rem;
+    width: 15rem;
+  }
+  .button-container {
+    margin-top: 1rem;
+  }
 }
